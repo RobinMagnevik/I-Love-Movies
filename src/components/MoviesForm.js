@@ -22,7 +22,7 @@ const fields = ({input, label, type, meta: { touched, error }}) => (
 )
 
 const MoviesForm = ({handleSubmit, valid}) => (
-    <form onSubmit={handleSubmit}>
+    <form className="moviesForm" onSubmit={handleSubmit}>
       <Field name="movieTitle"  type="text" component={fields} label="Movie title" />
       <Field name="mainCharacter" type="text" component={fields} label="Main characrer(s)" />
       <div>

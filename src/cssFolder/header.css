@@ -1,0 +1,25 @@
+header{
+	text-align: center;
+	background-color: black;
+}
+h1{
+	font-family: 'Montserrat';
+	color: red;
+	margin: 0;
+	padding: 1em;
+}
+.nav-field{
+	display: flex;
+	justify-content: space-evenly;
+	padding-bottom: 2em;
+}
+.nav-button{
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+	outline:none;
+	color: white;
+	font-size: 24px;
+}

@@ -5,18 +5,18 @@ const validate = v => {
 	const errors = {}
 	if (!v.movieTitle) {
 		errors.movieTitle = '(Required)'
-	} else if(v.movieTitle.length < 1){
+	} else if(v.movieTitle.length < 2){
 		errors.movieTitle = 'Must be more than one (1) character'
 	}
 	if (!v.mainCharacter) {
 		errors.mainCharacter = '(Required)'
-	} else if(isNaN(Number(v.mainCharacter))){
+	} else if(!isNaN(v.mainCharacter)){
 		errors.mainCharacter = 'Cannot be a number'
 	}
 	return errors
 }
 
-const fields = ({input, label, type, checked, meta: { touched, error }}) => (
+const fields = ({input, label, type, checked, select, meta: { touched, error }}) => (
 	<div>
 		<label>{label}</label>{touched && (error && <span className="errorMessage">{error}</span>) }
 		<div>
@@ -43,7 +43,7 @@ const MoviesForm = ({handleSubmit, valid}) => (
 			</div>
 			<div>
 				<label htmlFor="genres">Genres: </label>
-				<Field component={fields} name="genres" id="genres">
+				<Field component="select" name="genres" id="genres">
 					<option value="action">action</option>
 					<option value="anime">anime</option>
 					<option value="familj">familj</option>

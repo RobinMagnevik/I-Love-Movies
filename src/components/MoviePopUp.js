@@ -15,9 +15,9 @@ const MoviePopUp = () => {
           <div className="popUpImg"></div>
           <p className="popUpTitle"><span>SPIDERMAN</span></p>
 		  <p className="popUpAbout">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel orci iaculis odio pellentesque aliquam. Nam consectetur posuere odio, sit amet finibus leo pharetra ac.</p>
-          <p className="popUpGenre">Action</p>
-          <p className="popUpYear">2012</p>
-		  <p className="popUpRating">Rating: 5</p>
+          <span className="popUpGenre">Action</span>
+          <span className="popUpYear">2012</span>
+		  <span className="popUpRating">Rating: 5</span>
         </div>
       </div> }
 	  <br/>

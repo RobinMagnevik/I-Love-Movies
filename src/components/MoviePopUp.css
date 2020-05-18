@@ -21,7 +21,6 @@
 .popUpImg {
   grid-column: 1/4;
   grid-row: 2/8;
-  background-color: grey;
   height: 200px;
   width: 150px;
   justify-self: center;
@@ -34,7 +33,6 @@
   grid-column: 1/4;
   grid-row: 1/2;
   justify-self: center;
-  /* padding-top: 10px; */
   align-self: center;
   font-weight: bold;
   color: orangered;
@@ -149,19 +147,17 @@
 	  .popUpGenre {
 		grid-column: 2/3;
 		grid-row: 8/9;
-		font-size: 0.7em;
 	  }
 	
 	  .popUpYear {
-		grid-column: 3/4;
+		grid-column: 3/5;
 		grid-row: 8/9;
-		font-size: 0.7em;
+		justify-self: center;
 	  }
 	
 	  .popUpRating {
-		grid-column: 4/6;
+		grid-column: 5/7;
 		grid-row: 8/9;
-		font-size: 0.7em;
 	  }
 
 }

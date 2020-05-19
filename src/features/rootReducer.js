@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form'
+import { reducer as InspoMovieReducer } from './InspoMovie'
 
 const rootReducer = combineReducers({
-	form: formReducer
+	inspoMovie: InspoMovieReducer
 })
 
 export { rootReducer } 

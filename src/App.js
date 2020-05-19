@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-// import MoviesForm from './components/MoviesForm';
 import AddTitles from './components/AddTitles'
 import Header from './components/header/Header'
 import MoviePopUp from './components/MoviePopUp';
+import Favorites from "./components/Favorites";
 
 function App() {
 	return (
@@ -14,6 +14,9 @@ function App() {
 			</div>
 			<div>
 			<MoviePopUp />
+			</div>
+			<div>
+			<Favorites />
 			</div>
 		</div>
 	);

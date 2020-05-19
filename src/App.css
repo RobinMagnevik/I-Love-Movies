@@ -1,3 +1,7 @@
+*{
+	background-color: black;
+	color: white;
+}
 .errorMessage{
 	color: red;
 	font-size: 0.7em;

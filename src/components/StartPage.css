@@ -1,0 +1,47 @@
+.startPageDiv{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+
+.startPageInnerDiv{
+	width: 500px;
+	height: 150px;
+	background-color: black;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.startPageWelcomePhrase{
+	grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+	color: white;
+}
+
+.startPageInput{
+	grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+}
+
+.startPageWelcomeButton{
+	grid-column: 1/2;
+	grid-row: 3/4;
+	justify-self: center;
+	align-self: center;
+	background-color: white;
+	color: black;
+	height: 20px;
+	width: 70px;
+	border: 2px solid white;
+	cursor: pointer;
+}

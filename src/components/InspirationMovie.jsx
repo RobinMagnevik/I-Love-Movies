@@ -33,10 +33,11 @@ const Inspiration = () => {
             <p>
             <button onClick={() => fetchMovie(dispatch)}> Get new suggestion! </button>
             </p>
-            <img src={content}/>
+            <img src={content} />
         </div>
     )
 }
+
 
 let movieList = ['Batman', 'Superman', 'Spider-man'];
 
@@ -58,6 +59,8 @@ async function fetchMovie(dispatch) {
         dispatch(actions.failure());
     }
 }
+
+
 
 
 export default Inspiration;

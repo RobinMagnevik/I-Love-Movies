@@ -4,45 +4,48 @@ import "./favorites.css";
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [value, setValue] = useState("");
+
 	const movieArray = [
 		{
 			title: "Kill Bill",
-			director: "Quentin Tarantino",
+			rating: "5",
 		},
 		{
 			title: "Spiderman",
-			director: "Don't know",
+			rating: "4",
 		},
 		{
-			title: "Coming to America",
-			director: "Don't know",
+			title: "The Room",
+			rating: "1",
 		},
 	];
 
 	const seriesArray = [
 		{
 			title: "Game of Thrones",
-			director: "Don't know",
+			rating: "5",
 		},
 		{
 			title: "Breaking Bad",
-			director: "Don't know",
+			rating: "4",
 		},
 		{
 			title: "Chernobyl",
-			director: "Don't know",
+			rating: "4",
 		},
 	];
 	const movieList = movieArray.map((movie) => {
 		if (search.length !== 0) {
 			if (
 				movie.title.toLowerCase().match(search.toLowerCase()) ||
-				movie.director.toLowerCase().match(search.toLowerCase())
+				movie.rating.match(search)
 			) {
 				return (
-					<div key={movie.title}>
-						<p>Title: {movie.title} </p>
-						<p>Director: {movie.director} </p>
+					<div className="movie-styling" key={movie.title}>
+						<div>
+							<h2>{movie.title} </h2>
+							<p>Rating: {movie.rating} </p>
+						</div>
 					</div>
 				);
 			} else {
@@ -50,16 +53,40 @@ const FilterMovies = () => {
 			}
 		}
 		return (
-			<div key={movie.title}>
-				<p>Title: {movie.title} </p>
-				<p>Director: {movie.director} </p>
+			<div className="movie-styling" key={movie.title}>
+				<div>
+					<h2> {movie.title} </h2>
+					<p>Rating: {movie.rating} </p>
+				</div>
 			</div>
 		);
 	});
 
-	function test() {
-		return <p>Detta är dina filmer</p>;
-	}
+	const serieList = seriesArray.map((serie) => {
+		if (search.length !== 0) {
+			if (
+				serie.title.toLowerCase().match(search.toLowerCase()) ||
+				serie.rating.match(search)
+			) {
+				return (
+					<div className="movie-styling" key={serie.title}>
+						<div>
+							<h2>{serie.title} </h2>
+							<p>Rating: {serie.rating}</p>
+						</div>
+					</div>
+				);
+			} else {
+				return null;
+			}
+		}
+		return (
+			<div className="movie-styling" key={serie.title}>
+				<h2>{serie.title} </h2>
+				<p>Rating: {serie.rating} </p>
+			</div>
+		);
+	});
 	console.log("värdet av value", value);
 
 	return (
@@ -83,6 +110,18 @@ const FilterMovies = () => {
 				<option value="series">Series</option>
 			</select>
 			<br />
+
+			<div>
+				{value === "movies" ? <div>{movieList}</div> : null}
+
+				{value === "series" ? <div>{serieList}</div> : null}
+
+				{value === "all" ? (
+					<div>
+						{serieList} {movieList}
+					</div>
+				) : null}
+			</div>
 		</div>
 	);
 };

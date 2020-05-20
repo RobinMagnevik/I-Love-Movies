@@ -1,0 +1,24 @@
+.inspoContainer{
+	background-color: #101010;
+	height: 100vh;
+    text-align: center;
+}
+.movieButton, .serieButton{
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    background-color: #FF2E00;
+    border: 0;
+}
+#contentTitle {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+.contentPoster {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    color: white;
+}

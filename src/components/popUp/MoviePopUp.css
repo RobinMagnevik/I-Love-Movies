@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadein 2s;
 }
 
 .popUpDiv {
@@ -16,7 +17,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  border-radius: 5px;;
+  border-radius: 5px;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .popUpImg {
@@ -84,7 +90,9 @@
   padding-right: 25px;
   cursor: pointer;
   font-size: 1.2em;
+
 }
+
 .popUpX:hover {
   font-weight: bold;
 }

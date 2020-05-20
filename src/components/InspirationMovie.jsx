@@ -1,9 +1,6 @@
-  
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions, STATUS } from '../features/InspoMovie';
-
-
 
 
 const Inspiration = () => {
@@ -38,7 +35,6 @@ const Inspiration = () => {
     )
 }
 
-
 let movieList = ['Batman', 'Superman', 'Spider-man'];
 
 async function fetchMovie(dispatch) {
@@ -59,8 +55,6 @@ async function fetchMovie(dispatch) {
         dispatch(actions.failure());
     }
 }
-
-
 
 
 export default Inspiration;

@@ -23,18 +23,26 @@ const Inspiration = () => {
         content.title = 'Something went wrong. Could not retrieve movie.';
     }
 
-    // useEffect(() => {
-    //     fetchMovie(dispatch);
-    // }, [dispatch]);
+    useEffect(() => {
+        fetchMovie(dispatch);
+    }, [dispatch]);
 
     return (
         <div className="inspoContainer">
             <div>
-            <button className="movieButton" onClick={() => fetchMovie(dispatch)}> Get movie suggestion! </button>
-            <button className="serieButton" onClick={() => fetchSerie(dispatch)}> Get serie suggestion! </button>
+                <button className="movieButton" onClick={() => fetchMovie(dispatch)}> Get movie suggestion! </button>
+                <button className="serieButton" onClick={() => fetchSerie(dispatch)}> Get serie suggestion! </button>
             </div>
-            <h2 id="contentTitle">{content.title}</h2>
-            <img className="contentPoster" src={content.poster} alt="" />
+            <h2 id="contentTitle">{content.title} ({content.year})</h2>
+            <div className="movieInfo">
+                <p>{content.genre}</p>
+                <img className="contentPoster" src={content.poster} alt="" />
+                <p>{content.plot}</p>
+                <p>Rating: {content.rating}</p>
+            </div>
+            <div>
+                <button className="addButton">Add to favorites!</button>
+            </div>
         </div>
     )
 }
@@ -56,7 +64,11 @@ async function fetchMovie(dispatch) {
         console.log('Got data:', json);
         let movieSuggestion = {
             title: json.Title,
-            poster: json.Poster
+            poster: json.Poster,
+            genre: json.Genre,
+            year: json.Year.substring(0,4),
+            plot: json.Plot,
+            rating: json.Ratings[0].Value
         };
         console.log('keep: '+ movieSuggestion);
         dispatch(actions.success(movieSuggestion));
@@ -77,7 +89,11 @@ async function fetchSerie(dispatch) {
         console.log('Got data:', json);
         let serieSuggestion = {
             title: json.Title,
-            poster: json.Poster
+            poster: json.Poster,
+            genre: json.Genre,
+            year: json.Year.substring(0,4),
+            plot: json.Plot,
+            rating: json.Ratings[0].Value
         };
         console.log('keep: '+ serieSuggestion);
         if(json.Response === 'False') {

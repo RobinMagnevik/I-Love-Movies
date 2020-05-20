@@ -4,7 +4,7 @@ import AddTitles from './components/AddTitles'
 // import Header from './components/header/Header'
 import MoviePopUp from './components/MoviePopUp';
 import Favorites from "./components/Favorites";
-import InspirationMovie from "./components/InspirationMovie";
+import Inspiration from "./components/InspirationMovie";
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
 			<Favorites />
 			</div>
 			<div style={toShow === 'inspiration' ? {display: 'block'} : {display: 'none'}}> 
-			<InspirationMovie />
+			<Inspiration />
 			</div>
 		</div>
 	);

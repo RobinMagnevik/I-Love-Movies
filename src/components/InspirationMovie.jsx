@@ -41,7 +41,7 @@ const Inspiration = () => {
                 <p>Rating: {content.rating}</p>
             </div>
             <div>
-                <button className="addButton">Add to favorites!</button>
+                <button className="addButton" >Add to favorites!</button>
             </div>
         </div>
     )

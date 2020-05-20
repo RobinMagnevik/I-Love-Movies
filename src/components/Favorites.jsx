@@ -3,7 +3,7 @@ import "./favorites.css";
 
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
-	const [value, setValue] = useState("");
+	const [mode, setMode] = useState("all");
 
 	const movieArray = [
 		{
@@ -17,6 +17,10 @@ const FilterMovies = () => {
 		{
 			title: "The Room",
 			rating: "1",
+		},
+		{
+			title: "Incepton",
+			rating: "5",
 		},
 	];
 
@@ -33,6 +37,10 @@ const FilterMovies = () => {
 			title: "Chernobyl",
 			rating: "4",
 		},
+		{
+			title: "Stranger Things",
+			rating: "5",
+		},
 	];
 	const movieList = movieArray.map((movie) => {
 		if (search.length !== 0) {
@@ -41,8 +49,8 @@ const FilterMovies = () => {
 				movie.rating.match(search)
 			) {
 				return (
-					<div className="movie-styling" key={movie.title}>
-						<div>
+					<div>
+						<div key={movie.title}>
 							<h2>{movie.title} </h2>
 							<p>Rating: {movie.rating} </p>
 						</div>
@@ -53,11 +61,9 @@ const FilterMovies = () => {
 			}
 		}
 		return (
-			<div className="movie-styling" key={movie.title}>
-				<div>
-					<h2> {movie.title} </h2>
-					<p>Rating: {movie.rating} </p>
-				</div>
+			<div key={movie.title}>
+				<h2> {movie.title} </h2>
+				<p>Rating: {movie.rating} </p>
 			</div>
 		);
 	});
@@ -69,11 +75,9 @@ const FilterMovies = () => {
 				serie.rating.match(search)
 			) {
 				return (
-					<div className="movie-styling" key={serie.title}>
-						<div>
-							<h2>{serie.title} </h2>
-							<p>Rating: {serie.rating}</p>
-						</div>
+					<div key={serie.title}>
+						<h2>{serie.title} </h2>
+						<p>Rating: {serie.rating}</p>
 					</div>
 				);
 			} else {
@@ -81,17 +85,16 @@ const FilterMovies = () => {
 			}
 		}
 		return (
-			<div className="movie-styling" key={serie.title}>
+			<div key={serie.title}>
 				<h2>{serie.title} </h2>
 				<p>Rating: {serie.rating} </p>
 			</div>
 		);
 	});
-	console.log("värdet av value", value);
+	console.log("värdet av value", mode);
 
 	return (
 		<div className="wrapper">
-			<h1>Favorites component</h1>
 			<input
 				className="input-field"
 				type="text"
@@ -103,7 +106,7 @@ const FilterMovies = () => {
 				className="select-styling"
 				name="select"
 				id="select"
-				onChange={(e) => setValue(e.target.value)}
+				onChange={(e) => setMode(e.target.value)}
 			>
 				<option value="all">All</option>
 				<option value="movies">Movies</option>
@@ -112,14 +115,17 @@ const FilterMovies = () => {
 			<br />
 
 			<div>
-				{value === "movies" ? <div>{movieList}</div> : null}
-
-				{value === "series" ? <div>{serieList}</div> : null}
-
-				{value === "all" ? (
-					<div>
+				{mode === "all" ? (
+					<div className="movie-styling">
 						{serieList} {movieList}
 					</div>
+				) : null}
+				{mode === "movies" ? (
+					<div className="movie-styling">{movieList}</div>
+				) : null}
+
+				{mode === "series" ? (
+					<div className="movie-styling">{serieList}</div>
 				) : null}
 			</div>
 		</div>

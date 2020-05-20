@@ -5,9 +5,9 @@ import AddTitles from './components/AddTitles'
 import MoviePopUp from './components/MoviePopUp';
 import Favorites from "./components/Favorites";
 
-const [toShow, setToShow] = useState('')
 
 function App() {
+	const [toShow, setToShow] = useState('')
 	return (
 		<div className="App">
 			<header className="header-section">

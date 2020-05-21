@@ -68,6 +68,9 @@ function App() {
 			>
 				<InspirationMovie />
 			</div>
+
+			<span>{filmList}</span>
+			
 		</div>
 	);
 }

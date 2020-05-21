@@ -4,7 +4,7 @@ import AddTitles from "./components/AddTitles";
 // import Header from './components/header/Header'
 import MoviePopUp from "./components/MoviePopUp";
 import Favorites from "./components/Favorites";
-import Inspiration from "./components/InspirationMovie";
+import InspirationMovie from "./components/InspirationMovie";
 
 function App() {
 	const [toShow, setToShow] = useState("");

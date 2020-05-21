@@ -1,7 +1,10 @@
-* {
+
+*{
 	background-color: black;
+	color: white;
 }
-.errorMessage {
+.errorMessage{
+
 	color: red;
 	font-size: 0.7em;
 	padding: 5px;

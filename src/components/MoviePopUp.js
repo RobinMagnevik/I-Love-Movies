@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './MoviePopUp.css';
 
 const MoviePopUp = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   return (
     <div> {toggle &&

@@ -28,22 +28,22 @@ const fields = ({input, label, type, checked, select, meta: { touched, error }})
 const MoviesForm = ({handleSubmit, valid}) => (
 		<form onSubmit={handleSubmit}>
 			<div>
-				<Field name="movieTitle"  type="text" component={fields} label="Movie title" />
+				<input name="movieTitle"  type="text" label="Movie title" />
 
 			</div>
 			<div>
-				<Field name="mainCharacter" type="text" component={fields} label="Main characrer(s)" />
+				<input name="mainCharacter" type="text" label="Main characrer(s)" />
 				
 			</div>
 			<div>
 				<label htmlFor="Movie">Movie: </label>
-				<Field checked={true} value="movie" component={fields}  type="radio" name="ofType" id="Movie"/>
+				<input checked={true} value="movie" type="radio" name="ofType" id="Movie"/>
 				<label htmlFor="Serie">Serie: </label>
-				<Field value="serie" component={fields} type="radio" name="ofType" id="Serie"/>
+				<input value="serie" type="radio" name="ofType" id="Serie"/>
 			</div>
 			<div>
 				<label htmlFor="genres">Genres: </label>
-				<Field component="select" name="genres" id="genres">
+				<select name="genres" id="genres">
 					<option value="action">action</option>
 					<option value="anime">anime</option>
 					<option value="familj">familj</option>
@@ -61,7 +61,7 @@ const MoviesForm = ({handleSubmit, valid}) => (
 					<option value="sci-fi">sci-fi</option>
 					<option value="skräck">skräck</option>
 					<option value="svenskt">svenskt</option>
-				</Field>
+				</select>
 		</div>
 			<div>
 				<button type="submit" disabled={!valid}>Submit</button>

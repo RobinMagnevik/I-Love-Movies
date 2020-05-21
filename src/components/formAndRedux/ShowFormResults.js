@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import Form from './Form';
+import './form.css'
 
 
 const ShowFormResults = () => {
@@ -11,10 +12,10 @@ const ShowFormResults = () => {
 	}
 
 	return (
-		<div>
-	
+		<div className="container">
+			<div>
 		<Form addMovie={addMovie}/> <br />
-	
+		</div>
 		</div>
 	)
 

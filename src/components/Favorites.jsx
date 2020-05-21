@@ -46,6 +46,7 @@ const FilterMovies = () => {
 	];
 
 
+
 	
   
 	const data = useSelector(state => state.addFavoriteList)
@@ -59,19 +60,24 @@ const FilterMovies = () => {
 	// 	</div>
 	// ))
 
-	
+	console.log(data);
 
-	const movieList = data.map(item => {
+	const mixedList = data.map(item => {
 		if (search.length !== 0) {
 			if (
 				item.film.title.toLowerCase().match(search.toLowerCase()) ||
 				item.film.description.match(search)
+
 			) {
 				return (
 					<div>
-						<div key={item.id}>
+						<div key={item.title}>
 							<h2>{item.film.title} </h2>
-							<p>Rating: {item.film.description} </p>
+							<p>Genre: {item.film.genre}</p>
+							<p>About: {item.film.description}</p>
+							<p>Year: {item.film.year}</p>
+							<p>{item.film.ofType}</p>
+							<p>Rating: {item.film.rating} </p>
 							<MoviePopUp item={item} key={item.id}/>
 						</div>
 					</div>
@@ -79,40 +85,63 @@ const FilterMovies = () => {
 			} else {
 				return null;
 			}
+			
 		}
 		return (
-			<div key={item.id}>
-				<h2> {item.film.title} </h2>
-				<p>Rating: {item.film.description} </p>
-				<span><MoviePopUp item={item} key={item.id}/></span>
+			<div>
+				<div key={item.title}>
+					<h2>{item.film.title} </h2>
+					<p>Genre: {item.film.genre}</p>
+					<p>About: {item.film.description}</p>
+					<p>Year: {item.film.year}</p>
+					<p>{item.film.ofType}</p>
+					<p>Rating: {item.film.rating} </p>
+					<MoviePopUp item={item} key={item.id}/>
+				</div>
 			</div>
 		);
 	});
-
-	const serieList = seriesArray.map((serie) => {
-		if (search.length !== 0) {
-			if (
-				serie.title.toLowerCase().match(search.toLowerCase()) ||
-				serie.rating.match(search)
-			) {
-				return (
-					<div key={serie.title}>
-						<h2>{serie.title} </h2>
-						<p>Rating: {serie.rating}</p>
-					</div>
-				);
-			} else {
-				return null;
-			}
-		}
-		return (
-			<div key={serie.title}>
-				<h2>{serie.title} </h2>
-				<p>Rating: {serie.rating} </p>
-			</div>
-		);
-	});
-	console.log("värdet av value", mode);
+	
+	
+		let filterByMovie = data.filter((item) => {
+			return  item.film.ofType.match('movie') 
+		})
+		let filterBySerie = data.filter((item) => {
+			return item.film.ofType.match('serie')
+		})
+	
+	// const serieList = seriesArray.map((serie) => {
+	// 	if (search.length !== 0) {
+	// 		if (
+	// 			serie.title.toLowerCase().match(search.toLowerCase()) ||
+	// 			serie.rating.match(search)
+	// 		) {
+	// 			return (
+	// 				<div key={serie.title}>
+	// 					<h2>{serie.title} </h2>
+	// 					<p>{serie.genre}</p>
+	// 					<p>{serie.description}</p>
+	// 					<p>{serie.year}</p>
+	// 					<p>{serie.ofType}</p>
+	// 					<p>Rating: {serie.rating}</p>
+	// 				</div>
+	// 			);
+	// 		} else {
+	// 			return null;
+	// 		}
+	// 	}
+	// 	return (
+	// 		<div key={serie.title}>
+	// 					<h2>{serie.title} </h2>
+	// 					<p>{serie.genre}</p>
+	// 					<p>{serie.description}</p>
+	// 					<p>{serie.year}</p>
+	// 					<p>{serie.ofType}</p>
+	// 					<p>Rating: {serie.rating}</p>
+	// 				</div>
+	// 	);
+	// });
+	// console.log("värdet av value", mode);
 
 	return (
 		<div className="wrapper">
@@ -138,19 +167,43 @@ const FilterMovies = () => {
 			<div>
 				{mode === "all" ? (
 					<div className="movie-styling">
-						{serieList} {movieList}
+					 {mixedList}
 					</div>
 				) : null}
 				{mode === "movies" ? (
-					<div className="movie-styling">{movieList}</div>
+					<div className="movie-styling">{filterByMovie.map(item => (
+						<div className="movie-styling" key={item.film.title}>
+							<h2>{item.film.title} </h2>
+							<p>Genre: {item.film.genre}</p>
+							<p>About: {item.film.description}</p>
+							<p>Year: {item.film.year}</p>
+							<p>{item.film.ofType}</p>
+							<p>Rating: {item.film.rating} </p>
+							<MoviePopUp item={item} key={item.id}/>
+						</div>
+					))}</div>
 				) : null}
 
 				{mode === "series" ? (
-					<div className="movie-styling">{serieList}</div>
+					<div className="movie-styling">{filterBySerie.map(item => (
+						<div className="movie-styling" key={item.film.title}>
+							<h2>{item.film.title} </h2>
+							<p>Genre: {item.film.genre}</p>
+							<p>About: {item.film.description}</p>
+							<p>Year: {item.film.year}</p>
+							<p>{item.film.ofType}</p>
+							<p>Rating: {item.film.rating} </p>
+							<MoviePopUp item={item} key={item.id}/>
+						</div>
+					))}</div>
 				) : null}
+
+				{/* <div>{filterByMovie}</div> */}
+
+
 			</div>
 
-			{/* <div>{filmList}</div> */}
+			
 			
 		</div>
 	);

@@ -6,9 +6,9 @@ const removeFromMovieList = createAction("remove from movielist");
 const actions = { addToMovieList, removeFromMovieList };
 
 const initialState = [
-  // {
-  // 	film: { title: 'Spiderman', description: 'bla bla bla', genre: 'action', releaseYear: '2012', rating: '5,5', typeOf: "movie"  },
-  // }
+  {
+  	film: { title: 'Spiderman', description: 'bla bla bla', genre: 'action', releaseYear: '2012', rating: '5,5', ofType: "movie"  },
+  }
 ];
 
 const reducer = createReducer(initialState, {

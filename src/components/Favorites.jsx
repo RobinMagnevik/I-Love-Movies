@@ -82,7 +82,6 @@ const FilterMovies = () => {
 			<div key={movie.title}>
 				<h2> {movie.title} </h2>
 				<p>Rating: {movie.rating} </p>
-				<span>{filmList}</span>
 			</div>
 		);
 	});
@@ -147,6 +146,9 @@ const FilterMovies = () => {
 					<div className="movie-styling">{serieList}</div>
 				) : null}
 			</div>
+
+			<div>{filmList}</div>
+			
 		</div>
 	);
 };

@@ -1,42 +1,57 @@
-import React, { useState } from 'react';
-import './App.css';
-import AddTitles from './components/AddTitles'
+import React, { useState } from "react";
+import "./App.css";
+import AddTitles from "./components/AddTitles";
 // import Header from './components/header/Header'
-import MoviePopUp from './components/MoviePopUp';
+import MoviePopUp from "./components/MoviePopUp";
 import Favorites from "./components/Favorites";
 import Inspiration from "./components/InspirationMovie";
 
-
 function App() {
-	const [toShow, setToShow] = useState('')
+	const [toShow, setToShow] = useState("");
 	return (
 		<div className="App">
 			<header className="header-section">
 				<h1>I love movies</h1>
 				<nav className="nav-field">
-					<button className="nav-button" onClick={() => setToShow('addTitles')}>
+					<button className="nav-button" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>
-					<button className="nav-button" onClick={() => setToShow('favorites')}>
+					<button className="nav-button" onClick={() => setToShow("favorites")}>
 						Favoriter
 					</button>
-					<button className="nav-button" onClick={() => setToShow('inspiration')}>
+					<button
+						className="nav-button"
+						onClick={() => setToShow("inspiration")}
+					>
 						Inspiration
 					</button>
 				</nav>
 			</header>
 			{/* <Header/> */}
-			<div className="add-title-page" style={toShow === 'addTitles' ? {display: 'block'} : {display: 'none'}}>
-			<AddTitles />
+			<div
+				className="add-title-page"
+				style={
+					toShow === "addTitles" ? { display: "block" } : { display: "none" }
+				}
+			>
+				<AddTitles />
 			</div>
 			<div>
-			<MoviePopUp />
+				<MoviePopUp />
 			</div>
-			<div style={toShow === 'favorites' ? {display: 'block'} : {display: 'none'}}>
-			<Favorites />
+			<div
+				style={
+					toShow === "favorites" ? { display: "block" } : { display: "none" }
+				}
+			>
+				<Favorites />
 			</div>
-			<div style={toShow === 'inspiration' ? {display: 'block'} : {display: 'none'}}> 
-			<Inspiration />
+			<div
+				style={
+					toShow === "inspiration" ? { display: "block" } : { display: "none" }
+				}
+			>
+				<InspirationMovie />
 			</div>
 		</div>
 	);

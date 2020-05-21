@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './MoviePopUp.css';
 
-const MoviePopUp = ({item}) => {
+const MoviePopUp = ({ item }) => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -13,7 +13,7 @@ const MoviePopUp = ({item}) => {
         <div className="popUpDiv">
 		<p className="popUpX" onClick={() => setToggle((toggle) => toggle)}>x</p>
           <div className="popUpImg"></div>
-          <p className="popUpTitle"><span>{item.title}</span></p>
+          <p className="popUpTitle"><span>{item.film.title}</span></p>
 		  <p className="popUpAbout">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel orci iaculis odio pellentesque aliquam. Nam consectetur posuere odio, sit amet finibus leo pharetra ac.</p>
           <span className="popUpGenre">Action</span>
           <span className="popUpYear">2012</span>

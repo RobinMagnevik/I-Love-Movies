@@ -38,7 +38,7 @@ function App() {
 					toShow === "addTitles" ? { display: "block" } : { display: "none" }
 				}
 			>
-				<AddTitles />
+				{/* <AddTitles /> */}
 				<ShowFormResults />
 			</div>
 			<div>

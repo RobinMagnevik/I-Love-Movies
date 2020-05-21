@@ -48,29 +48,29 @@ const FilterMovies = () => {
 	
   
 	const data = useSelector(state => state.addFavoriteList)
-	const filmList = data.map(item => (
-		<div key={item.id}>
-			<p>Title: {item.film.title} </p>
-			<p>Description: {item.film.description} </p>
-			<p>Genre: {item.film.genre}</p>
-			<p>Id: {item.film.id}</p>
-			<p>THROUGH REDUX</p>
-		</div>
-	))
+	// const filmList = data.map(item => (
+	// 	<div key={item.id}>
+	// 		<p>Title: {item.film.title} </p>
+	// 		<p>Description: {item.film.description} </p>
+	// 		<p>Genre: {item.film.genre}</p>
+	// 		<p>Id: {item.film.id}</p>
+	// 		<p>THROUGH REDUX</p>
+	// 	</div>
+	// ))
 
 	
 
-	const movieList = movieArray.map((movie) => {
+	const movieList = data.map(item => {
 		if (search.length !== 0) {
 			if (
-				movie.title.toLowerCase().match(search.toLowerCase()) ||
-				movie.rating.match(search)
+				item.film.title.toLowerCase().match(search.toLowerCase()) ||
+				item.film.description.match(search)
 			) {
 				return (
 					<div>
-						<div key={movie.title}>
-							<h2>{movie.title} </h2>
-							<p>Rating: {movie.rating} </p>
+						<div key={item.id}>
+							<h2>{item.film.title} </h2>
+							<p>Rating: {item.film.description} </p>
 						</div>
 					</div>
 				);
@@ -79,9 +79,9 @@ const FilterMovies = () => {
 			}
 		}
 		return (
-			<div key={movie.title}>
-				<h2> {movie.title} </h2>
-				<p>Rating: {movie.rating} </p>
+			<div key={item.id}>
+				<h2> {item.film.title} </h2>
+				<p>Rating: {item.film.description} </p>
 			</div>
 		);
 	});
@@ -147,7 +147,7 @@ const FilterMovies = () => {
 				) : null}
 			</div>
 
-			<div>{filmList}</div>
+			{/* <div>{filmList}</div> */}
 			
 		</div>
 	);

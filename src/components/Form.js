@@ -77,6 +77,7 @@ const Form = () => {
           <div>
             <label htmlFor="genre">Genre: </label>
             <select name="genre" id="genre" onChange={handleChange}>
+              <option value=""></option>
               <option value="action">action</option>
               <option value="anime">anime</option>
               <option value="dokumentärer">dokumentärer</option>

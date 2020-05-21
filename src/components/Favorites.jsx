@@ -40,7 +40,7 @@ const FilterMovies = () => {
               <p>{item.film.ofType}</p>
               <p>Rating: {item.film.rating} </p>
               <MoviePopUp item={item} key={item.id} />
-              <MoviePopUp item={item} key={item.id} />
+              
               <button
                 onClick={() =>
                   dispatch(actions.removeFromMovieList(item.film.title))
@@ -56,7 +56,7 @@ const FilterMovies = () => {
       }
     }
     return (
-      <div key={item.film}>
+      <div key={item.film.title}>
         <div>
           <h2>{item.film.title} </h2>
           <p>Genre: {item.film.genre}</p>
@@ -153,7 +153,7 @@ const FilterMovies = () => {
                 <p>{item.film.ofType}</p>
                 <p>Rating: {item.film.rating} </p>
                 <MoviePopUp item={item} key={item.id} />
-                <MoviePopUp item={item} key={item.id} />
+                
                 <button
                   onClick={() =>
                     dispatch(actions.removeFromMovieList(item.film.title))
@@ -177,7 +177,7 @@ const FilterMovies = () => {
                 <p>{item.film.ofType}</p>
                 <p>Rating: {item.film.rating} </p>
                 <MoviePopUp item={item} key={item.id} />
-                <MoviePopUp item={item} key={item.id} />
+                
                 <button
                   onClick={() =>
                     dispatch(actions.removeFromMovieList(item.film.title))

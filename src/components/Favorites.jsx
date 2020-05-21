@@ -19,7 +19,7 @@ const FilterMovies = () => {
 			rating: "1",
 		},
 		{
-			title: "Incepton",
+			title: "Inception",
 			rating: "5",
 		},
 	];

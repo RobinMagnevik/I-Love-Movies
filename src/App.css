@@ -1,5 +1,8 @@
-.errorMessage{
+* {
+	background-color: black;
+}
+.errorMessage {
 	color: red;
 	font-size: 0.7em;
-	padding: 5px; 
+	padding: 5px;
 }

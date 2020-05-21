@@ -1,4 +1,3 @@
-  
 import React from "react";
 import Movie from "./Movie";
 
@@ -7,7 +6,7 @@ function List({ movies }) {
     <div>
       <div>
         {movies.map((movie) => (
-          <Movie key={movie.id} movie={movie}/>
+          <Movie key={movie.id} movie={movie} />
         ))}
       </div>
     </div>

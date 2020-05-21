@@ -45,13 +45,15 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 }
-.movie-styling div {
+/* .movie-styling div {
 	margin: 15px;
 	padding: 10px;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 3px;
 	justify-items: center;
-}
-.movie-styling div:hover {
+} */
+/* .movie-styling div:hover {
 	opacity: 0.8;
-}
+} */
+
+/* DET UTMARKERADE OVAN FÅR VI KIKA PÅ, DET FÅR POPUPEN ATT BETE SIG KONSTIGT, VET INTE VARFÖR :D */

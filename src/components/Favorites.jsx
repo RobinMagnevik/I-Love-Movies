@@ -140,7 +140,7 @@ const FilterMovies = () => {
 
       <div>
         {mode === "all" ? (
-          <div className="movie-styling">{mixedList}</div>
+          <div className="movie-styling" >{mixedList}</div>
         ) : null}
         {mode === "movies" ? (
           <div className="movie-styling">

@@ -5,9 +5,9 @@ function List({ movies }) {
   return (
     <div>
       <div>
-        {movies.map((movie) => (
+        {/* {movies.map((movie) => (
           <Movie key={movie.id} movie={movie} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

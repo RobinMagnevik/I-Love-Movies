@@ -2,7 +2,7 @@
 import React from "react";
 import Movie from "./Movie";
 
-function AddFavoriteList({ movies }) {
+function List({ movies }) {
   return (
     <div>
       <div>
@@ -14,4 +14,4 @@ function AddFavoriteList({ movies }) {
   );
 }
 
-export default AddFavoriteList;
+export default List;

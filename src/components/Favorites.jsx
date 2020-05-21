@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./favorites.css";
+import "../cssFolder/favorites.css";
 import { useSelector } from 'react-redux';
 import MoviePopUp from './MoviePopUp'
 
@@ -7,43 +7,43 @@ const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [mode, setMode] = useState("all");
 
-	const movieArray = [
-		{
-			title: "Kill Bill",
-			rating: "5",
-		},
-		{
-			title: "Spiderman",
-			rating: "4",
-		},
-		{
-			title: "The Room",
-			rating: "1",
-		},
-		{
-			title: "Inception",
-			rating: "5",
-		},
-	];
+	// const movieArray = [
+	// 	{
+	// 		title: "Kill Bill",
+	// 		rating: "5",
+	// 	},
+	// 	{
+	// 		title: "Spiderman",
+	// 		rating: "4",
+	// 	},
+	// 	{
+	// 		title: "The Room",
+	// 		rating: "1",
+	// 	},
+	// 	{
+	// 		title: "Inception",
+	// 		rating: "5",
+	// 	},
+	// ];
 
-	const seriesArray = [
-		{
-			title: "Game of Thrones",
-			rating: "5",
-		},
-		{
-			title: "Breaking Bad",
-			rating: "4",
-		},
-		{
-			title: "Chernobyl",
-			rating: "4",
-		},
-		{
-			title: "Stranger Things",
-			rating: "5",
-		},
-	];
+	// const seriesArray = [
+	// 	{
+	// 		title: "Game of Thrones",
+	// 		rating: "5",
+	// 	},
+	// 	{
+	// 		title: "Breaking Bad",
+	// 		rating: "4",
+	// 	},
+	// 	{
+	// 		title: "Chernobyl",
+	// 		rating: "4",
+	// 	},
+	// 	{
+	// 		title: "Stranger Things",
+	// 		rating: "5",
+	// 	},
+	// ];
 
 
 
@@ -88,8 +88,8 @@ const FilterMovies = () => {
 			
 		}
 		return (
-			<div>
-				<div key={item.title}>
+			<div key={item.film}>
+				<div>
 					<h2>{item.film.title} </h2>
 					<p>Genre: {item.film.genre}</p>
 					<p>About: {item.film.description}</p>

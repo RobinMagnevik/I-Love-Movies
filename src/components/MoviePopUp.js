@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './MoviePopUp.css';
+import "../cssFolder/moviePopUp.css";
 
 const MoviePopUp = ({ item }) => {
   const [toggle, setToggle] = useState(false);

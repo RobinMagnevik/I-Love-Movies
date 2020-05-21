@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import AddTitles from "./components/AddTitles";
-// import Header from './components/header/Header'
-import MoviePopUp from "./components/MoviePopUp";
 import Favorites from "./components/Favorites";
 import InspirationMovie from "./components/InspirationMovie";
-
-
-import ShowFormResults from "./components/formAndRedux/ShowFormResults";
+import AddFavorite from "./components/AddFavorite";
 import StartPage from "./components/StartPage";
 
 function App() {
@@ -32,22 +27,17 @@ function App() {
 					</button>
 				</nav>
 			</header>
-			{/* <Header/> */}			
+	
 			<div
 				className="add-title-page"
 				style={
 					toShow === "addTitles" ? { display: "block" } : { display: "none" }
 				}
-			>
-				{/* <AddTitles /> */}
-				
-				<ShowFormResults />
+			>				
+				<AddFavorite />
 				
 			</div>
 			<div>
-				<MoviePopUp />
-
-		
 			<StartPage />
 			
 			</div>

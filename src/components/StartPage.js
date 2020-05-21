@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from "react";
-import MoviePopUp from "./MoviePopUp";
-import './startPage.css';
+import React, {useState, 
+	// useEffect
+} from "react";
+import "../cssFolder/startPage.css";
 
 const StartPage = () => {
   const [toggle, setToggle] = useState(true);
@@ -32,9 +33,6 @@ const StartPage = () => {
 		</div>
         </div>
       )}
-	  {!toggle && (
-	  <MoviePopUp />
-	  )}
     </div>
   );
 };

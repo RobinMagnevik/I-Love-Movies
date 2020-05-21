@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { actions } from '../../features/addFavoriteList'
-import './form.css'
+import { actions } from '../features/addFavoriteList'
+import "../cssFolder/form.css";
 
 const Form = () => {
 	const [movie, setMovie] = useState({ id: "", title: "", description: "",  genre: "", ofType: "", year: '' });

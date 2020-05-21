@@ -1,9 +1,9 @@
 import React, { useState }  from 'react';
 import Form from './Form';
-import './form.css'
+import "../cssFolder/form.css";
 
 
-const ShowFormResults = () => {
+const AddFavorite = () => {
 
 	const [movies, setMovies] = useState([])
 
@@ -22,4 +22,4 @@ const ShowFormResults = () => {
 }
 
 
-export default ShowFormResults;
+export default AddFavorite;

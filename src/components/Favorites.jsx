@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./favorites.css";
 import { useSelector } from 'react-redux';
+import MoviePopUp from './MoviePopUp'
 
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
@@ -71,6 +72,7 @@ const FilterMovies = () => {
 						<div key={item.id}>
 							<h2>{item.film.title} </h2>
 							<p>Rating: {item.film.description} </p>
+							<MoviePopUp item={item} key={item.id}/>
 						</div>
 					</div>
 				);
@@ -82,6 +84,7 @@ const FilterMovies = () => {
 			<div key={item.id}>
 				<h2> {item.film.title} </h2>
 				<p>Rating: {item.film.description} </p>
+				<span><MoviePopUp item={item} key={item.id}/></span>
 			</div>
 		);
 	});

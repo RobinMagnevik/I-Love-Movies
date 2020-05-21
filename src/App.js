@@ -8,6 +8,7 @@ import InspirationMovie from "./components/InspirationMovie";
 
 
 import ShowFormResults from "./components/formAndRedux/ShowFormResults";
+import StartPage from "./components/StartPage";
 
 function App() {
   const [toShow, setToShow] = useState("");
@@ -31,7 +32,7 @@ function App() {
 					</button>
 				</nav>
 			</header>
-			{/* <Header/> */}
+			{/* <Header/> */}			
 			<div
 				className="add-title-page"
 				style={
@@ -39,10 +40,16 @@ function App() {
 				}
 			>
 				{/* <AddTitles /> */}
+				
 				<ShowFormResults />
+				
 			</div>
 			<div>
 				<MoviePopUp />
+
+		
+			<StartPage />
+			
 			</div>
 			<div
 				style={

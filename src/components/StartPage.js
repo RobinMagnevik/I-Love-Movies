@@ -4,17 +4,17 @@ import './startPage.css';
 
 const StartPage = () => {
   const [toggle, setToggle] = useState(true);
-	const [todos, setTodos] = useState("")
+	const [name, setName] = useState("")
 
-	useEffect(() => {
-		localStorage.setItem("hej", JSON.stringify(todos))
-	}, (todos))
+	// useEffect(() => {
+	// 	localStorage.setItem("hej", JSON.stringify(name))
+	// }, (name))
 
 
-	function addTodo(todo) {
-		setTodos([todo, ...todos])
+	function addName(lsName) {
+		setName([lsName, ...name])
+		localStorage.setItem("name", name)
 	}
-
 
   return (
     <div>
@@ -23,10 +23,10 @@ const StartPage = () => {
 		<div className="startPageInnerDiv">
 		<p className="startPageWelcomePhrase">Welcome, tell us who you are!</p>
 	
-		<input className="startPageInput" todos={todos} type="text"/><br/>
+		<input className="startPageInput" name={name} type="text" onChange={(e) => setName(e.target.value)}/><br/>
 		<button type="submit"
             className="startPageWelcomeButton"
-            onClick={() => {setToggle((toggle) => !toggle); addTodo()}}
+            onClick={() => {setToggle((toggle) => !toggle); addName()}}
           >Welcome!</button>
 
 		</div>

@@ -10,7 +10,7 @@ header {
 	text-align: center;
 	background-color: black;
 }
-h1 {
+.header-section > h1 {
 	font-family: "Montserrat";
 	color: red;
 	margin: 0;

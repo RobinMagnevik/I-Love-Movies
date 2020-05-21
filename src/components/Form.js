@@ -1,18 +1,61 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
+import { useSelector } from "react-redux";
 import "../cssFolder/form.css";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Form = () => {
+  const dispatch = useDispatch();
+
+
+  const data = useSelector((state) => state.addFavoriteList);
+  const latestList = data.slice(-3).map(item => (
+    	<div key={item.id}>
+    		<h2>{item.film.title} </h2>
+              <p>Genre: {item.film.genre}</p>
+              <p>About: {item.film.description}</p>
+              <p>Year: {item.film.year}</p>
+              <p>{item.film.ofType}</p>
+              <p>Rating: {item.film.rating} </p>
+    	</div>
+    ))
+  
+
+
+
+
+
+
+
+
+
+
+
   const [movie, setMovie] = useState({
     id: "",
     title: "",
     description: "",
-    genre: "",
-    ofType: "",
+    genre: "action",
+    ofType: "movie",
     year: "",
   });
-  const dispatch = useDispatch();
+  
 
   const handleChange = (e) => {
     setMovie({
@@ -38,6 +81,7 @@ const Form = () => {
   console.log(movie);
 
   return (
+    <div className="main-container">
     <div className="add-title-container">
       <form className="addFavoriteToListForm" onSubmit={handleSubmit}>
         <div>
@@ -77,7 +121,6 @@ const Form = () => {
           <div>
             <label htmlFor="genre">Genre: </label>
             <select name="genre" id="genre" onChange={handleChange}>
-              <option value=""></option>
               <option value="action">action</option>
               <option value="anime">anime</option>
               <option value="dokumentärer">dokumentärer</option>
@@ -120,6 +163,12 @@ const Form = () => {
           Add
         </button>
       </form>
+      
+    </div>
+    <div>
+      <h1>Three latest: </h1>
+      {latestList}
+    </div>
     </div>
   );
 };

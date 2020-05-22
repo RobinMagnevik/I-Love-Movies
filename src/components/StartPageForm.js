@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../cssFolder/startPageForm.css";
 
-
 const StartPageForm = ({ addName }) => {
   const [firstName, setfirstName] = useState("");
   const [toggle, setToggle] = useState(true);
@@ -18,7 +17,6 @@ const StartPageForm = ({ addName }) => {
 	  return setToggle(true)
 	} else return setToggle(false)
   })
-
 
   return (
     <div>
@@ -41,135 +39,3 @@ const StartPageForm = ({ addName }) => {
 };
 
 export default StartPageForm;
-
-// import React, { useState, useEffect } from "react";
-// import "../cssFolder/startPage.css";
-
-// const StartPage = () => {
-//   const [toggle, setToggle] = useState(true);
-//   const [name, setName] = useState("");
-
-//   // useEffect(() => {
-//   // 	localStorage.setItem("hej", JSON.stringify(name))
-//   // }, (name))
-
-//   function addName(lsName) {
-//     setName([lsName, ...name]);
-//     localStorage.setItem("name", name);
-//   }
-
-//   function checkStorage() {
-//     if (localStorage.getItem("name") === null) {
-//       return console.log("Empty");
-//     } else console.log("Not empty");
-//   }
-
-//   useEffect(() => {
-//     checkStorage();
-//   });
-
-//   return (
-//     <div>
-//       {/* {toggle && ( */}
-//       <div className="startPageDiv">
-//         <div className="startPageInnerDiv">
-//           <p className="startPageWelcomePhrase">
-//             Welcome, tell us who you are!
-//           </p>
-//           <input
-//             className="startPageInput"
-//             name={name}
-//             value={name}
-//             type="text"
-//             onChange={(e) => setName(e.target.value)}
-//           />
-//           <br />
-
-//           <button
-//             type="submit"
-//             className="startPageWelcomeButton"
-//             onClick={() => {
-//               setToggle((toggle) => !toggle);
-//               addName();
-//             }}
-//           >
-//             Welcome!
-//           </button>
-//         </div>
-//       </div>
-//       {/* )} */}
-//     </div>
-//   );
-// };
-
-// export default StartPage;
-
-// import React, { useState, useEffect } from "react";
-// import "../cssFolder/startPage.css";
-
-// const StartPage = () => {
-//   const [toggle, setToggle] = useState(true);
-//   const [name, setName] = useState({ title: "" });
-
-//   const handleChange = (e) => {
-//     setName({
-//       ...name,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   function addName() {
-//     if (name.title) {
-//       setName({ ...name, title: "" });
-//       localStorage.setItem("name", JSON.stringify(name));
-//     }
-//     console.log(name);
-//   }
-
-//   function checkStorage() {
-//     if (localStorage.getItem(name) === null) {
-//       return null;
-//     } else return name;
-//   }
-
-//   useEffect(() => {
-//     checkStorage();
-//   });
-
-//   return (
-//     <div>
-//       {/* {toggle && (  */}
-//       <div className="startPageDiv">
-//         <div className="startPageInnerDiv">
-//           <p className="startPageWelcomePhrase">
-//             Welcome, tell us who you are!
-//           </p>
-
-//             <input
-//               className="startPageInput"
-//               type="text"
-//               name="title"
-//               value={name.title}
-//               onChange={handleChange}
-//             />
-//             <br />
-//             <button
-//               type="submit"
-//               className="startPageWelcomeButton"
-//               onClick={() => {
-//                 setToggle((toggle) => !toggle);
-//                 addName();
-//               }}
-//             >
-//               Welcome!
-//             </button>
-
-//           <p>{name.title}</p>
-//         </div>
-//       </div>
-//       {/* )} */}
-//     </div>
-//   );
-// };
-
-// export default StartPage;

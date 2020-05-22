@@ -20,7 +20,7 @@ function App() {
 	return (
 		<div className="App">
 			<header className="header-section">
-				<h1>I love movies</h1>
+				<h1>I LOVE MOVIES</h1>
 				<nav className="nav-field">
 					<button className="nav-button" onClick={() => setToShow("addTitles")}>
 						Start

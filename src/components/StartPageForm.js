@@ -3,13 +3,13 @@ import "../cssFolder/startPageForm.css";
 
 
 const StartPageForm = ({ addName }) => {
-  const [title, setTitle] = useState("");
+  const [firstName, setfirstName] = useState("");
   const [toggle, setToggle] = useState(true);
 
   const handleSubmit = (lsName) => {
-	addName(title);
-	setTitle([lsName, ...title]);
-    localStorage.setItem("name", title);
+	addName(firstName);
+	setfirstName([lsName, ...firstName]);
+    localStorage.setItem("name", firstName);
   };
 
   const start = useState(() => {
@@ -28,7 +28,7 @@ const StartPageForm = ({ addName }) => {
 	  <h1 className="header">I LOVE MOVIES</h1>
         <form >
 		<p className="startPageWelcomePhrase"> Welcome, tell us who you are!</p>
-          <input className="startPageInput" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input className="startPageInput" type="text" value={firstName} onChange={(e) => setfirstName(e.target.value)} />
             <br />
 			<br />
 			<button type="button" className="startPageWelcomeButton" value="add song" onClick={() => {setToggle((toggle) => !toggle); handleSubmit();}}> Sign in </button>

@@ -46,3 +46,7 @@
 	border: 2px solid white;
 	cursor: pointer;
 }
+
+.welcomeHeaderText{
+	text-align: center;
+}

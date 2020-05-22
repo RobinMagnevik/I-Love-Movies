@@ -4,9 +4,18 @@ import Favorites from "./components/Favorites";
 import InspirationMovie from "./components/InspirationMovie";
 import AddFavorite from "./components/AddFavorite";
 import StartPage from "./components/StartPage";
+import WelcomeBackPage from './components/WelcomeBackPage';
 
 function App() {
   const [toShow, setToShow] = useState("");
+
+  const [localStorageName] = useState(() => {
+	let localStorageName = window.localStorage.getItem("name");
+	if (localStorage.getItem("name") === null) {
+	  return null
+	} else 
+	return (localStorageName + "'s movie page!")
+  })
 
 	return (
 		<div className="App">
@@ -26,6 +35,7 @@ function App() {
 						Inspiration
 					</button>
 				</nav>
+				<p className="welcomeHeaderText">{localStorageName}</p>
 			</header>
 	
 			<div
@@ -37,10 +47,15 @@ function App() {
 				<AddFavorite />
 				
 			</div>
-			<div>
-			<StartPage />
 			
+			<div>
+			<StartPage /> 			
 			</div>
+
+			<div>
+			<WelcomeBackPage />
+			</div>
+
 			<div
 				style={
 					toShow === "favorites" ? { display: "block" } : { display: "none" }

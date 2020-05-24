@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const MoviePopUpEffect = ({ show, children }) => {
+const FadeEffect = ({ show, children }) => {
   const [render, setRender] = useState(show);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ const MoviePopUpEffect = ({ show, children }) => {
   );
 };
 
-export default MoviePopUpEffect;
+export default FadeEffect;

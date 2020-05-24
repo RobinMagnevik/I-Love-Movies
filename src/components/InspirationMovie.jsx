@@ -9,6 +9,8 @@ const Inspiration = () => {
     const status = useSelector(state => state.inspoMovie.status);
     const movie = useSelector(state => state.inspoMovie.movie);
 
+    
+
     let content = {};
     
     if( status === STATUS.NORMAL ) {
@@ -29,7 +31,7 @@ const Inspiration = () => {
 
     return (
         <div className="inspoContainer">
-            <div>
+            <div className="buttonDiv">
                 <button className="movieButton" onClick={() => fetchMovie(dispatch)}> Get movie suggestion! </button>
                 <button className="serieButton" onClick={() => fetchSerie(dispatch)}> Get serie suggestion! </button>
             </div>
@@ -40,7 +42,7 @@ const Inspiration = () => {
                 <p>{content.plot}</p>
                 <p>Rating: {content.rating}</p>
             </div>
-            <div>
+            <div className="buttonDiv">
                 <button className="addButton" >Add to favorites!</button>
             </div>
         </div>
@@ -90,7 +92,6 @@ async function fetchMovie(dispatch) {
             plot: json.Plot,
             rating: json.Ratings[0].Value
         };
-        console.log('keep: '+ movieSuggestion);
         dispatch(actions.success(movieSuggestion));
     } catch {
         dispatch(actions.failure());

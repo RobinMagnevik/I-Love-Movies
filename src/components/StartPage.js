@@ -18,6 +18,6 @@ export default function StartPage() {
       </div>
       <StartPageForm addName={addName} />
 
-    </div>
+    </div> 
   );
 }

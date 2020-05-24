@@ -52,48 +52,55 @@ const Form = () => {
 	console.log(movie);
 
 	//Validering av bild man laddar upp
-	function checkImage(files) {
-		if (files.length == 0) {
-			console.log("Ingen bild");
-		} else {
-			console.log("Du har laddat upp", files);
-		}
-	}
-	console.log("värdet av fileList", FileList.length);
+	// function checkImage(files) {
+	// 	if (files.length == 0) {
+	// 		console.log("Ingen bild");
+	// 	} else {
+	// 		console.log("Du har laddat upp", files);
+	// 	}
+	// }
+	// console.log("värdet av fileList", FileList.length);
 
 	return (
 		<div className="main-container">
-			<div className="add-title-container">
-				<form className="addFavoriteToListForm" onSubmit={handleSubmit}>
-					<div>
-						<label>Title: </label>
-						{/* {errors.title && <span>{errors.title}</span>}  */}
-						<br />
-						<input
-							type="text"
-							name="title"
-							value={movie.title}
-							onChange={handleChange}
-						/>
-					</div>
+			<div>
+				<h2>Lägg till en film eller serie</h2>
+				<form className="form-style" onSubmit={handleSubmit}>
+					{/* {errors.title && <span>{errors.title}</span>}  */}
+
+					<input
+						placeholder="Title"
+						type="text"
+						name="title"
+						value={movie.title}
+						onChange={handleChange}
+					/>
+
+					{/* {errors.description && <span>{errors.description}</span>}  */}
+
+					{/* <input
+						placeholder="Description"
+						type="text"
+						name="description"
+						value={movie.description}
+						onChange={handleChange}
+					/> */}
+
+					<textarea
+						placeholder="Movie plot"
+						type="text"
+						name="description"
+						value={movie.description}
+						onChange={handleChange}
+						cols="20"
+						rows="5"
+					></textarea>
 
 					<div>
-						<label>Description: </label>
-						{/* {errors.description && <span>{errors.description}</span>}  */}
-						<br />
-						<input
-							type="text"
-							name="description"
-							value={movie.description}
-							onChange={handleChange}
-						/>
-					</div>
-
-					<div>
-						<label>Year: </label>
 						{/* {errors.genre && <span>{errors.genre}</span>}  */}
-						<br />
+
 						<input
+							placeholder="Year"
 							type="number"
 							name="year"
 							value={movie.year}
@@ -135,16 +142,15 @@ const Form = () => {
 						</div>
 					</div>
 
-					<br />
-					<label>Upload image</label>
+					{/* <label>Upload image</label>
 					<br></br>
 					<input
 						type="file"
 						id="image"
 						accept=".png, .jpeg, .jpg"
 						onChange={checkImage(FileList)}
-					></input>
-					<br></br>
+					></input> */}
+
 					<button
 						type="submit"
 						onClick={handleClick}
@@ -155,7 +161,7 @@ const Form = () => {
 					<br></br>
 				</form>
 			</div>
-			<div>
+			<div className="three-latest">
 				<h1>Three latest: </h1>
 				{latestList}
 			</div>

@@ -52,4 +52,17 @@ textarea {
 /* .container {
 	background-color: #101010;
 	height: 100vh;
-} */
+}
+
+.startPageWelcomeButton{
+	grid-column: 1/2;
+	grid-row: 3/4;
+	justify-self: center;
+	align-self: center;
+	background-color: white;
+	color: black;
+	height: 20px;
+	width: 70px;
+	border: 2px solid white;
+	cursor: pointer;
+}

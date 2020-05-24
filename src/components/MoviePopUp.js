@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../cssFolder/moviePopUp.css";
-import MoviePopUpEffect from './MoviePopUpEffect'
+import FadeEffect from './FadeEffect'
 
 const MoviePopUp = ({ item }) => {
 const [show, setShow] = useState(false);
 
   return (
 	  <div>
-    <MoviePopUpEffect show={show}>
+    <FadeEffect show={show}>
       <div className="popUpModal" onClick={() => setShow(show => !show)}>
         <div className="popUpDiv">
 		<p className="popUpX" onClick={() => setShow(show => show)}> x </p>
@@ -20,7 +20,7 @@ const [show, setShow] = useState(false);
         </div>
       </div> 
 	  <br/>
-	</MoviePopUpEffect> 
+	</FadeEffect> 
 	<p className="popUpShowDetails" onClick={() => setShow(show => !show)}> 
 		  {/* {show ? "hide" : "show"} */}
 		  Show details

@@ -14,6 +14,7 @@
 #contentTitle {
     color: white;
     text-align: center;
+    background-color: #101010;
 }
 .contentPoster {
     display: block;
@@ -21,17 +22,26 @@
     margin-right: auto;
     margin-top: 30px;
     color: white;
+    background-color: #101010;
 }
 .movieInfo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    color: white;   
+    color: white;  
+    background-color: #101010; 
 }
 .movieInfo > p {
     width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: #101010;
+}
+.buttonDiv {
+    margin-top: 10px;
+    padding: 0;
+    margin: 0;
+    background-color: #101010;
 }

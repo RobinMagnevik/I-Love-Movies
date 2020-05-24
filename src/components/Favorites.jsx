@@ -41,7 +41,11 @@ const FilterMovies = () => {
 							<p>Rating: {item.film.rating} </p>
 							<MoviePopUp item={item} key={item.id} />
 
+<<<<<<< HEAD
 							<button
+=======
+							<button className="startPageWelcomeButton"
+>>>>>>> alexandra
 								onClick={() =>
 									dispatch(actions.removeFromMovieList(item.film.title))
 								}
@@ -65,7 +69,11 @@ const FilterMovies = () => {
 					<p>{item.film.ofType}</p>
 					<p>Rating: {item.film.rating} </p>
 					<MoviePopUp item={item} key={item.id} />
+<<<<<<< HEAD
 					<button
+=======
+					<button className="startPageWelcomeButton"
+>>>>>>> alexandra
 						onClick={() =>
 							dispatch(actions.removeFromMovieList(item.film.title))
 						}
@@ -154,7 +162,11 @@ const FilterMovies = () => {
 								<p>Rating: {item.film.rating} </p>
 								<MoviePopUp item={item} key={item.id} />
 
+<<<<<<< HEAD
 								<button
+=======
+								<button className="startPageWelcomeButton"
+>>>>>>> alexandra
 									onClick={() =>
 										dispatch(actions.removeFromMovieList(item.film.title))
 									}
@@ -178,7 +190,7 @@ const FilterMovies = () => {
 								<p>Rating: {item.film.rating} </p>
 								<MoviePopUp item={item} key={item.id} />
 
-								<button
+								<button className="startPageWelcomeButton"
 									onClick={() =>
 										dispatch(actions.removeFromMovieList(item.film.title))
 									}

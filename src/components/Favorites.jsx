@@ -41,7 +41,8 @@ const FilterMovies = () => {
 							<p>Rating: {item.film.rating} </p>
 							<MoviePopUp item={item} key={item.id} />
 
-							<button className="startPageWelcomeButton"
+							<button
+								className="startPageWelcomeButton"
 								onClick={() =>
 									dispatch(actions.removeFromMovieList(item.film.title))
 								}
@@ -65,7 +66,8 @@ const FilterMovies = () => {
 					<p>{item.film.ofType}</p>
 					<p>Rating: {item.film.rating} </p>
 					<MoviePopUp item={item} key={item.id} />
-					<button className="startPageWelcomeButton"
+					<button
+						className="startPageWelcomeButton"
 						onClick={() =>
 							dispatch(actions.removeFromMovieList(item.film.title))
 						}
@@ -77,6 +79,7 @@ const FilterMovies = () => {
 		);
 	});
 
+	//Kan man skriva om detta så att det blir som funktionen ovanför?
 	let filterByMovie = data.filter((item) => {
 		return item.film.ofType.match("movie");
 	});
@@ -145,7 +148,7 @@ const FilterMovies = () => {
 				{mode === "movies" ? (
 					<div className="movie-styling">
 						{filterByMovie.map((item) => (
-							<div className="movie-styling" key={item.film.title}>
+							<div key={item.film.title}>
 								<h2>{item.film.title} </h2>
 								<p>Genre: {item.film.genre}</p>
 								<p>About: {item.film.description}</p>
@@ -154,7 +157,8 @@ const FilterMovies = () => {
 								<p>Rating: {item.film.rating} </p>
 								<MoviePopUp item={item} key={item.id} />
 
-								<button className="startPageWelcomeButton"
+								<button
+									className="startPageWelcomeButton"
 									onClick={() =>
 										dispatch(actions.removeFromMovieList(item.film.title))
 									}
@@ -178,7 +182,8 @@ const FilterMovies = () => {
 								<p>Rating: {item.film.rating} </p>
 								<MoviePopUp item={item} key={item.id} />
 
-								<button className="startPageWelcomeButton"
+								<button
+									className="startPageWelcomeButton"
 									onClick={() =>
 										dispatch(actions.removeFromMovieList(item.film.title))
 									}

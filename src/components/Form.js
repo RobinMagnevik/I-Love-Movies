@@ -64,12 +64,12 @@ const Form = () => {
 	return (
 		<div className="main-container">
 			<div>
-				<h2>Lägg till en film eller serie</h2>
+				<h1>Lägg till en film eller serie</h1>
 				<form className="form-style" onSubmit={handleSubmit}>
 					{/* {errors.title && <span>{errors.title}</span>}  */}
 
 					<input
-						placeholder="Title"
+						placeholder="Titel"
 						type="text"
 						name="title"
 						value={movie.title}
@@ -87,7 +87,7 @@ const Form = () => {
 					/> */}
 
 					<textarea
-						placeholder="Movie plot"
+						placeholder="Handling"
 						type="text"
 						name="description"
 						value={movie.description}
@@ -158,13 +158,11 @@ const Form = () => {
 					>
 						Add
 					</button>
-					<br></br>
 				</form>
 			</div>
-			<div className="three-latest">
-				<h1>Three latest: </h1>
-				{latestList}
-			</div>
+			<h1>Latest Upload </h1>
+
+			<div className="three-latest">{latestList}</div>
 		</div>
 	);
 };

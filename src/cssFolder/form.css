@@ -13,11 +13,12 @@
 	margin-top: 1em;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 2.5em;
 	width: 400px;
 	padding: 1em;
 	color: white;
 	text-align: center;
-	cursor: pointer;
+
 	/* left: 0;
 	right: 0; */
 	/* top: 40vh; */
@@ -49,20 +50,12 @@ textarea {
 	background-color: #302c2c;
 	cursor: pointer;
 }
-/* .container {
-	background-color: #101010;
-	height: 100vh;
-}
+.three-latest {
+	display: grid;
+	/* border: 2px solid rgb(255, 255, 255); */
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	padding: 0.9em;
 
-.startPageWelcomeButton{
-	grid-column: 1/2;
-	grid-row: 3/4;
-	justify-self: center;
-	align-self: center;
-	background-color: white;
-	color: black;
-	height: 20px;
-	width: 70px;
-	border: 2px solid white;
-	cursor: pointer;
+	font-size: large;
 }

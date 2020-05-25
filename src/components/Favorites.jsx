@@ -79,7 +79,6 @@ const FilterMovies = () => {
 		);
 	});
 
-	//Kan man skriva om detta så att det blir som funktionen ovanför?
 	let filterByMovie = data.filter((item) => {
 		return item.film.ofType.match("movie");
 	});

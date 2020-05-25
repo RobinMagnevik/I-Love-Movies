@@ -1,5 +1,4 @@
 * {
-  background-color: black;
   margin: 0;
   padding: 0;
 }
@@ -14,7 +13,7 @@ header {
   grid-template-rows: 40px 60px 60px;
 }
 
-.header-section > h1 {
+.headerLogo {
   background-color: transparent;
   color: #FF2E00;
   grid-column: 1/4;
@@ -30,7 +29,7 @@ header {
   align-self: end;
 }
 
-.nav-field {
+.navField {
   background-color: transparent;
   grid-column: 1/4;
   grid-row: 3/4;

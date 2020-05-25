@@ -1,0 +1,86 @@
+@keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes fadeOut {
+	0% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+
+  * {
+	color: aliceblue;
+	background-color: #101010;
+}
+
+h2{
+	background-color: black;
+}
+
+.main-container {
+	background-color: #101010;
+	margin: 1em;
+}
+
+.form-style {
+	background-color: #000000;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2.5em;
+	width: 400px;
+	padding: 1em;
+	text-align: center;
+	border: 1px solid #ff2e00;
+	/* left: 0;
+	right: 0; */
+	/* top: 40vh; */
+	/* position: absolute; */
+}
+.form-style div,
+label {
+	background-color: #000000;
+}
+
+.form-style input,
+textarea {
+	padding: 0.5em;
+	margin: 0.5em;
+	background-color: white;
+	color: #101010;
+}
+
+.addFavoriteToListButton {
+	padding: 0.3em;
+	margin: 1em;
+	width: 80px;
+	border: none;
+	margin-left: 40%;
+	font-size: 0.9em;
+	font-weight: bold;
+	background-color: #ff2e00;
+}
+.addFavoriteToListButton:hover {
+	cursor: pointer;
+	background-color: #ff2f00dc;
+}
+.three-latest {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1.5em;
+	align-items: center;
+	font-size: large;
+	height: 250px;
+}
+
+

@@ -50,9 +50,8 @@ const FilterMovies = () => {
 								}
 							>
 								Delete
-							</button>
-							<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item} /> }
+							</button> &nbsp;
+							<EditForm item={item}  />
 						</div>
 					</div>
 				);
@@ -77,9 +76,8 @@ const FilterMovies = () => {
 						}
 					>
 						Delete
-					</button>
-					<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item}  /> }
+					</button> &nbsp;
+					<EditForm item={item}  />
 					
 				</div>
 			</div>
@@ -170,9 +168,8 @@ const FilterMovies = () => {
 									}
 								>
 									Delete
-								</button>
-								<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item}  /> }
+								</button> &nbsp;
+								<EditForm item={item}  />
 							</div>
 						))}
 					</div>
@@ -197,9 +194,8 @@ const FilterMovies = () => {
 									}
 								>
 									Delete
-								</button>
-								<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item}  /> }
+								</button> &nbsp;
+								 <EditForm item={item}  />
 							</div>
 						))}
 					</div>

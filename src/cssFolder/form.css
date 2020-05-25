@@ -17,7 +17,6 @@
 	margin-bottom: 2.5em;
 	width: 400px;
 	padding: 1em;
-	color: white;
 	text-align: center;
 	border: 1px solid #ff2e00;
 	/* left: 0;
@@ -34,8 +33,8 @@ label {
 textarea {
 	padding: 0.5em;
 	margin: 0.5em;
-	/* border-radius: 5px; */
 	background-color: white;
+	color: #101010;
 }
 
 .addFavoriteToListButton {
@@ -50,6 +49,7 @@ textarea {
 }
 .addFavoriteToListButton:hover {
 	cursor: pointer;
+	background-color: #ff2f00dc;
 }
 .three-latest {
 	display: grid;

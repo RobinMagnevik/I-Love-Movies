@@ -88,7 +88,7 @@ const Form = () => {
 					/> */}
 
 					<textarea
-						placeholder="Plot"
+						placeholder="Description"
 						type="text"
 						name="description"
 						value={movie.description}

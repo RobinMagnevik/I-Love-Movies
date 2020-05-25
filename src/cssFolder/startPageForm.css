@@ -23,12 +23,11 @@
 	top: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	background-color: black; 
 }
 
-
 .startPageInnerDiv{
+	margin-top: 100px;
 	width: 500px;
 	height: 150px;
 	background-color: black;
@@ -36,8 +35,10 @@
 
 .header{
 	color: orangered;
+	background-color: black;
 }
 .startPageWelcomePhrase{
+	background-color: black;
 	color: white;
 	margin-top: 25px;
 }
@@ -46,6 +47,7 @@
 height: 20px;
   margin-top: 25px;
   text-align: center; 
+  background-color: black;
 }
 
 .startPageWelcomeButton{
@@ -57,6 +59,14 @@ height: 20px;
 	cursor: pointer;
 }
 
-.welcomeHeaderText{
-	text-align: center;
+.startPageForm{
+	background-color: black;
 }
+
+.welcomeBackForm{
+	background-color: black;
+}
+
+/* .welcomeHeaderText{
+	text-align: center;
+} */

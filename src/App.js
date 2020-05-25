@@ -22,14 +22,14 @@ function App() {
 			<p className="welcomeHeaderText">{localStorageName}</p>
 				<h1>I LOVE MOVIES</h1>
 				<nav className="nav-field">
-					<button className="navButtonStart" onClick={() => setToShow("addTitles")}>
+					<button className="navButton" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>
-					<button className="navButtonFavorites" onClick={() => setToShow("favorites")}>
+					<button className="navButton" onClick={() => setToShow("favorites")}>
 						Favorites
 					</button>
 					<button
-						className="navButtonInspiration"
+						className="navButton"
 						onClick={() => setToShow("inspiration")}
 					>
 						Inspiration

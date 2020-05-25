@@ -4,10 +4,12 @@ import { useSelector } from "react-redux";
 import MoviePopUp from "./MoviePopUp";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
+import EditForm from "./EditForm";
 
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [mode, setMode] = useState("all");
+	const [toggle, setToggle] = useState(false)
 
 	const data = useSelector((state) => state.addFavoriteList);
 	// const filmList = data.map(item => (
@@ -74,6 +76,7 @@ const FilterMovies = () => {
 					>
 						Delete
 					</button>
+					
 				</div>
 			</div>
 		);
@@ -196,6 +199,8 @@ const FilterMovies = () => {
 
 				{/* <div>{filterByMovie}</div> */}
 			</div>
+			<button onClick={() => setToggle(toggle => !toggle)}>Edit</button>
+			{toggle && <EditForm /> }
 		</div>
 	);
 };

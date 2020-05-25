@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
 import { useSelector } from "react-redux";
-import "../cssFolder/form.css";
+import "../cssFolder/editForm.css";
+import FadeEffect from './FadeEffect'
 
 const EditForm = ({ item }) => {
 	const dispatch = useDispatch();
+	const [show, setShow] = useState(false);
 
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
@@ -52,11 +54,12 @@ const EditForm = ({ item }) => {
 	console.log(movie);
 
 	return (
-		<div className="main-container">
+	<div>
+		<FadeEffect show={show}>
+		<div className="popUpModal">
 			<div>
 				<form className="form-style" onSubmit={handleSubmit}>
-					{/* {errors.title && <span>{errors.title}</span>}  */}
-					<h2>Add movies or series</h2>
+					<h2 className="editTitle">Edit</h2>
 					<br></br>
 
 					<input
@@ -133,11 +136,12 @@ const EditForm = ({ item }) => {
 					</button>
 				</form>
 			</div>
-			<h1>Latest Upload </h1>
 
-			<div className="three-latest">
-				<div className="test">{latestList}</div>
-			</div>
+		</div>
+		</FadeEffect> 
+			<p className="popUpShowDetails" onClick={() => setShow(show => !show)}> 
+		  Edit
+		</p>
 		</div>
 	);
 };

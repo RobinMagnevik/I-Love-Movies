@@ -4,10 +4,12 @@ import { useSelector } from "react-redux";
 import MoviePopUp from "./MoviePopUp";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
+import EditForm from "./EditForm";
 
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [mode, setMode] = useState("all");
+	const [toggle, setToggle] = useState(false)
 
 	const data = useSelector((state) => state.addFavoriteList);
 	// const filmList = data.map(item => (
@@ -42,12 +44,14 @@ const FilterMovies = () => {
 							<MoviePopUp item={item} key={item.id} />
 
 							<button
+								className="startPageWelcomeButton"
 								onClick={() =>
 									dispatch(actions.removeFromMovieList(item.film.title))
 								}
 							>
 								Delete
-							</button>
+							</button> &nbsp;
+							<EditForm item={item}  />
 						</div>
 					</div>
 				);
@@ -66,12 +70,15 @@ const FilterMovies = () => {
 					<p>Rating: {item.film.rating} </p>
 					<MoviePopUp item={item} key={item.id} />
 					<button
+						className="startPageWelcomeButton"
 						onClick={() =>
 							dispatch(actions.removeFromMovieList(item.film.title))
 						}
 					>
 						Delete
-					</button>
+					</button> &nbsp;
+					<EditForm item={item}  />
+					
 				</div>
 			</div>
 		);
@@ -145,7 +152,7 @@ const FilterMovies = () => {
 				{mode === "movies" ? (
 					<div className="movie-styling">
 						{filterByMovie.map((item) => (
-							<div className="movie-styling" key={item.film.title}>
+							<div key={item.film.title}>
 								<h2>{item.film.title} </h2>
 								<p>Genre: {item.film.genre}</p>
 								<p>About: {item.film.description}</p>
@@ -155,12 +162,14 @@ const FilterMovies = () => {
 								<MoviePopUp item={item} key={item.id} />
 
 								<button
+									className="startPageWelcomeButton"
 									onClick={() =>
 										dispatch(actions.removeFromMovieList(item.film.title))
 									}
 								>
 									Delete
-								</button>
+								</button> &nbsp;
+								<EditForm item={item}  />
 							</div>
 						))}
 					</div>
@@ -179,12 +188,14 @@ const FilterMovies = () => {
 								<MoviePopUp item={item} key={item.id} />
 
 								<button
+									className="startPageWelcomeButton"
 									onClick={() =>
 										dispatch(actions.removeFromMovieList(item.film.title))
 									}
 								>
 									Delete
-								</button>
+								</button> &nbsp;
+								 <EditForm item={item}  />
 							</div>
 						))}
 					</div>

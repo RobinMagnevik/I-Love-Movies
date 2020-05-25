@@ -4,56 +4,55 @@ import Favorites from "./components/Favorites";
 import InspirationMovie from "./components/InspirationMovie";
 import AddFavorite from "./components/AddFavorite";
 import StartPage from "./components/StartPage";
-import WelcomeBackPage from './components/WelcomeBackPage';
+import WelcomeBackPage from "./components/WelcomeBackPage";
 
 function App() {
-  const [toShow, setToShow] = useState("");
+	const [toShow, setToShow] = useState("");
 
-  const [localStorageName] = useState(() => {
-	let localStorageName = window.localStorage.getItem("name");
-	if (localStorage.getItem("name") === null) {
-	  return null
-	} else 
-	return (localStorageName + "'s movie page!")
-  })
+	const [localStorageName] = useState(() => {
+		let localStorageName = window.localStorage.getItem("name");
+		if (localStorage.getItem("name") === null) {
+			return null;
+		} else return localStorageName + "'s movie page!";
+	});
 
 	return (
 		<div className="App">
 			<header className="header-section">
-				<h1>I LOVE MOVIES</h1>
-				<nav className="nav-field">
-					<button className="nav-button" onClick={() => setToShow("addTitles")}>
+			<p className="welcomeHeaderText">{localStorageName}</p>
+				<h1 className="headerLogo">I LOVE MOVIES</h1>
+				<nav className="navField">
+					<button className="navButton" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>
-					<button className="nav-button" onClick={() => setToShow("favorites")}>
-						Favoriter
+					<button className="navButton" onClick={() => setToShow("favorites")}>
+						Favorites
 					</button>
 					<button
-						className="nav-button"
+						className="navButton"
 						onClick={() => setToShow("inspiration")}
 					>
 						Inspiration
 					</button>
 				</nav>
-				<p className="welcomeHeaderText">{localStorageName}</p>
+				
 			</header>
-	
+
 			<div
 				className="add-title-page"
 				style={
 					toShow === "addTitles" ? { display: "block" } : { display: "none" }
 				}
-			>				
+			>
 				<AddFavorite />
-				
-			</div>
-			
-			<div>
-			<StartPage /> 			
 			</div>
 
 			<div>
-			<WelcomeBackPage />
+				<StartPage />
+			</div>
+
+			<div>
+				<WelcomeBackPage />
 			</div>
 
 			<div
@@ -70,8 +69,6 @@ function App() {
 			>
 				<InspirationMovie />
 			</div>
-
-			
 		</div>
 	);
 }

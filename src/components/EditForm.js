@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
 import { useSelector } from "react-redux";
-import {v4 as uuidv4} from 'uuid'
-import "../cssFolder/form.css";
+import "../cssFolder/editForm.css";
+import FadeEffect from './FadeEffect'
 
-const Form = () => {
+const EditForm = ({ item }) => {
 	const dispatch = useDispatch();
-	const [broadcastMsg, setBroadcastMsg] = useState('')
+	const [show, setShow] = useState(false);
+
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
-		<div key={item.film.id}>
+		<div key={item.id}>
 			<h2>{item.film.title} </h2>
 			<p>Genre: {item.film.genre}</p>
 			<p>About: {item.film.description}</p>
@@ -21,11 +22,11 @@ const Form = () => {
 	));
 
 	const [movie, setMovie] = useState({
-		id: uuidv4(),
+		id: "",
 		title: "",
 		description: "",
-		genre: "",
-		ofType: "",
+		genre: "action",
+		ofType: "movie",
 		year: "",
 	});
 
@@ -38,48 +39,30 @@ const Form = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if(!movie.title || !movie.description || !movie.genre || !movie.year || !movie.ofType){
-			console.log('inside else if');
-			
-			setBroadcastMsg("Please sir/madam! all fields are in need of filling!")
-		}
-		else if (movie.genre.trim('') || movie.title.trim('') || movie.description.trim('') || movie.year.trim('') || movie.ofType.trim('')) {
-			console.log('inside if');
-			setBroadcastMsg('Item has been successfully added!')
+		if (movie.genre) {
 			setMovie(
 				{ ...movie, title: "" },
 				{ ...movie, description: "" },
 				{ ...movie, genre: "" },
 				{ ...movie, year: "" },
-				{ ...movie, ofType: "" },
-				{ ...movie, id: "" }
-				);
-				dispatch(actions.addToMovieList(movie))
+				{ ...movie, ofType: "" }
+			);
 		}
 	};
 
-	// const handleClick = () => dispatch(actions.addToMovieList(movie));
+	const handleClick = () => dispatch(actions.addToMovieList(movie));
 	console.log(movie);
 
-	//Validering av bild man laddar upp
-	// function checkImage(files) {
-	// 	if (files.length == 0) {
-	// 		console.log("Ingen bild");
-	// 	} else {
-	// 		console.log("Du har laddat upp", files);
-	// 	}
-	// }
-	// console.log("värdet av fileList", FileList.length);
-
 	return (
-		<div className="main-container">
+	<div>
+		<FadeEffect show={show}>
+		<div className="popUpModal">
 			<div>
 				<form className="form-style" onSubmit={handleSubmit}>
-					{/* {errors.title && <span>{errors.title}</span>}  */}
-					<h2>Add movies or series</h2>
+					<h2 className="editTitle">Edit</h2>
 					<br></br>
 
-					<input className="inputTitle"
+					<input
 						placeholder="Title"
 						type="text"
 						name="title"
@@ -87,18 +70,8 @@ const Form = () => {
 						onChange={handleChange}
 					/>
 
-					{/* {errors.description && <span>{errors.description}</span>}  */}
-
-					{/* <input
-						placeholder="Description"
-						type="text"
-						name="description"
-						value={movie.description}
-						onChange={handleChange}
-					/> */}
-
 					<textarea
-						placeholder="Description"
+						placeholder="Plot"
 						type="text"
 						name="description"
 						value={movie.description}
@@ -108,7 +81,6 @@ const Form = () => {
 					></textarea>
 
 					<div>
-						{/* {errors.genre && <span>{errors.genre}</span>}  */}
 
 						<input
 							placeholder="Year"
@@ -120,7 +92,6 @@ const Form = () => {
 						<div>
 							<label htmlFor="genre">Genre: </label>
 							<select name="genre" id="genre" onChange={handleChange}>
-							<option value=""></option>
 								<option value="action">action</option>
 								<option value="anime">anime</option>
 								<option value="dokumentärer">dokumentärer</option>
@@ -136,10 +107,11 @@ const Form = () => {
 						<div>
 							<label htmlFor="Movie">Movie: </label>
 							<input
+								checked={true}
 								value="movie"
 								type="radio"
 								name="ofType"
-								className="Movie"
+								id="Movie"
 								onChange={handleChange}
 							/>
 							<label htmlFor="Serie">Serie: </label>
@@ -147,39 +119,31 @@ const Form = () => {
 								value="serie"
 								type="radio"
 								name="ofType"
-								className="Serie"
+								id="Serie"
 								onChange={handleChange}
 							/>
 						</div>
 					</div>
 
-					{/* <label>Upload image</label>
-					<br></br>
-					<input
-						type="file"
-						id="image"
-						accept=".png, .jpeg, .jpg"
-						onChange={checkImage(FileList)}
-					></input> */}
-
 					<button
 						type="submit"
-						onClick={handleSubmit}
+						onClick={() =>
+									{dispatch(actions.updateMovieList(item.film.title)); handleClick()
+								}}
 						className="addFavoriteToListButton"
 					>
-						Add
+						Update
 					</button>
-					<br></br>
-					<span className='broadcast-message'>{broadcastMsg}</span>
 				</form>
 			</div>
-			<h1>Latest Upload </h1>
 
-			<div className="three-latest">
-				<div className="test">{latestList}</div>
-			</div>
+		</div>
+		</FadeEffect> 
+			<p className="popUpShowDetails" onClick={() => setShow(show => !show)}> 
+		  Edit
+		</p>
 		</div>
 	);
 };
 
-export default Form;
+export default EditForm;

@@ -24,7 +24,7 @@
 }
 .input-field:hover {
 	background-color: rgb(241, 238, 238);
-	box-shadow: 3px 3px 3px rgba(71, 71, 70, 0.616);
+	box-shadow: 3px 3px 3px rgba(245, 245, 87, 0.616);
 }
 .select-styling {
 	display: inline-block;
@@ -35,15 +35,27 @@
 	border: none;
 	outline: none;
 	background: none;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
 	background-color: rgb(241, 238, 238);
 	border-radius: 0px 16px 0px 0px;
 	transition: 0.4s;
+}
+.select-styling:hover {
+	cursor: pointer;
+	box-shadow: 0px 3px 3px rgba(245, 245, 87, 0.616);
 }
 .movie-styling {
 	/* width: 75%; */
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	margin-top: 50px;
+}
+.movie-styling button {
+	background-color: rgb(255, 44, 44);
+	border: none;
+	font-weight: 600;
+}
+.movie-styling button:hover {
+	background-color: rgba(255, 44, 44, 0.829);
 }
 /* .movie-styling div {
 	margin: 15px;
@@ -57,3 +69,32 @@
 } */
 
 /* DET UTMARKERADE OVAN FÅR VI KIKA PÅ, DET FÅR POPUPEN ATT BETE SIG KONSTIGT, VET INTE VARFÖR :D */
+
+@media screen and (max-width: 580px) {
+	.select-styling {
+		display: inline;
+	}
+	.input-field {
+		width: 45%;
+	}
+}
+@media screen and (max-width: 310px) {
+	.select-styling {
+		width: 20%;
+		font-size: small;
+		background-color: rgb(216, 34, 34);
+	}
+	.input-field {
+		width: 20%;
+		font-size: small;
+	}
+}
+@media screen and (max-width: 270px) {
+	.select-styling {
+		background-color: rgb(216, 34, 34);
+		font-size: x-small;
+	}
+	.input-field {
+		font-size: x-small;
+	}
+}

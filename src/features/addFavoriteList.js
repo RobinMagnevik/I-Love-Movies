@@ -2,8 +2,9 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const addToMovieList = createAction("add to movielist");
 const removeFromMovieList = createAction("remove from movielist");
+const updateMovieList = createAction("remove from movielist");
 
-const actions = { addToMovieList, removeFromMovieList };
+const actions = { addToMovieList, removeFromMovieList, updateMovieList };
 
 const initialState = [
   {
@@ -28,6 +29,14 @@ const reducer = createReducer(initialState, {
       return [...state, { film: action.payload }];
     }
   },
+
+  [updateMovieList]: (state, action) => state.map((movieItem, index) => {
+    if( movieItem.film.title === action.payload.title ) {
+        return action.payload;
+    } else {
+        return movieItem
+    }
+}),
 
   [removeFromMovieList]: (state, action) =>
     state.filter((movieItem) => movieItem.film.title !== action.payload),

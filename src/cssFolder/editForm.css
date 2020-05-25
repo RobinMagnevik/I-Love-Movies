@@ -1,6 +1,24 @@
-* {
-	color: aliceblue;
-	background-color: #101010;
+@keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes fadeOut {
+	0% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+
+
+.editTitle{
+	background-color: black;
 }
 
 .main-container {
@@ -61,6 +79,4 @@ textarea {
 	height: 250px;
 }
 
-.broadcast-message{
-	color: green;
-}
+

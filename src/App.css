@@ -1,35 +1,77 @@
 * {
-	background-color: black;
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.errorMessage {
-	color: red;
-	font-size: 0.7em;
-	padding: 5px;
-}
+
 header {
-	text-align: center;
-	background-color: black;
+  background-color: black;
 }
-.header-section > h1 {
-	/* font-family: "Montserrat"; */
-	color: red;
-	margin: 0;
-	padding: 1em;
+
+.header-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px 60px 60px;
 }
-.nav-field {
-	display: flex;
-	justify-content: space-evenly;
-	padding-bottom: 2em;
+
+.headerLogo {
+  background-color: transparent;
+  color: #FF2E00;
+  grid-column: 1/4;
+  grid-row: 2/3;
+  align-self: center;
+  justify-self: center;
 }
-.nav-button {
-	background-color: Transparent;
-	background-repeat: no-repeat;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
-	color: white;
-	font-size: 24px;
+
+.welcomeHeaderText {
+  background-color: transparent;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  align-self: end;
+}
+
+.navField {
+  background-color: transparent;
+  grid-column: 1/4;
+  grid-row: 3/4;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navButton {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  /* color: white; */
+  font-size: 24px;
+}
+
+
+@media (max-width: 700px) {
+	.welcomeHeaderText {
+		grid-column: 1/4;
+	  }
+
+	  .header-section > h1 {
+		align-self: end;
+	  }
+	  .welcomeHeaderText {
+		align-self: end;
+	  }
+}
+
+@media (max-width: 550px) {
+	.header-section {
+		grid-template-rows: 40px 50px 50px;
+	  }
+
+	.navButton {
+		font-size: 18px;
+	  }
+	  
+	  .welcomeHeaderText {
+		align-self: center;
+	  }
 }

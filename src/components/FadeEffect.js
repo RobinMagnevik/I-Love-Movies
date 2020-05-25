@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const MoviePopUpEffect = ({ show, children }) => {
+const FadeEffect = ({ show, children }) => {
   const [render, setRender] = useState(show);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const MoviePopUpEffect = ({ show, children }) => {
   return (
     render && (
       <div
-        style={{ animation: `${show ? "fadeIn" : "fadeOut"} 1s` }}
+        style={{ animation: `${show ? "fadeIn" : "fadeOut"} 0.7s` }}
         onAnimationEnd={onAnimationEnd}
       >
         {children}
@@ -23,4 +23,4 @@ const MoviePopUpEffect = ({ show, children }) => {
   );
 };
 
-export default MoviePopUpEffect;
+export default FadeEffect;

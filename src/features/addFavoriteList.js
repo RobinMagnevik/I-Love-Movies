@@ -36,7 +36,6 @@ const reducer = createReducer(initialState, {
     } else {
         return movieItem
     }
-    // Alternativ: return (character.id === action.payload.id) ? action.payload : character
 }),
 
   [removeFromMovieList]: (state, action) =>

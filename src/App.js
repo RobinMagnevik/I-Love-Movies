@@ -20,8 +20,8 @@ function App() {
 		<div className="App">
 			<header className="header-section">
 			<p className="welcomeHeaderText">{localStorageName}</p>
-				<h1>I LOVE MOVIES</h1>
-				<nav className="nav-field">
+				<h1 className="headerLogo">I LOVE MOVIES</h1>
+				<nav className="navField">
 					<button className="navButton" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>

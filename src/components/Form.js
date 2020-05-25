@@ -52,7 +52,7 @@ const Form = () => {
 				{ ...movie, genre: "" },
 				{ ...movie, year: "" },
 				{ ...movie, ofType: "" },
-				{ ...movie, id: "" }
+				{ ...movie, id: uuidv4() }
 				);
 				dispatch(actions.addToMovieList(movie))
 		}
@@ -178,6 +178,7 @@ const Form = () => {
 			<div className="three-latest">
 				<div className="test">{latestList}</div>
 			</div>
+			
 		</div>
 	);
 };

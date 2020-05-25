@@ -6,7 +6,7 @@ import "../cssFolder/form.css";
 
 const Form = () => {
 	const dispatch = useDispatch();
-
+	const [broadcastMsg, setBroadcastMsg] = useState('hohohohohoh')
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div key={item.id}>
@@ -23,7 +23,7 @@ const Form = () => {
 		id: "",
 		title: "",
 		description: "",
-		genre: "action",
+		genre: "",
 		ofType: "movie",
 		year: "",
 	});
@@ -37,7 +37,15 @@ const Form = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (movie.genre) {
+		if(!movie.title || !movie.description || !movie.genre || !movie.year || !movie.ofType){
+			console.log('inside else if');
+			
+			setBroadcastMsg("Please sir/madam! all fields are in need of filling!")
+		}
+		else if (movie.genre.trim('') || movie.title.trim('') || movie.description.trim('') || movie.year.trim('') || movie.ofType.trim('')) {
+			console.log('inside if');
+			dispatch(actions.addToMovieList(movie))
+			setBroadcastMsg('Item has been successfully added!')
 			setMovie(
 				{ ...movie, title: "" },
 				{ ...movie, description: "" },
@@ -48,12 +56,12 @@ const Form = () => {
 		}
 	};
 
-	const handleClick = () => dispatch(actions.addToMovieList(movie));
+	// const handleClick = () => dispatch(actions.addToMovieList(movie));
 	console.log(movie);
 
 	//Validering av bild man laddar upp
 	function checkImage(files) {
-		if (files.length == 0) {
+		if (files.length === 0) {
 			console.log("Ingen bild");
 		} else {
 			console.log("Du har laddat upp", files);
@@ -64,7 +72,7 @@ const Form = () => {
 	return (
 		<div className="main-container">
 			<div className="add-title-container">
-				<form className="addFavoriteToListForm" onSubmit={handleSubmit}>
+				<form className="addFavoriteToListForm">
 					<div>
 						<label>Title: </label>
 						{/* {errors.title && <span>{errors.title}</span>}  */}
@@ -102,6 +110,7 @@ const Form = () => {
 						<div>
 							<label htmlFor="genre">Genre: </label>
 							<select name="genre" id="genre" onChange={handleChange}>
+							<option value=""></option>
 								<option value="action">action</option>
 								<option value="anime">anime</option>
 								<option value="dokumentärer">dokumentärer</option>
@@ -117,11 +126,10 @@ const Form = () => {
 						<div>
 							<label htmlFor="Movie">Movie: </label>
 							<input
-								checked={true}
 								value="movie"
 								type="radio"
 								name="ofType"
-								id="Movie"
+								className="Movie"
 								onChange={handleChange}
 							/>
 							<label htmlFor="Serie">Serie: </label>
@@ -129,7 +137,7 @@ const Form = () => {
 								value="serie"
 								type="radio"
 								name="ofType"
-								id="Serie"
+								className="Serie"
 								onChange={handleChange}
 							/>
 						</div>
@@ -147,12 +155,13 @@ const Form = () => {
 					<br></br>
 					<button
 						type="submit"
-						onClick={handleClick}
+						onClick={handleSubmit}
 						className="addFavoriteToListButton"
 					>
 						Add
 					</button>
 					<br></br>
+					<span className='broadcast-message'>{broadcastMsg}</span>
 				</form>
 			</div>
 			<div>

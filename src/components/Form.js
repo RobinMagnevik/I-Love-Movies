@@ -64,12 +64,13 @@ const Form = () => {
 	return (
 		<div className="main-container">
 			<div>
-				<h1>Lägg till en film eller serie</h1>
 				<form className="form-style" onSubmit={handleSubmit}>
 					{/* {errors.title && <span>{errors.title}</span>}  */}
+					<h2>Add movies or series</h2>
+					<br></br>
 
 					<input
-						placeholder="Titel"
+						placeholder="Title"
 						type="text"
 						name="title"
 						value={movie.title}
@@ -87,7 +88,7 @@ const Form = () => {
 					/> */}
 
 					<textarea
-						placeholder="Handling"
+						placeholder="Plot"
 						type="text"
 						name="description"
 						value={movie.description}
@@ -113,11 +114,11 @@ const Form = () => {
 								<option value="anime">anime</option>
 								<option value="dokumentärer">dokumentärer</option>
 								<option value="draman">draman</option>
-								<option value="historia">historia</option>
-								<option value="klassiker">klassiker</option>
-								<option value="komedier">komedier</option>
-								<option value="musikaler">musikaler</option>
-								<option value="romantic">romantik</option>
+								<option value="historia">history</option>
+								<option value="klassiker">classic</option>
+								<option value="komedier">comedy</option>
+								<option value="musikaler">musical</option>
+								<option value="romantic">romantic</option>
 								<option value="sci-fi">sci-fi</option>
 							</select>
 						</div>
@@ -162,7 +163,9 @@ const Form = () => {
 			</div>
 			<h1>Latest Upload </h1>
 
-			<div className="three-latest">{latestList}</div>
+			<div className="three-latest">
+				<div className="test">{latestList}</div>
+			</div>
 		</div>
 	);
 };

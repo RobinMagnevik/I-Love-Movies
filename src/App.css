@@ -4,12 +4,6 @@
   padding: 0;
 }
 
-/* .errorMessage {
-	color: red;
-	font-size: 0.7em;
-	padding: 5px;
-} */
-
 header {
   background-color: black;
 }
@@ -24,7 +18,7 @@ header {
 
 .header-section > h1 {
   background-color: transparent;
-  color: red;
+  color: #FF2E00;
   grid-column: 1/4;
   grid-row: 2/3;
 }

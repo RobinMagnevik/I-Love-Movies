@@ -27,7 +27,7 @@ header {
   background-color: transparent;
   grid-column: 3/4;
   grid-row: 1/2;
-  align-self: center;
+  align-self: end;
 }
 
 .nav-field {
@@ -58,6 +58,9 @@ header {
 	  .header-section > h1 {
 		align-self: end;
 	  }
+	  .welcomeHeaderText {
+		align-self: end;
+	  }
 }
 
 @media (max-width: 550px) {
@@ -67,5 +70,9 @@ header {
 
 	.navButton {
 		font-size: 18px;
+	  }
+	  
+	  .welcomeHeaderText {
+		align-self: center;
 	  }
 }

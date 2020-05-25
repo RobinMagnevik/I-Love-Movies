@@ -1,7 +1,7 @@
 * {
-	background-color: black;
-	margin: 0;
-	padding: 0;
+  background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 /* .errorMessage {
@@ -11,83 +11,113 @@
 } */
 
 header {
-	background-color: black;
+  background-color: black;
 }
 
-
-.header-section{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 70px;
-	justify-items: center;
-	align-items: center;
+.header-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 70px;
+  justify-items: center;
+  align-items: center;
 }
 
 .header-section > h1 {
-	background-color: transparent;
-	color: red;
-	grid-column: 1/4;
-	grid-row: 2/3;	
+  background-color: transparent;
+  color: red;
+  grid-column: 1/4;
+  grid-row: 2/3;
 }
 
-.welcomeHeaderText{
-	background-color: transparent;
-	grid-column: 3/4;
-	grid-row: 1/2;
-	align-self: center;
-	justify-self: end;
-	margin-right: 30px;
+.welcomeHeaderText {
+  background-color: transparent;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: end;
+  margin-top: 10px;
+  margin-right: 30px;
 }
 
 .nav-field {
-	background-color: transparent;
-	display: flex;
-	justify-content: space-evenly;
-	grid-column: 1/4;
-	grid-row: 3/4;
+  background-color: transparent;
+  grid-column: 1/4;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 200px;
 }
 
 .navButtonStart {
-background-color: transparent;
-	background-repeat: no-repeat;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
-	color: white;
-	font-size: 24px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  font-size: 24px;
+  padding-left: 50px;
+  grid-column: 1/2;
+
 }
 
 .navButtonFavorites {
-	background-color: transparent;
-	background-repeat: no-repeat;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
-	color: white;
-	font-size: 24px;
-	padding-left: 150px;
-	padding-right: 150px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  font-size: 24px;
+  grid-column: 2/3;
 }
 
 .navButtonInspiration {
-	background-color: Transparent;
-	background-repeat: no-repeat;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
-	color: white;
-	font-size: 24px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  font-size: 24px;
+  grid-column: 3/4;
 }
 
-@media (max-width: 700px) {
-	
-	.welcomeHeaderText{
-		font-size: 0.9em;
-	}
+@media (max-width: 850px) {
 
-  
-  }
-  
+	.nav-field {
+		grid-column-gap: 150px;
+	  }
+
+}
+
+@media (max-width: 725px) {
+
+	.nav-field {
+		grid-column-gap: 100px;
+	  }
+
+	  .welcomeHeaderText {
+		font-size: 0.8em;
+		grid-column: 2/3;
+		justify-self: center;
+		margin-right: 0;
+	  }
+
+	  .navButtonStart {
+		font-size: 20px;
+	  }
+	  
+	  .navButtonFavorites {
+		font-size: 20px;
+	  }
+	  
+	  .navButtonInspiration {
+		font-size: 20px;
+	  }
+}
+
+

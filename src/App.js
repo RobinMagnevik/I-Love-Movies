@@ -21,7 +21,7 @@ function App() {
 			<header className="header-section">
 			<p className="welcomeHeaderText">{localStorageName}</p>
 				<h1>I LOVE MOVIES</h1>
-				<nav className="nav-field">
+				<div className="nav-field">
 					<button className="navButtonStart" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>
@@ -34,7 +34,7 @@ function App() {
 					>
 						Inspiration
 					</button>
-				</nav>
+				</div>
 				
 			</header>
 

@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
 import { useSelector } from "react-redux";
+import {v4 as uuidv4} from 'uuid'
 import "../cssFolder/form.css";
 
 const Form = () => {
 	const dispatch = useDispatch();
-	const [broadcastMsg, setBroadcastMsg] = useState('hohohohohoh')
+	const [broadcastMsg, setBroadcastMsg] = useState('')
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
-		<div key={item.id}>
+		<div key={item.film.id}>
 			<h2>{item.film.title} </h2>
 			<p>Genre: {item.film.genre}</p>
 			<p>About: {item.film.description}</p>
@@ -20,11 +21,11 @@ const Form = () => {
 	));
 
 	const [movie, setMovie] = useState({
-		id: "",
+		id: uuidv4(),
 		title: "",
 		description: "",
 		genre: "",
-		ofType: "movie",
+		ofType: "",
 		year: "",
 	});
 
@@ -44,15 +45,16 @@ const Form = () => {
 		}
 		else if (movie.genre.trim('') || movie.title.trim('') || movie.description.trim('') || movie.year.trim('') || movie.ofType.trim('')) {
 			console.log('inside if');
-			dispatch(actions.addToMovieList(movie))
 			setBroadcastMsg('Item has been successfully added!')
 			setMovie(
 				{ ...movie, title: "" },
 				{ ...movie, description: "" },
 				{ ...movie, genre: "" },
 				{ ...movie, year: "" },
-				{ ...movie, ofType: "" }
-			);
+				{ ...movie, ofType: "" },
+				{ ...movie, id: "" }
+				);
+				dispatch(actions.addToMovieList(movie))
 		}
 	};
 

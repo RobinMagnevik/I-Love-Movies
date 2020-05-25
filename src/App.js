@@ -19,22 +19,23 @@ function App() {
 	return (
 		<div className="App">
 			<header className="header-section">
+			<p className="welcomeHeaderText">{localStorageName}</p>
 				<h1>I LOVE MOVIES</h1>
 				<nav className="nav-field">
-					<button className="nav-button" onClick={() => setToShow("addTitles")}>
+					<button className="navButtonStart" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>
-					<button className="nav-button" onClick={() => setToShow("favorites")}>
-						Favoriter
+					<button className="navButtonFavorites" onClick={() => setToShow("favorites")}>
+						Favorites
 					</button>
 					<button
-						className="nav-button"
+						className="navButtonInspiration"
 						onClick={() => setToShow("inspiration")}
 					>
 						Inspiration
 					</button>
 				</nav>
-				<p className="welcomeHeaderText">{localStorageName}</p>
+				
 			</header>
 
 			<div

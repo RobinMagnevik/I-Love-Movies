@@ -1,29 +1,77 @@
 * {
-	background-color: black;
+	background-color: #101010;
 	margin: 0;
 	padding: 0;
 }
-.errorMessage {
+
+/* .errorMessage {
 	color: red;
 	font-size: 0.7em;
 	padding: 5px;
-}
+} */
+
 header {
-	text-align: center;
 	background-color: black;
 }
-.header-section > h1 {
-	/* font-family: "Montserrat"; */
-	color: red;
-	margin: 0;
-	padding: 1em;
+
+
+.header-section{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 70px;
+	justify-items: center;
+	align-items: center;
 }
+
+.header-section > h1 {
+	background-color: transparent;
+	color: red;
+	grid-column: 1/4;
+	grid-row: 2/3;	
+}
+
+.welcomeHeaderText{
+	background-color: transparent;
+	grid-column: 3/4;
+	grid-row: 1/2;
+	align-self: center;
+	justify-self: end;
+	margin-right: 30px;
+}
+
 .nav-field {
+	background-color: transparent;
 	display: flex;
 	justify-content: space-evenly;
-	padding-bottom: 2em;
+	grid-column: 1/4;
+	grid-row: 3/4;
 }
-.nav-button {
+
+.navButtonStart {
+background-color: transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	color: white;
+	font-size: 24px;
+}
+
+.navButtonFavorites {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	color: white;
+	font-size: 24px;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.navButtonInspiration {
 	background-color: Transparent;
 	background-repeat: no-repeat;
 	border: none;
@@ -33,3 +81,10 @@ header {
 	color: white;
 	font-size: 24px;
 }
+
+@media (max-width: 495px) {
+  
+
+  
+  }
+  

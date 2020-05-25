@@ -1,5 +1,5 @@
 * {
-	background-color: #101010;
+	background-color: black;
 	margin: 0;
 	padding: 0;
 }
@@ -82,8 +82,11 @@ background-color: transparent;
 	font-size: 24px;
 }
 
-@media (max-width: 495px) {
-  
+@media (max-width: 700px) {
+	
+	.welcomeHeaderText{
+		font-size: 0.9em;
+	}
 
   
   }

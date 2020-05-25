@@ -21,20 +21,20 @@ function App() {
 			<header className="header-section">
 			<p className="welcomeHeaderText">{localStorageName}</p>
 				<h1>I LOVE MOVIES</h1>
-				<div className="nav-field">
-					<button className="navButtonStart" onClick={() => setToShow("addTitles")}>
+				<nav className="nav-field">
+					<button className="navButton" onClick={() => setToShow("addTitles")}>
 						Start
 					</button>
-					<button className="navButtonFavorites" onClick={() => setToShow("favorites")}>
+					<button className="navButton" onClick={() => setToShow("favorites")}>
 						Favorites
 					</button>
 					<button
-						className="navButtonInspiration"
+						className="navButton"
 						onClick={() => setToShow("inspiration")}
 					>
 						Inspiration
 					</button>
-				</div>
+				</nav>
 				
 			</header>
 

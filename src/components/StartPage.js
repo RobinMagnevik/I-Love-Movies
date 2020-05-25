@@ -15,7 +15,7 @@ export default function StartPage() {
 				{names.map((name) => {
 					return (
 						<p className="welcomeHeaderText" key={name.firstName}>
-							{name.firstName}'s movie page!
+							{/* {name.firstName}'s movie page! */}
 						</p>
 					);
 				})}

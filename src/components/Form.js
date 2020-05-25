@@ -69,7 +69,7 @@ const Form = () => {
 					<h2>Add movies or series</h2>
 					<br></br>
 
-					<input
+					<input className="inputTitle"
 						placeholder="Title"
 						type="text"
 						name="title"

@@ -4,7 +4,7 @@ import { actions } from "../features/addFavoriteList";
 import { useSelector } from "react-redux";
 import "../cssFolder/form.css";
 
-const EditForm = () => {
+const EditForm = ({ item }) => {
 	const dispatch = useDispatch();
 
 	const data = useSelector((state) => state.addFavoriteList);
@@ -124,7 +124,9 @@ const EditForm = () => {
 
 					<button
 						type="submit"
-						onClick={handleClick}
+						onClick={() =>
+									{dispatch(actions.updateMovieList(item.film.title)); handleClick()
+								}}
 						className="addFavoriteToListButton"
 					>
 						Update

@@ -22,7 +22,7 @@ const FilterMovies = () => {
 	// 	</div>
 	// ))
 
-	console.log(data);
+	console.log('data favorit: ', data);
 
 	const dispatch = useDispatch();
 
@@ -36,6 +36,7 @@ const FilterMovies = () => {
 					<div>
 						<div key={item.title}>
 							<h2>{item.film.title} </h2>
+							<img src={item.film.poster} alt="" />
 							<p>Genre: {item.film.genre}</p>
 							<p>About: {item.film.description}</p>
 							<p>Year: {item.film.year}</p>
@@ -50,9 +51,8 @@ const FilterMovies = () => {
 								}
 							>
 								Delete
-							</button>
-							<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item} /> }
+							</button> &nbsp;
+							<EditForm item={item}  />
 						</div>
 					</div>
 				);
@@ -64,6 +64,7 @@ const FilterMovies = () => {
 			<div key={item.film.title}>
 				<div>
 					<h2>{item.film.title} </h2>
+					<img src={item.film.poster} alt="" />
 					<p>Genre: {item.film.genre}</p>
 					<p>About: {item.film.description}</p>
 					<p>Year: {item.film.year}</p>
@@ -77,9 +78,8 @@ const FilterMovies = () => {
 						}
 					>
 						Delete
-					</button>
-					<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item}  /> }
+					</button> &nbsp;
+					<EditForm item={item}  />
 					
 				</div>
 			</div>
@@ -156,6 +156,7 @@ const FilterMovies = () => {
 						{filterByMovie.map((item) => (
 							<div key={item.film.title}>
 								<h2>{item.film.title} </h2>
+								<img src={item.film.poster} alt="" />
 								<p>Genre: {item.film.genre}</p>
 								<p>About: {item.film.description}</p>
 								<p>Year: {item.film.year}</p>
@@ -170,9 +171,8 @@ const FilterMovies = () => {
 									}
 								>
 									Delete
-								</button>
-								<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item}  /> }
+								</button> &nbsp;
+								<EditForm item={item}  />
 							</div>
 						))}
 					</div>
@@ -183,6 +183,7 @@ const FilterMovies = () => {
 						{filterBySerie.map((item) => (
 							<div className="movie-styling" key={item.film.title}>
 								<h2>{item.film.title} </h2>
+								<img src={item.film.poster} alt="" />
 								<p>Genre: {item.film.genre}</p>
 								<p>About: {item.film.description}</p>
 								<p>Year: {item.film.year}</p>
@@ -197,9 +198,8 @@ const FilterMovies = () => {
 									}
 								>
 									Delete
-								</button>
-								<button className="startPageWelcomeButton" onClick={() => setToggle(toggle => !toggle)}>Edit</button>
-			{toggle && <EditForm item={item}  /> }
+								</button> &nbsp;
+								 <EditForm item={item}  />
 							</div>
 						))}
 					</div>

@@ -3,7 +3,7 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 const isFetching = createAction('is fetching');
 const success = createAction('success');
 const failure = createAction('failure');
-const actions = { isFetching, success, failure };
+const inspoActions = { isFetching, success, failure };
 
 
 const STATUS = {
@@ -18,19 +18,19 @@ const initialState = {
 }
 
 const reducer = createReducer(initialState, {
-    [isFetching]: (state, action) => ({
+    [isFetching]: (state, inspoActions) => ({
         ...state,
         status: STATUS.FETCHING
     }),
-    [success]: (state, action) => ({
+    [success]: (state, inspoActions) => ({
         status: STATUS.SUCCESS,
-        movie: action.payload
+        movie: inspoActions.payload
     }),
-    [failure]: (state, action) => ({
+    [failure]: (state, inspoActions) => ({
         ...state,
         status: STATUS.FAILURE
     })
 })
 
 
-export { actions, reducer, STATUS };
+export { inspoActions, reducer, STATUS };

@@ -2,7 +2,6 @@
 	color: aliceblue;
 	background-color: #101010;
 }
-
 .main-container {
 	background-color: #101010;
 	margin: 1em;
@@ -37,10 +36,16 @@ textarea {
 	background-color: white;
 	color: #101010;
 }
+.form-style h2 {
+	background-color: #000000;
+}
+input[type="file"] {
+	background-color: transparent;
+	margin-left: 150px;
+}
 
 .addFavoriteToListButton {
 	padding: 0.3em;
-	margin: 1em;
 	width: 80px;
 	border: none;
 	margin-left: 40%;

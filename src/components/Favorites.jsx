@@ -9,7 +9,6 @@ import EditForm from "./EditForm";
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [mode, setMode] = useState("all");
-	// const [toggle, setToggle] = useState(false)
 
 	const data = useSelector((state) => state.addFavoriteList);
 	// const filmList = data.map(item => (
@@ -36,10 +35,7 @@ const FilterMovies = () => {
 					<div>
 						<div key={item.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
 							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
@@ -60,10 +56,7 @@ const FilterMovies = () => {
 			<div key={item.film.title}>
 				<div>
 				<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
 							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
@@ -150,10 +143,7 @@ const FilterMovies = () => {
 						{filterByMovie.map((item) => (
 							<div key={item.film.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
 							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
@@ -173,10 +163,7 @@ const FilterMovies = () => {
 						{filterBySerie.map((item) => (
 							<div key={item.film.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
 							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">

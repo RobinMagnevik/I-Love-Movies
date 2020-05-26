@@ -8,7 +8,7 @@ const actions = { addToMovieList, removeFromMovieList, updateMovieList };
 
 const initialState = [
   {
-  	film: { id: '13323', title: 'Spiderman', description: 'bla bla bla', genre: 'action', releaseYear: '2012', rating: '5,5', ofType: "movie" },
+  	film: { id: '13323', title: 'Spiderman', description: 'bla bla bla', poster: 'http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg', genre: 'action', releaseYear: '2012', rating: '5,5', ofType: "movie" },
   }
 ];
 

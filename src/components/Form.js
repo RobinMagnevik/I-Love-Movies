@@ -24,6 +24,7 @@ const Form = () => {
 	const [movie, setMovie] = useState({
 		id: uuidv4(),
 		title: "",
+		poster: "",
 		description: "",
 		genre: "",
 		ofType: "",

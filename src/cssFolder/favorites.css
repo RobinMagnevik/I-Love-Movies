@@ -52,8 +52,8 @@
 .buttonsInFavoriteList{
 	cursor: pointer;
 	margin-top: 15px;
-	background-color: white;
-	color: black;
+	background-color: #ff2e00;
+	color: white;
 	height: 30px;
 	width: 70px;
 	font-size: 1em;
@@ -63,8 +63,8 @@
 }
 
 .buttonsInFavoriteList:hover{
-	background-color: #ff2e00;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
 .showDeleteEditButtonsDiv{

@@ -35,7 +35,7 @@ const FilterMovies = () => {
 						<div key={item.title}>
 						<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -56,7 +56,7 @@ const FilterMovies = () => {
 				<div>
 				<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -143,7 +143,7 @@ const FilterMovies = () => {
 							<div key={item.film.title}>
 							<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span>{item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -163,7 +163,7 @@ const FilterMovies = () => {
 							<div key={item.film.title}>
 							<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />

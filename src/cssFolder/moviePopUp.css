@@ -94,6 +94,13 @@
 	background-color: black;
 	padding-right: 35px;
   }
+
+  .fa{
+	  color: yellow;
+	  padding-right: 5px;
+	  background-color: none;
+	  font-size: 1.2em;
+  }
   
   .popUpX {
 	grid-column: 6/7;

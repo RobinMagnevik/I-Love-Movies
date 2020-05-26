@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../cssFolder/moviePopUp.css";
 import FadeEffect from './FadeEffect'
 
+
 const MoviePopUp = ({ item }) => {
 const [show, setShow] = useState(false);
 
@@ -16,10 +17,10 @@ const [show, setShow] = useState(false);
 		  <p className="popUpAbout">{item.film.description}</p>
 
 
-		  <span className="popUpGenre">{item.film.genre}</span>
+		  <p className="popUpGenre">{item.film.genre}</p>
 	
 
-		  <span className="popUpRating">{item.film.rating}</span> 
+		  <p className="popUpRating"> <span className="fa moviePopUp" >&#xf005;</span>{item.film.rating}</p> 
 		  
           
         </div>

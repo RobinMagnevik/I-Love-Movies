@@ -15,7 +15,7 @@ const Form = () => {
 			<p className="threeLatestGenre">{item.film.genre}</p>
 			<img className="threeLatestPoster" src={item.film.poster} alt="" />
 			<p className="threeLatestDescription">{item.film.description}</p>
-			<p className="threeLatestRating">Rating: {item.film.rating} </p>
+			<p className="threeLatestRating"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 		</div>
 	));
 

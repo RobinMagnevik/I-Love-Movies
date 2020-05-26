@@ -77,12 +77,11 @@ const Form = () => {
 
 	const showImage = (event) => {
 		let img = event.target.files[0];
+		console.log("innan onload", img);
 		const reader = new FileReader();
 		reader.onload = function () {
 			const img = new Image();
 			img.src = reader.result;
-			console.log("detta är reader.result", reader.result);
-			console.log("detta är image", img);
 			document.body.appendChild(img);
 		};
 		reader.readAsDataURL(img);

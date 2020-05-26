@@ -3,10 +3,16 @@
 	height: 125vh;
     text-align: center;
 }
-.movieButton, .serieButton, .addButton{
+.movieButton, .serieButton{
     width: 300px;
     height: 40px;
-    margin: 10px;
+    background-color: #FF2E00;
+    border: 0;
+    margin-bottom: 30px;
+}
+.addButton{
+    width: 300px;
+    height: 40px;
     background-color: #FF2E00;
     border: 0;
     margin-bottom: 30px;
@@ -21,6 +27,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+    margin-bottom: 30px;
     color: white;
     background-color: #101010;
 }
@@ -33,15 +40,19 @@
     background-color: #101010; 
 }
 .movieInfo > p {
-    width: 50%;
+    width: 30%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     background-color: #101010;
 }
+.description{
+    width: 30%;
+    word-wrap: normal;
+    margin-bottom: 30px;
+}
 .buttonDiv {
-    margin-top: 10px;
-    padding: 0;
+    padding-top: 30px;
     margin: 0;
     background-color: #101010;
 }

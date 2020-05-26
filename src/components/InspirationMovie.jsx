@@ -41,11 +41,11 @@ const handleSubmit = (content) => {
                 <button className="movieButton" onClick={() => fetchMovie(dispatch)}> Get movie suggestion! </button>
                 <button className="serieButton" onClick={() => fetchSerie(dispatch)}> Get serie suggestion! </button>
             </div>
-            <h2 className="contentTitle">{content.title} ({content.year})</h2>
+            <h2 id="contentTitle">{content.title} ({content.year})</h2>
             <div className="movieInfo">
                 <p>{content.genre}</p>
                 <img className="contentPoster" src={content.poster} alt="" />
-                <p>{content.description}</p>
+                <p className="description">{content.description}</p>
                 <p>Rating: {content.rating}</p>
             </div>
             <div className="buttonDiv">

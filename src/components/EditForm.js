@@ -139,9 +139,9 @@ const EditForm = ({ item }) => {
 
 		</div>
 		</FadeEffect> 
-			<p className="popUpShowDetails" onClick={() => setShow(show => !show)}> 
+			<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> 
 		  Edit
-		</p>
+		</button>
 		</div>
 	);
 };

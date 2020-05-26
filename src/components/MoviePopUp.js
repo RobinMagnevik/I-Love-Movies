@@ -21,10 +21,10 @@ const [show, setShow] = useState(false);
       </div> 
 	  <br/>
 	</FadeEffect> 
-	<p className="popUpShowDetails" onClick={() => setShow(show => !show)}> 
+	<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> 
 		  {/* {show ? "hide" : "show"} */}
-		  Show details
-		</p>
+		  Details
+		</button>
 		</div>
   );
 };

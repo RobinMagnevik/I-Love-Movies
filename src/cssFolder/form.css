@@ -50,17 +50,18 @@ input[type="file"] {
 	font-size: 0.9em;
 	font-weight: bold;
 	background-color: #ff2e00; */
-	background-color: white;
-	color: black;
-	height: 30px;
-	width: 70px;
+	background-color: #ff2e00;
+	color: white;
+	height: 35px;
+	width: 75px;
+	font-size: 1em;
 	border: none;
 	cursor: pointer;
 	border-radius: 1px;
 }
 .addFavoriteToListButton:hover {
-	background-color: #ff2e00;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
 .three-latest {

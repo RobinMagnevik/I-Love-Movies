@@ -27,7 +27,7 @@ const StartPageForm = ({ addName }) => {
 <FadeEffect show={show}>
 	<div className="startPageDiv">
       <div className="startPageInnerDiv">
-	  <h1 className="header">I LOVE MOVIES</h1>
+	  <h1 className="startPageheader">I LOVE MOVIES</h1>
         <form className="startPageForm">
 		<p className="startPageWelcomePhrase"> What’s kickin’, little chicken? Let us know your name!</p>
           <input className="startPageInput" type="text"  value={firstName} onChange={(e) => setfirstName(e.target.value)} />

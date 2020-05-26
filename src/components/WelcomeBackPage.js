@@ -22,7 +22,7 @@ function WelcomeBackPage() {
 	<FadeEffect show={show}>
 		<div className="startPageDiv">
 		  <div className="startPageInnerDiv">
-		  <h1 className="header">I LOVE MOVIES</h1>
+		  <h1 className="startPageheader">I LOVE MOVIES</h1>
 			<form className="welcomeBackForm">
 			<p className="startPageWelcomePhrase"> Welcome back {localStorageName}</p>
 			<br />

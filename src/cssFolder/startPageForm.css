@@ -27,13 +27,15 @@
 }
 
 .startPageInnerDiv{
-	margin-top: 48px;
+	/* margin-top: 48px; */
 	width: 500px;
 	height: 150px;
 	background-color: black;
+	align-self: center;
 }
 
-.header{
+.startPageheader{
+	font-size: 3em;
 	color: orangered;
 	background-color: black;
 }

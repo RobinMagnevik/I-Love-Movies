@@ -11,7 +11,7 @@ const [show, setShow] = useState(false);
       <div className="popUpModal" onClick={() => setShow(show => !show)}>
         <div className="popUpDiv">
 		<p className="popUpX" onClick={() => setShow(show => show)}> x </p>
-          <div className="popUpImg"></div>
+          <img className="popUpImg" src={item.film.poster} alt="" />
           <h2 className="popUpTitleYear"> {item.film.title} ({item.film.year})</h2>
 		  <p className="popUpAbout">{item.film.description}</p>
 

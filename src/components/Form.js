@@ -15,7 +15,6 @@ const Form = () => {
 			<p>{item.film.genre}</p>
 			<img src={item.film.poster} alt="" />
 			<p>{item.film.description}</p>
-			<p>{item.film.ofType}</p>
 			<p>Rating: {item.film.rating} </p>
 		</div>
 	));

@@ -62,15 +62,16 @@ const Form = () => {
 	// const handleClick = () => dispatch(actions.addToMovieList(movie));
 	console.log(movie);
 
-	//Validering av bild man laddar upp
-	// function checkImage(files) {
-	// 	if (files.length == 0) {
-	// 		console.log("Ingen bild");
-	// 	} else {
-	// 		console.log("Du har laddat upp", files);
-	// 	}
-	// }
-	// console.log("värdet av fileList", FileList.length);
+	const showImage = (event) => {
+		let img = event.target.files[0];
+		const reader = new FileReader();
+		reader.onload = function () {
+			const img = new Image();
+			img.src = reader.result;
+			document.body.appendChild(img);
+		};
+		reader.readAsDataURL(img);
+	};
 
 	return (
 		<div className="main-container">
@@ -80,7 +81,7 @@ const Form = () => {
 					<h2>Add movies or series</h2>
 					<br></br>
 
-					<input className="inputTitle"
+					<input
 						placeholder="Title"
 						type="text"
 						name="title"
@@ -154,14 +155,14 @@ const Form = () => {
 						</div>
 					</div>
 
-					{/* <label>Upload image</label>
+					<label>Upload image</label>
 					<br></br>
 					<input
 						type="file"
 						id="image"
 						accept=".png, .jpeg, .jpg"
-						onChange={checkImage(FileList)}
-					></input> */}
+						onChange={showImage}
+					></input>
 
 					<button
 						type="submit"

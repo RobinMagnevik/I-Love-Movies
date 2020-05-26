@@ -15,7 +15,6 @@ const Inspiration = () => {
 
 const handleSubmit = (content) => {
     const movieObject = { ...content, id: uuidv4() }
-    console.log('movie2: ',movieObject)
     dispatch(actions.addToMovieList(movieObject))
 };
 
@@ -27,7 +26,6 @@ const handleSubmit = (content) => {
         content.title = 'Waiting for data...';
     } else if( status === STATUS.SUCCESS ) {
         content = movie;
-        console.log('movie is:', movie);
     }
      else {
         content.title = 'Something went wrong. Could not retrieve movie.';
@@ -87,7 +85,6 @@ async function fetchMovie(dispatch) {
 
     dispatch(inspoActions.isFetching());
     const url = 'http://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomMovie);
-    console.log('url: ' + url)
     try {
         let response = await fetch(url);
         let json = await response.json();
@@ -115,7 +112,6 @@ async function fetchSerie(dispatch) {
     try {
         let response = await fetch(url);
         let json = await response.json();
-        console.log('Got data:', json);
         let serieSuggestion = {
             id: '',
             title: json.Title,
@@ -126,7 +122,6 @@ async function fetchSerie(dispatch) {
             rating: json.Ratings[0].Value,
             ofType: json.Type
         };
-        console.log('keep: '+ serieSuggestion);
         if(json.Response === 'False') {
             dispatch(inspoActions.failure())
         } else {

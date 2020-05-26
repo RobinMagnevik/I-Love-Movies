@@ -24,7 +24,7 @@ const Form = () => {
 	const [movie, setMovie] = useState({
 		id: uuidv4(),
 		title: "",
-		poster: "",
+		poster: 'http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg',
 		description: "",
 		genre: "",
 		ofType: "",
@@ -178,7 +178,7 @@ const Form = () => {
 			<h1>Latest Upload </h1>
 
 			<div className="three-latest">
-				<div className="test">{latestList}</div>
+				<div>{latestList}</div>
 			</div>
 			
 		</div>

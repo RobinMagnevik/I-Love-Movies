@@ -51,7 +51,6 @@ const EditForm = ({ item }) => {
 	};
 
 	const handleClick = () => dispatch(actions.addToMovieList(movie));
-	console.log(movie);
 
 	return (
 	<div>
@@ -92,16 +91,17 @@ const EditForm = ({ item }) => {
 						<div>
 							<label htmlFor="genre">Genre: </label>
 							<select name="genre" id="genre" onChange={handleChange}>
-								<option value="action">action</option>
-								<option value="anime">anime</option>
-								<option value="dokumentärer">dokumentärer</option>
-								<option value="draman">draman</option>
-								<option value="historia">history</option>
-								<option value="klassiker">classic</option>
-								<option value="komedier">comedy</option>
-								<option value="musikaler">musical</option>
-								<option value="romantic">romantic</option>
-								<option value="sci-fi">sci-fi</option>
+							<option value=""></option>
+								<option value="Action">Action</option>
+								<option value="Anime">Anime</option>
+								<option value="Documentary">Documentary</option>
+								<option value="Drama">Drama</option>
+								<option value="History">History</option>
+								<option value="Classic">Classic</option>
+								<option value="Comedy">Comedy</option>
+								<option value="Musical">Musical</option>
+								<option value="Romance">Romance</option>
+								<option value="Sci-fi">Sci-fi</option>
 							</select>
 						</div>
 						<div>

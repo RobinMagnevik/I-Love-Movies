@@ -11,11 +11,12 @@ const Form = () => {
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div key={item.film.id}>
-			<h2>{item.film.title} </h2>
+			<h2>
+				{item.film.title} ({item.film.year})
+			</h2>
+			<p>{item.film.genre}</p>
 			<img src={item.film.poster} alt="" />
-			<p>Genre: {item.film.genre}</p>
-			<p>About: {item.film.description}</p>
-			<p>Year: {item.film.year}</p>
+			<p>{item.film.description}</p>
 			<p>{item.film.ofType}</p>
 			<p>Rating: {item.film.rating} </p>
 		</div>
@@ -48,8 +49,6 @@ const Form = () => {
 			!movie.year ||
 			!movie.ofType
 		) {
-			console.log("inside else if");
-
 			setBroadcastMsg("Please sir/madam! all fields are in need of filling!");
 		} else if (
 			movie.genre.trim("") ||
@@ -58,33 +57,32 @@ const Form = () => {
 			movie.year.trim("") ||
 			movie.ofType.trim("")
 		) {
-			console.log("inside if");
 			setBroadcastMsg("Item has been successfully added!");
-			setMovie(
-				{ ...movie, title: "" },
-				{ ...movie, description: "" },
-				{ ...movie, genre: "" },
-				{ ...movie, year: "" },
-				{ ...movie, ofType: "" },
-				{ ...movie, id: uuidv4() }
-			);
+			setMovie({
+				id: uuidv4(),
+				title: "",
+				poster:
+					"http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg",
+				description: "",
+				genre: "",
+				ofType: "",
+				year: "",
+			});
 			dispatch(actions.addToMovieList(movie));
 		}
 	};
 
-	// const handleClick = () => dispatch(actions.addToMovieList(movie));
-	console.log(movie);
-
 	const showImage = (event) => {
 		let img = event.target.files[0];
-		console.log("innan onload", img);
+		console.log("IMG: ", img);
 		const reader = new FileReader();
-		reader.onload = function () {
-			const img = new Image();
-			img.src = reader.result;
-			document.body.appendChild(img);
-		};
 		reader.readAsDataURL(img);
+		reader.onload = function () {
+			const imgData = reader.result;
+			setMovie({ ...movie, poster: imgData });
+			console.log("movieOBJECT: ", imgData);
+			console.log("MOVIE: ", movie);
+		};
 	};
 
 	return (
@@ -137,16 +135,16 @@ const Form = () => {
 							<label htmlFor="genre">Genre: </label>
 							<select name="genre" id="genre" onChange={handleChange}>
 								<option value=""></option>
-								<option value="action">action</option>
-								<option value="anime">anime</option>
-								<option value="dokumentärer">dokumentärer</option>
-								<option value="draman">draman</option>
-								<option value="historia">history</option>
-								<option value="klassiker">classic</option>
-								<option value="komedier">comedy</option>
-								<option value="musikaler">musical</option>
-								<option value="romantic">romantic</option>
-								<option value="sci-fi">sci-fi</option>
+								<option value="Action">Action</option>
+								<option value="Anime">Anime</option>
+								<option value="Documentary">Documentary</option>
+								<option value="Drama">Drama</option>
+								<option value="History">History</option>
+								<option value="Classic">Classic</option>
+								<option value="Comedy">Comedy</option>
+								<option value="Musical">Musical</option>
+								<option value="Romance">Romance</option>
+								<option value="Sci-fi">Sci-fi</option>
 							</select>
 						</div>
 						<div>

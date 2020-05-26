@@ -11,7 +11,7 @@
     border: 0;
     margin-bottom: 30px;
 }
-#contentTitle {
+.contentTitle {
     color: white;
     text-align: center;
     background-color: #101010;

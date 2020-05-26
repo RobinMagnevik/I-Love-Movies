@@ -134,7 +134,7 @@ const EditForm = ({ item }) => {
 						</div>
 						
 					</div>
-
+					<br />
 					<button
 						type="submit"
 						onClick={() =>

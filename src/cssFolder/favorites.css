@@ -25,7 +25,6 @@
 }
 .input-field:hover {
 	background-color: rgb(241, 238, 238);
-	box-shadow: 3px 3px 3px rgba(245, 245, 87, 0.616);
 }
 .select-styling {
 	display: inline-block;
@@ -42,27 +41,29 @@
 }
 .select-styling:hover {
 	cursor: pointer;
-	box-shadow: 0px 3px 3px rgba(245, 245, 87, 0.616);
 }
 .movie-styling {
-	/* width: 75%; */
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	margin-top: 50px;
 }
 
 .buttonsInFavoriteList{
-	background-color:rgb(255, 44, 44);
-	color: white;
-	height: 20px;
+	cursor: pointer;
+	margin-top: 15px;
+	background-color: white;
+	color: black;
+	height: 30px;
 	width: 70px;
+	font-size: 1em;
 	border: none;
 	cursor: pointer;
-	margin-top: 10px;
+	border-radius: 2px;
 }
 
 .buttonsInFavoriteList:hover{
-	background-color: rgba(255, 44, 44, 0.829);
+	background-color: #ff2e00;
+	color: white;
 }
 
 .showDeleteEditButtonsDiv{

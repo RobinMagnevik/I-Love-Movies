@@ -51,7 +51,6 @@ const EditForm = ({ item }) => {
 	};
 
 	const handleClick = () => dispatch(actions.addToMovieList(movie));
-	console.log(movie);
 
 	return (
 	<div>

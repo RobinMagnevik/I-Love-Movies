@@ -56,9 +56,8 @@ textarea {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 1.5em;
-	align-items: center;
 	font-size: large;
-	height: 250px;
+	margin-top: 50px;
 }
 
 .broadcast-message{

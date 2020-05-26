@@ -24,19 +24,17 @@
 	/* top: 40vh; */
 	/* position: absolute; */
 }
-.form-style div,
-label {
+.form-style-div-label {
 	background-color: #000000;
 }
 
-.form-style input,
-textarea {
+.form-style-input {
 	padding: 0.5em;
 	margin: 0.5em;
 	background-color: white;
 	color: #101010;
 }
-.form-style h2 {
+.form-style-h2 {
 	background-color: #000000;
 }
 input[type="file"] {
@@ -65,6 +63,6 @@ input[type="file"] {
 	margin-top: 50px;
 }
 
-.broadcast-message{
+.broadcast-message {
 	color: green;
 }

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
 import { useSelector } from "react-redux";
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 import "../cssFolder/form.css";
 
 const Form = () => {
 	const dispatch = useDispatch();
-	const [broadcastMsg, setBroadcastMsg] = useState('')
+	const [broadcastMsg, setBroadcastMsg] = useState("");
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div key={item.film.id}>
@@ -24,7 +24,8 @@ const Form = () => {
 	const [movie, setMovie] = useState({
 		id: uuidv4(),
 		title: "",
-		poster: 'http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg',
+		poster:
+			"http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg",
 		description: "",
 		genre: "",
 		ofType: "",
@@ -40,14 +41,25 @@ const Form = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if(!movie.title || !movie.description || !movie.genre || !movie.year || !movie.ofType){
-			console.log('inside else if');
-			
-			setBroadcastMsg("Please sir/madam! all fields are in need of filling!")
-		}
-		else if (movie.genre.trim('') || movie.title.trim('') || movie.description.trim('') || movie.year.trim('') || movie.ofType.trim('')) {
-			console.log('inside if');
-			setBroadcastMsg('Item has been successfully added!')
+		if (
+			!movie.title ||
+			!movie.description ||
+			!movie.genre ||
+			!movie.year ||
+			!movie.ofType
+		) {
+			console.log("inside else if");
+
+			setBroadcastMsg("Please sir/madam! all fields are in need of filling!");
+		} else if (
+			movie.genre.trim("") ||
+			movie.title.trim("") ||
+			movie.description.trim("") ||
+			movie.year.trim("") ||
+			movie.ofType.trim("")
+		) {
+			console.log("inside if");
+			setBroadcastMsg("Item has been successfully added!");
 			setMovie(
 				{ ...movie, title: "" },
 				{ ...movie, description: "" },
@@ -55,8 +67,8 @@ const Form = () => {
 				{ ...movie, year: "" },
 				{ ...movie, ofType: "" },
 				{ ...movie, id: uuidv4() }
-				);
-				dispatch(actions.addToMovieList(movie))
+			);
+			dispatch(actions.addToMovieList(movie));
 		}
 	};
 
@@ -69,6 +81,8 @@ const Form = () => {
 		reader.onload = function () {
 			const img = new Image();
 			img.src = reader.result;
+			console.log("detta är reader.result", reader.result);
+			console.log("detta är image", img);
 			document.body.appendChild(img);
 		};
 		reader.readAsDataURL(img);
@@ -79,10 +93,10 @@ const Form = () => {
 			<div>
 				<form className="form-style" onSubmit={handleSubmit}>
 					{/* {errors.title && <span>{errors.title}</span>}  */}
-					<h2>Add movies or series</h2>
+					<h2 className="form-style-h2">Add movies or series</h2>
 					<br></br>
 
-					<input 
+					<input
 						placeholder="Title"
 						type="text"
 						name="title"
@@ -110,10 +124,10 @@ const Form = () => {
 						rows="5"
 					></textarea>
 
-					<div>
+					<div className="form-style-div-label">
 						{/* {errors.genre && <span>{errors.genre}</span>}  */}
 
-						<input 
+						<input
 							placeholder="Year"
 							type="number"
 							name="year"
@@ -123,7 +137,7 @@ const Form = () => {
 						<div>
 							<label htmlFor="genre">Genre: </label>
 							<select name="genre" id="genre" onChange={handleChange}>
-							<option value=""></option>
+								<option value=""></option>
 								<option value="action">action</option>
 								<option value="anime">anime</option>
 								<option value="dokumentärer">dokumentärer</option>
@@ -173,7 +187,7 @@ const Form = () => {
 						Add
 					</button>
 					<br></br>
-					<span className='broadcast-message'>{broadcastMsg}</span>
+					<span className="broadcast-message">{broadcastMsg}</span>
 				</form>
 			</div>
 			<h1>Latest Upload </h1>
@@ -183,7 +197,6 @@ const Form = () => {
 				<div>{latestList[1]}</div>
 				<div>{latestList[2]}</div>
 			</div>
-			
 		</div>
 	);
 };

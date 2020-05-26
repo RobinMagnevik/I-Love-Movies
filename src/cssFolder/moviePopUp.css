@@ -38,25 +38,23 @@
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	border-radius: 5px;
 	border: 1px solid orangered;
-	
   }
 
   .popUpTitleYear {
-	grid-column: 1/6;
+	grid-column: 1/7;
 	grid-row: 1/2;
-	justify-self: start;
+	justify-self: center;
 	align-self: center;
 	font-weight: bold;
 	color: white;
 	background-color: black;
-	margin-left: 10px;
   }
   
   .popUpImg {
 	grid-column: 1/4;
-	grid-row: 2/6;
-	height: 200px;
-	width: 150px;
+	grid-row: 2/5;
+	height: 250px;
+	width: 180px;
 	justify-self: center;
 	align-self: center;
 	background-position: center;
@@ -66,36 +64,35 @@
   
   .popUpAbout {
 	grid-column: 4/7;
-	grid-row: 2/4;
-	padding-right: 25px;
+	grid-row: 2/3;
+	padding-right: 35px;
 	align-self: center;
 	color: white;
 	font-size: 0.8em;
 	background-color: black;
   }
 
-  .popUpGenreOfTypeDiv{
+  .popUpGenre{
 	  grid-column: 4/7;
-	  grid-row: 4/5;
-	  display: flex;
-	  justify-content: space-evenly;
-	  align-items: center;
+	  grid-row: 3/4;
+	  justify-self: center;
+	  align-self: center;
 	  background-color: black;
+	  padding-right: 35px;
   }
 
-  .popUpGenre{
-	background-color: black;
-  }
+
   
   
   .popUpRating {
 	grid-column: 4/7;
-	grid-row: 5/6;
+	grid-row: 4/5;
 	align-self: center;
 	color: white;
 	font-size: 0.8em;
 	font-weight: bold;
 	background-color: black;
+	padding-right: 35px;
   }
   
   .popUpX {
@@ -107,13 +104,14 @@
 	/* padding-right: 25px; */
 	cursor: pointer;
 	font-size: 1.2em;
-	margin-top: 5px;
-	margin-right: 10px;
+	margin-top: 10px;
+	margin-right: 15px;
 	background-color: black;
   }
   
   .popUpX:hover {
 	font-weight: bold;
+	color: white;
   }
   
   .popUpShowDetails {
@@ -124,69 +122,81 @@
   .popUpShowDetails:hover {
 	color: orangered;
   }
-  
-  @media (max-width: 495px) {
-  
+
+  @media (max-width: 690px) {
 	.popUpDiv {
-	  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	}
-	.popUpImg {
-	  grid-row: 3/8;
-	}
-  
-	.popUpAbout {
-	  grid-column: 4/7;
-	  grid-row: 2/6;
-  
-	}
-  
-	.popUpGenre {
-	  grid-column: 4/5;
-	  grid-row: 6/7;
-	}
-  
-	.popUpYear {
-	  grid-column: 5/6;
-	  grid-row: 6/7;
-	}
-  
-	.popUpRating {
-	  grid-column: 4/5;
-	  grid-row: 7/8;
-	}
+		border: none;
+	  }
   }
   
-  @media (max-width: 400px) {
   
-	  .popUpImg {
-		  grid-column: 1/4;
-		  grid-row: 2/8;
-		  height: 150px;
-		  width: 100px;
-		  background-position: top;
-		}
-  
-	  .popUpAbout {
+  @media (max-width: 600px) {
+
+    .popUpAbout {
+		grid-column: 4/7;
+		grid-row: 2/4;
+	  }
+	
+	  .popUpGenre{
 		  grid-column: 4/7;
-		  grid-row: 2/6;
-		}
-	  
-		.popUpGenre {
-		  grid-column: 2/3;
-		  grid-row: 8/9;
-		}
-	  
-		.popUpYear {
-		  grid-column: 3/5;
-		  grid-row: 8/9;
-		  justify-self: center;
-		}
-	  
-		.popUpRating {
-		  grid-column: 5/7;
-		  grid-row: 8/9;
-		}
-  
+		  grid-row: 3/4;
+		align-self: end;
+	  }
   }
+
+  @media (max-width: 600px) {
+	.popUpTitleYear {
+		font-size: 1em;
+	  }
+
+    .popUpAbout {
+		align-self: start;
+		margin-top: 10px;
+	  }
+
+	  .popUpGenre{
+		font-size: 0.9em;
+	}
+
+  }
+
+  @media (max-width: 430px) {
+	.popUpDiv {
+		width: 650px;
+		height: 400px;
+		grid-template-rows: 1fr 1fr 1fr 1fr ;
+	  }
+	.popUpTitleYear {
+		grid-column: 2/6;
+		font-size: 0.8em;
+	  }
+	  
+	  .popUpImg {
+		grid-column: 1/4;
+		grid-row: 2/4;
+		height: 200px;
+		width: 130px;
+	  }
+	
+	  .popUpAbout {
+		grid-column: 4/7;
+		grid-row: 2/4;
+		padding-right: 20px;
+	  }
+	
+	  .popUpGenre{
+		  grid-column: 1/4;
+		  grid-row: 4/5;
+		  align-self: center;
+		  justify-self: center;
+		  padding-right: 0px;
+		  padding-left: 10px;
+	  }
+
+	  .popUpRating {
+		padding-right: 10px;
+	  }
+
+  }
+
   

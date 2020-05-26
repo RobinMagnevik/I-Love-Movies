@@ -48,7 +48,6 @@ const Form = () => {
 			!movie.year ||
 			!movie.ofType
 		) {
-			console.log("inside else if");
 
 			setBroadcastMsg("Please sir/madam! all fields are in need of filling!");
 		} else if (
@@ -58,34 +57,37 @@ const Form = () => {
 			movie.year.trim("") ||
 			movie.ofType.trim("")
 		) {
-			console.log("inside if");
 			setBroadcastMsg("Item has been successfully added!");
 			setMovie(
-				{ ...movie, title: "" },
-				{ ...movie, description: "" },
-				{ ...movie, genre: "" },
-				{ ...movie, year: "" },
-				{ ...movie, ofType: "" },
-				{ ...movie, id: uuidv4() }
+				{
+					id: uuidv4(),
+					title: "",
+					poster:
+						"http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg",
+					description: "",
+					genre: "",
+					ofType: "",
+					year: "",
+				}
 			);
 			dispatch(actions.addToMovieList(movie));
 		}
 	};
 
-	// const handleClick = () => dispatch(actions.addToMovieList(movie));
-	console.log(movie);
 
 	const showImage = (event) => {
 		let img = event.target.files[0];
+		console.log('IMG: ', img)
 		const reader = new FileReader();
-		reader.onload = function () {
-			const img = new Image();
-			img.src = reader.result;
-			console.log("detta är reader.result", reader.result);
-			console.log("detta är image", img);
-			document.body.appendChild(img);
-		};
 		reader.readAsDataURL(img);
+		reader.onload = function () {
+			const imgData = reader.result;
+			setMovie(
+				{ ...movie, poster: imgData}
+			)
+			console.log('movieOBJECT: ', imgData)
+			console.log('MOVIE: ', movie)
+		};
 	};
 
 	return (

@@ -16,7 +16,11 @@
 	}
   }
 
-
+.rating {
+	width: 5em;
+	margin-left: auto;
+    margin-right: auto;
+}
 .editTitle{
 	background-color: black;
 }

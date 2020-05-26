@@ -8,27 +8,32 @@ import FadeEffect from './FadeEffect'
 const EditForm = ({ item }) => {
 	const dispatch = useDispatch();
 	const [show, setShow] = useState(false);
-
+	console.log('item: ', item)
 	const data = useSelector((state) => state.addFavoriteList);
-	const latestList = data.slice(-3).map((item) => (
-		<div key={item.id}>
-			<h2>{item.film.title} </h2>
-			<p>Genre: {item.film.genre}</p>
-			<p>About: {item.film.description}</p>
-			<p>Year: {item.film.year}</p>
-			<p>{item.film.ofType}</p>
-			<p>Rating: {item.film.rating} </p>
-		</div>
-	));
+	console.log('data: ', data);
+	// const latestList = data.slice(-3).map((item) => (
+	// 	<div key={item.id}>
+	// 		<h2>{item.film.title} </h2>
+	// 		<p>Genre: {item.film.genre}</p>
+	// 		<p>About: {item.film.description}</p>
+	// 		<p>Year: {item.film.year}</p>
+	// 		<p>{item.film.ofType}</p>
+	// 		<p>Rating: {item.film.rating} </p>
+	// 	</div>
+	// ));
+	// console.log('Latestlist: ', latestList);
 
 	const [movie, setMovie] = useState({
-		id: "",
-		title: "",
-		description: "",
-		genre: "action",
-		ofType: "movie",
-		year: "",
+		id: item.film.id,
+		title: item.film.title,
+		description: item.film.description,
+		genre: item.film.genre,
+		ofType: item.film.ofType,
+		year: item.film.year,
+		poster: item.film.poster,
+		rating: item.film.rating,
 	});
+	console.log('MOVIE: ', movie)
 
 	const handleChange = (e) => {
 		setMovie({
@@ -41,11 +46,7 @@ const EditForm = ({ item }) => {
 		e.preventDefault();
 		if (movie.genre) {
 			setMovie(
-				{ ...movie, title: "" },
-				{ ...movie, description: "" },
-				{ ...movie, genre: "" },
-				{ ...movie, year: "" },
-				{ ...movie, ofType: "" }
+				{...movie}
 			);
 		}
 	};
@@ -79,6 +80,15 @@ const EditForm = ({ item }) => {
 						rows="5"
 					></textarea>
 
+						<textarea className="rating"
+							placeholder="Rating"
+							type="number"
+							name="rating"
+							value={movie.rating}
+							onChange={handleChange}
+							cols="10"
+							rows="1"
+						></textarea>
 					<div>
 
 						<input
@@ -107,7 +117,6 @@ const EditForm = ({ item }) => {
 						<div>
 							<label htmlFor="Movie">Movie: </label>
 							<input
-								checked={true}
 								value="movie"
 								type="radio"
 								name="ofType"
@@ -123,12 +132,13 @@ const EditForm = ({ item }) => {
 								onChange={handleChange}
 							/>
 						</div>
+						
 					</div>
 
 					<button
 						type="submit"
 						onClick={() =>
-									{dispatch(actions.updateMovieList(item.film.title)); handleClick()
+									{dispatch(actions.updateMovieList(item.film.title)); handleClick(); setShow(show =>!show)
 								}}
 						className="addFavoriteToListButton"
 					>

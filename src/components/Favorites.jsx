@@ -21,7 +21,6 @@ const FilterMovies = () => {
 	// 	</div>
 	// ))
 
-	console.log('data favorit: ', data);
 
 	const dispatch = useDispatch();
 

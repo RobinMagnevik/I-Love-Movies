@@ -59,7 +59,7 @@ input[type="file"] {
 	border-radius: 1px;
 }
 .addFavoriteToListButton:hover {
-	background-color: #ff2e00;
+	background-color: black;
 	color: white;
 }
 .three-latest {

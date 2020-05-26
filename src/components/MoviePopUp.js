@@ -12,19 +12,25 @@ const [show, setShow] = useState(false);
         <div className="popUpDiv">
 		<p className="popUpX" onClick={() => setShow(show => show)}> x </p>
           <div className="popUpImg"></div>
-          <p className="popUpTitle"><span> {item.film.title} </span></p>
-		  <p className="popUpAbout">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel orci iaculis odio pellentesque aliquam. Nam consectetur posuere odio, sit amet finibus leo pharetra ac.</p>
-          <span className="popUpGenre">Action</span>
-          <span className="popUpYear">2012</span>
-		  <span className="popUpRating">Rating: 5</span>
+          <h2 className="popUpTitleYear"><span> {item.film.title} ({item.film.year}) </span></h2>
+		  <p className="popUpAbout">{item.film.description}</p>
+
+		  <div className="popUpGenreOfTypeDiv">
+		  <span className="popUpGenre">{item.film.genre}</span>
+		  <span className="popUpOfType">{item.film.ofType}</span>
+		  </div>
+
+		  <span className="popUpRating">{item.film.rating}</span> 
+		  
+          
         </div>
       </div> 
 	  <br/>
 	</FadeEffect> 
-	<p className="popUpShowDetails" onClick={() => setShow(show => !show)}> 
+	<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> 
 		  {/* {show ? "hide" : "show"} */}
-		  Show details
-		</p>
+		  Details
+		</button>
 		</div>
   );
 };

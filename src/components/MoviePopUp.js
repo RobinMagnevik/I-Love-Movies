@@ -26,11 +26,8 @@ const [show, setShow] = useState(false);
       </div> 
 	  <br/>
 	</FadeEffect> 
-	<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> 
-		  {/* {show ? "hide" : "show"} */}
-		  Details
-		</button>
-		</div>
+	<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> Details </button>
+	</div>
   );
 };
 

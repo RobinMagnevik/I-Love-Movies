@@ -34,7 +34,7 @@ const FilterMovies = () => {
 					<div>
 						<div key={item.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
-							<img src={item.film.poster} alt="" />
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
@@ -55,7 +55,7 @@ const FilterMovies = () => {
 			<div key={item.film.title}>
 				<div>
 				<h2>{item.film.title} ({item.film.year})</h2>
-							<img src={item.film.poster} alt="" />
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
@@ -142,7 +142,7 @@ const FilterMovies = () => {
 						{filterByMovie.map((item) => (
 							<div key={item.film.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
-							<img src={item.film.poster} alt="" />
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
@@ -162,7 +162,7 @@ const FilterMovies = () => {
 						{filterBySerie.map((item) => (
 							<div key={item.film.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
-							<img src={item.film.poster} alt="" />
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
 							<p>Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">

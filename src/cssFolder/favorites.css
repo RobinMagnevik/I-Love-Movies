@@ -72,6 +72,11 @@
 	justify-content: space-evenly;
 }
 
+.posterFavoritePage{
+	height: 350px;
+	width: 250px;
+	background-position: center;
+}
 
 @media screen and (max-width: 580px) {
 	.select-styling {

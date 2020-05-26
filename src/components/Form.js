@@ -13,7 +13,7 @@ const Form = () => {
 		<div key={item.film.id}>
 			<h2>{item.film.title} ({item.film.year})</h2>
 			<p>{item.film.genre}</p>
-			<img src={item.film.poster} alt="" />
+			<img className="posterStartPage" src={item.film.poster} alt="" />
 			<p>{item.film.description}</p>
 			<p>Rating: {item.film.rating} </p>
 		</div>

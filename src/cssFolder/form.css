@@ -71,6 +71,12 @@ input[type="file"] {
 	margin-top: 50px;
 }
 
+.posterStartPage{
+	height: 300px;
+	width: 200px;
+	background-position: center;
+}
+
 .broadcast-message {
 	color: green;
 }

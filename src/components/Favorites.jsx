@@ -143,6 +143,8 @@ const FilterMovies = () => {
 				{mode === "all" ? (
 					<div className="movie-styling">{mixedList}</div>
 				) : null}
+
+				
 				{mode === "movies" ? (
 					<div className="movie-styling">
 						{filterByMovie.map((item) => (
@@ -153,7 +155,6 @@ const FilterMovies = () => {
 							{/* <p>{item.film.description}</p> */}
 							{/* <p>{item.film.ofType}</p> */}
 							<p>Rating: {item.film.rating} </p>
-							<MoviePopUp item={item} key={item.id} />
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -170,7 +171,7 @@ const FilterMovies = () => {
 				{mode === "series" ? (
 					<div className="movie-styling">
 						{filterBySerie.map((item) => (
-							<div className="movie-styling" key={item.film.title}>
+							<div key={item.film.title}>
 							<h2>{item.film.title} ({item.film.year})</h2>
 							{/* <p>{item.film.genre}</p> */}
 							<img src={item.film.poster} alt="" />

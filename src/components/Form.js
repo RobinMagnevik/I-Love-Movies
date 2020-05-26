@@ -81,7 +81,7 @@ const Form = () => {
 					<h2>Add movies or series</h2>
 					<br></br>
 
-					<input
+					<input 
 						placeholder="Title"
 						type="text"
 						name="title"
@@ -112,7 +112,7 @@ const Form = () => {
 					<div>
 						{/* {errors.genre && <span>{errors.genre}</span>}  */}
 
-						<input
+						<input 
 							placeholder="Year"
 							type="number"
 							name="year"

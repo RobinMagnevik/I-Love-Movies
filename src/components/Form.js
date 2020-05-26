@@ -178,7 +178,7 @@ const Form = () => {
 						accept=".png, .jpeg, .jpg"
 						onChange={showImage}
 					></input>
-
+					<br />
 					<button
 						type="submit"
 						onClick={handleSubmit}

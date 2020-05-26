@@ -12,12 +12,11 @@ const [show, setShow] = useState(false);
         <div className="popUpDiv">
 		<p className="popUpX" onClick={() => setShow(show => show)}> x </p>
           <div className="popUpImg"></div>
-          <h2 className="popUpTitleYear"><span> {item.film.title} ({item.film.year}) </span></h2>
+          <h2 className="popUpTitleYear"> {item.film.title} ({item.film.year})</h2>
 		  <p className="popUpAbout">{item.film.description}</p>
 
 		  <div className="popUpGenreOfTypeDiv">
 		  <span className="popUpGenre">{item.film.genre}</span>
-		  <span className="popUpOfType">{item.film.ofType}</span>
 		  </div>
 
 		  <span className="popUpRating">{item.film.rating}</span> 

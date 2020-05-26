@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions, STATUS } from '../features/InspoMovie';
+import { inspoActions, STATUS } from '../features/InspoMovie';
+import { actions } from "../features/addFavoriteList";
+import {v4 as uuidv4} from 'uuid'
 import '../cssFolder/inspirationMovie.css'
 
 
@@ -9,7 +11,13 @@ const Inspiration = () => {
     const status = useSelector(state => state.inspoMovie.status);
     const movie = useSelector(state => state.inspoMovie.movie);
 
-    
+
+
+const handleSubmit = (content) => {
+    const movieObject = { ...content, id: uuidv4() }
+    console.log('movie2: ',movieObject)
+    dispatch(actions.addToMovieList(movieObject))
+};
 
     let content = {};
     
@@ -39,11 +47,11 @@ const Inspiration = () => {
             <div className="movieInfo">
                 <p>{content.genre}</p>
                 <img className="contentPoster" src={content.poster} alt="" />
-                <p>{content.plot}</p>
+                <p>{content.description}</p>
                 <p>Rating: {content.rating}</p>
             </div>
             <div className="buttonDiv">
-                <button className="addButton" >Add to favorites!</button>
+                <button className="addButton" onClick={() => handleSubmit(content)}>Add to favorites!</button>
             </div>
         </div>
     )
@@ -77,54 +85,56 @@ async function fetchMovie(dispatch) {
     let randomNumber = Math.floor((Math.random() * movieList.length -1) + 1);
     let randomMovie = movieList[randomNumber];
 
-    dispatch(actions.isFetching());
+    dispatch(inspoActions.isFetching());
     const url = 'http://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomMovie);
     console.log('url: ' + url)
     try {
         let response = await fetch(url);
         let json = await response.json();
-        console.log('Got data:', json);
         let movieSuggestion = {
+            id: '',
             title: json.Title,
             poster: json.Poster,
+            description: json.Plot,
             genre: json.Genre,
             year: json.Year.substring(0,4),
-            plot: json.Plot,
-            rating: json.Ratings[0].Value
+            rating: json.Ratings[0].Value,
+            ofType: json.Type
         };
-        dispatch(actions.success(movieSuggestion));
+        dispatch(inspoActions.success(movieSuggestion));
     } catch {
-        dispatch(actions.failure());
+        dispatch(inspoActions.failure());
     }
 }
 async function fetchSerie(dispatch) {
     let randomNumber = Math.floor((Math.random() * serieList.length -1) + 1);
     let randomSerie = serieList[randomNumber];
 
-    dispatch(actions.isFetching());
+    dispatch(inspoActions.isFetching());
     const url = 'http://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomSerie);
-    console.log('url: ' + url)
     try {
         let response = await fetch(url);
         let json = await response.json();
         console.log('Got data:', json);
         let serieSuggestion = {
+            id: '',
             title: json.Title,
             poster: json.Poster,
+            description: json.Plot,
             genre: json.Genre,
             year: json.Year.substring(0,4),
-            plot: json.Plot,
-            rating: json.Ratings[0].Value
+            rating: json.Ratings[0].Value,
+            ofType: json.Type
         };
         console.log('keep: '+ serieSuggestion);
         if(json.Response === 'False') {
-            dispatch(actions.failure())
+            dispatch(inspoActions.failure())
         } else {
-        dispatch(actions.success(serieSuggestion));
+        dispatch(inspoActions.success(serieSuggestion));
         }
     } 
     catch {
-        dispatch(actions.failure());
+        dispatch(inspoActions.failure());
     }
 }
 

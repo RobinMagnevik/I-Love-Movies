@@ -12,6 +12,7 @@ const Form = () => {
 	const latestList = data.slice(-3).map((item) => (
 		<div key={item.film.id}>
 			<h2>{item.film.title} </h2>
+			<img src={item.film.poster} alt="" />
 			<p>Genre: {item.film.genre}</p>
 			<p>About: {item.film.description}</p>
 			<p>Year: {item.film.year}</p>

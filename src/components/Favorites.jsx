@@ -9,7 +9,7 @@ import EditForm from "./EditForm";
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [mode, setMode] = useState("all");
-	const [toggle, setToggle] = useState(false)
+	// const [toggle, setToggle] = useState(false)
 
 	const data = useSelector((state) => state.addFavoriteList);
 	// const filmList = data.map(item => (
@@ -35,24 +35,20 @@ const FilterMovies = () => {
 				return (
 					<div>
 						<div key={item.title}>
-							<h2>{item.film.title} </h2>
+							<h2>{item.film.title} ({item.film.year})</h2>
+							{/* <p>{item.film.genre}</p> */}
 							<img src={item.film.poster} alt="" />
-							<p>Genre: {item.film.genre}</p>
-							<p>About: {item.film.description}</p>
-							<p>Year: {item.film.year}</p>
-							<p>{item.film.ofType}</p>
+							{/* <p>{item.film.description}</p> */}
+							{/* <p>{item.film.ofType}</p> */}
 							<p>Rating: {item.film.rating} </p>
-							<MoviePopUp item={item} key={item.id} />
 
-							<button
-								className="startPageWelcomeButton"
-								onClick={() =>
-									dispatch(actions.removeFromMovieList(item.film.title))
-								}
-							>
-								Delete
-							</button> &nbsp;
+							<div className="showDeleteEditButtonsDiv">
+							<MoviePopUp item={item} key={item.id} />
+							<button className="buttonsInFavoriteList" onClick={() => dispatch(actions.removeFromMovieList(item.film.title))}>
+								Delete </button> 
 							<EditForm item={item}  />
+							</div>
+
 						</div>
 					</div>
 				);
@@ -63,23 +59,19 @@ const FilterMovies = () => {
 		return (
 			<div key={item.film.title}>
 				<div>
-					<h2>{item.film.title} </h2>
-					<img src={item.film.poster} alt="" />
-					<p>Genre: {item.film.genre}</p>
-					<p>About: {item.film.description}</p>
-					<p>Year: {item.film.year}</p>
-					<p>{item.film.ofType}</p>
-					<p>Rating: {item.film.rating} </p>
-					<MoviePopUp item={item} key={item.id} />
-					<button
-						className="startPageWelcomeButton"
-						onClick={() =>
-							dispatch(actions.removeFromMovieList(item.film.title))
-						}
-					>
-						Delete
-					</button> &nbsp;
-					<EditForm item={item}  />
+				<h2>{item.film.title} ({item.film.year})</h2>
+							{/* <p>{item.film.genre}</p> */}
+							<img src={item.film.poster} alt="" />
+							{/* <p>{item.film.description}</p> */}
+							{/* <p>{item.film.ofType}</p> */}
+							<p>Rating: {item.film.rating} </p>
+
+							<div className="showDeleteEditButtonsDiv">
+							<MoviePopUp item={item} key={item.id} />
+							<button className="buttonsInFavoriteList" onClick={() => dispatch(actions.removeFromMovieList(item.film.title))}>
+								Delete </button> 
+							<EditForm item={item}  />
+							</div>
 					
 				</div>
 			</div>
@@ -155,24 +147,21 @@ const FilterMovies = () => {
 					<div className="movie-styling">
 						{filterByMovie.map((item) => (
 							<div key={item.film.title}>
-								<h2>{item.film.title} </h2>
-								<img src={item.film.poster} alt="" />
-								<p>Genre: {item.film.genre}</p>
-								<p>About: {item.film.description}</p>
-								<p>Year: {item.film.year}</p>
-								<p>{item.film.ofType}</p>
-								<p>Rating: {item.film.rating} </p>
-								<MoviePopUp item={item} key={item.id} />
+							<h2>{item.film.title} ({item.film.year})</h2>
+							{/* <p>{item.film.genre}</p> */}
+							<img src={item.film.poster} alt="" />
+							{/* <p>{item.film.description}</p> */}
+							{/* <p>{item.film.ofType}</p> */}
+							<p>Rating: {item.film.rating} </p>
+							<MoviePopUp item={item} key={item.id} />
 
-								<button
-									className="startPageWelcomeButton"
-									onClick={() =>
-										dispatch(actions.removeFromMovieList(item.film.title))
-									}
-								>
-									Delete
-								</button> &nbsp;
-								<EditForm item={item}  />
+							<div className="showDeleteEditButtonsDiv">
+							<MoviePopUp item={item} key={item.id} />
+							<button className="buttonsInFavoriteList" onClick={() => dispatch(actions.removeFromMovieList(item.film.title))}>
+								Delete </button> 
+							<EditForm item={item}  />
+							</div>
+
 							</div>
 						))}
 					</div>
@@ -182,24 +171,22 @@ const FilterMovies = () => {
 					<div className="movie-styling">
 						{filterBySerie.map((item) => (
 							<div className="movie-styling" key={item.film.title}>
-								<h2>{item.film.title} </h2>
-								<img src={item.film.poster} alt="" />
-								<p>Genre: {item.film.genre}</p>
-								<p>About: {item.film.description}</p>
-								<p>Year: {item.film.year}</p>
-								<p>{item.film.ofType}</p>
-								<p>Rating: {item.film.rating} </p>
-								<MoviePopUp item={item} key={item.id} />
+							<h2>{item.film.title} ({item.film.year})</h2>
+							{/* <p>{item.film.genre}</p> */}
+							<img src={item.film.poster} alt="" />
+							{/* <p>{item.film.description}</p> */}
+							{/* <p>{item.film.ofType}</p> */}
+							<p>Rating: {item.film.rating} </p>
 
-								<button
-									className="startPageWelcomeButton"
-									onClick={() =>
-										dispatch(actions.removeFromMovieList(item.film.title))
-									}
-								>
-									Delete
-								</button> &nbsp;
-								 <EditForm item={item}  />
+							<div className="showDeleteEditButtonsDiv">
+							<MoviePopUp item={item} key={item.id} />
+							<button className="buttonsInFavoriteList" onClick={() => dispatch(actions.removeFromMovieList(item.film.title))}>
+								Delete </button> 
+							<EditForm item={item}  />
+							</div>
+							
+							
+
 							</div>
 						))}
 					</div>

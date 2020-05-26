@@ -8,7 +8,7 @@ const actions = { addToMovieList, removeFromMovieList, updateMovieList };
 
 const initialState = [
   {
-  	film: { id: '13323', title: 'Spiderman', description: 'bla bla bla', genre: 'action', releaseYear: '2012', rating: '5,5', ofType: "movie" },
+  	film: { id: '13323', title: 'Spiderman', description: 'bla bla bla', genre: 'action', year: '2012', rating: '5,5', ofType: "movie" },
   }
 ];
 

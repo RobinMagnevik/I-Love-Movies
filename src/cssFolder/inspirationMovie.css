@@ -1,6 +1,6 @@
 .inspoContainer{
 	background-color: #101010;
-	height: 125vh;
+	height: auto;
     text-align: center;
 }
 .movieButton, .serieButton{
@@ -8,7 +8,7 @@
     height: 40px;
     background-color: #FF2E00;
     border: 0;
-    margin-bottom: 30px;
+    margin: 10px;
 }
 .addButton{
     width: 300px;
@@ -26,8 +26,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: white;
     background-color: #101010;
 }
@@ -35,7 +35,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     color: white;  
     background-color: #101010; 
 }
@@ -49,10 +49,15 @@
 .description{
     width: 30%;
     word-wrap: normal;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
-.buttonDiv {
+.buttonDivTop {
     padding-top: 30px;
+    margin: 0;
+    background-color: #101010;
+}
+.buttonDivBottom {
+    padding-top: 10px;
     margin: 0;
     background-color: #101010;
 }

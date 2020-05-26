@@ -69,12 +69,36 @@ input[type="file"] {
 	grid-gap: 1.5em;
 	font-size: large;
 	margin-top: 50px;
+	margin-bottom: 50px;
+	
 }
 
-.posterStartPage{
+.threeLatestTitle{
+	height: 80px;
+}
+
+.threeLatestGenre{
+	align-self: center;
+	height: 40px;
+}
+
+
+.threeLatestPoster{
 	height: 300px;
 	width: 200px;
 	background-position: center;
+	justify-self: center;
+}
+
+.threeLatestDescription{
+padding: 10px 5px 10px 5px;
+height: 150px;
+
+}
+
+.threeLatestRating{
+	height: 30px;
+	margin-bottom: 50px;
 }
 
 .broadcast-message {

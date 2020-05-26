@@ -10,12 +10,12 @@ const Form = () => {
 	const [broadcastMsg, setBroadcastMsg] = useState("");
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
-		<div key={item.film.id}>
-			<h2>{item.film.title} ({item.film.year})</h2>
-			<p>{item.film.genre}</p>
-			<img className="posterStartPage" src={item.film.poster} alt="" />
-			<p>{item.film.description}</p>
-			<p>Rating: {item.film.rating} </p>
+		<div className="threeLatestDiv" key={item.film.id}>
+			<h3 className="threeLatestTitle">{item.film.title} ({item.film.year})</h3>
+			<p className="threeLatestGenre">{item.film.genre}</p>
+			<img className="threeLatestPoster" src={item.film.poster} alt="" />
+			<p className="threeLatestDescription">{item.film.description}</p>
+			<p className="threeLatestRating">Rating: {item.film.rating} </p>
 		</div>
 	));
 

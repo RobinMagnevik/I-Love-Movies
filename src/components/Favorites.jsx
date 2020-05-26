@@ -33,9 +33,9 @@ const FilterMovies = () => {
 				return (
 					<div>
 						<div key={item.title}>
-							<h2>{item.film.title} ({item.film.year})</h2>
+						<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p>Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -54,9 +54,9 @@ const FilterMovies = () => {
 		return (
 			<div key={item.film.title}>
 				<div>
-				<h2>{item.film.title} ({item.film.year})</h2>
+				<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p>Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -141,9 +141,9 @@ const FilterMovies = () => {
 					<div className="movie-styling">
 						{filterByMovie.map((item) => (
 							<div key={item.film.title}>
-							<h2>{item.film.title} ({item.film.year})</h2>
+							<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p>Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -161,9 +161,9 @@ const FilterMovies = () => {
 					<div className="movie-styling">
 						{filterBySerie.map((item) => (
 							<div key={item.film.title}>
-							<h2>{item.film.title} ({item.film.year})</h2>
+							<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
-							<p>Rating: {item.film.rating} </p>
+							<p className="ratingFavoritePage">Rating: {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />

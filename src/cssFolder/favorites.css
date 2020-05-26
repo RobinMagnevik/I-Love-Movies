@@ -47,6 +47,7 @@
 	grid-template-columns: repeat(4, 1fr);
 	margin-top: 50px;
 	grid-gap: 10px;
+	grid-row-gap: 50px;
 }
 
 .buttonsInFavoriteList{
@@ -72,10 +73,19 @@
 	justify-content: space-evenly;
 }
 
+.titleFavoritePage{
+	height: 80px;
+}
+
 .posterFavoritePage{
 	height: 350px;
 	width: 250px;
 	background-position: center;
+}
+
+.ratingFavoritePage{
+	height: 30px;
+	margin-top: 10px;
 }
 
 @media screen and (max-width: 580px) {

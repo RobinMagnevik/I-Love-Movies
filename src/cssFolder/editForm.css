@@ -57,18 +57,18 @@ textarea {
 }
 
 .addFavoriteToListButton {
-	padding: 0.3em;
-	margin: 1em;
-	width: 80px;
-	border: none;
-	margin-left: 40%;
-	font-size: 0.9em;
-	font-weight: bold;
 	background-color: #ff2e00;
+	color: white;
+	height: 35px;
+	width: 75px;
+	font-size: 1em;
+	border: none;
+	cursor: pointer;
+	border-radius: 1px;
 }
 .addFavoriteToListButton:hover {
-	cursor: pointer;
-	background-color: #ff2f00dc;
+	background-color: white;
+	color: black;
 }
 .three-latest {
 	display: grid;

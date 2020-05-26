@@ -33,7 +33,7 @@ const StartPageForm = ({ addName }) => {
           <input className="startPageInput" type="text"  value={firstName} onChange={(e) => setfirstName(e.target.value)} />
             <br />
 			<br />
-			<button type="button" className="startPageWelcomeButton" value="add song" onClick={() => {setShow((show) => !show); handleSubmit();}}> Cluck </button>
+			<button type="button" className="startPageWelcomeButton" value="add name" onClick={() => {setShow((show) => !show); handleSubmit();}}> Cluck </button>
         </form>
 		</div>
 		</div>

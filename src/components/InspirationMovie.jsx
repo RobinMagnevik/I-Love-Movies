@@ -37,7 +37,7 @@ const handleSubmit = (content) => {
 
     return (
         <div className="inspoContainer">
-            <div className="buttonDiv">
+            <div className="buttonDivTop">
                 <button className="movieButton" onClick={() => fetchMovie(dispatch)}> Get movie suggestion! </button>
                 <button className="serieButton" onClick={() => fetchSerie(dispatch)}> Get serie suggestion! </button>
             </div>
@@ -48,7 +48,7 @@ const handleSubmit = (content) => {
                 <p className="description">{content.description}</p>
                 <p>Rating: {content.rating}</p>
             </div>
-            <div className="buttonDiv">
+            <div className="buttonDivBottom">
                 <button className="addButton" onClick={() => handleSubmit(content)}>Add to favorites!</button>
             </div>
         </div>

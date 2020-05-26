@@ -56,8 +56,7 @@ const EditForm = ({ item }) => {
 	return (
 	<div>
 		<FadeEffect show={show}>
-		<div className="popUpModal">
-			<div>
+		<div className="popUpModalEditForm">
 				<form className="form-style" onSubmit={handleSubmit}>
 					<h2 className="editTitle">Edit</h2>
 					<br></br>
@@ -145,8 +144,6 @@ const EditForm = ({ item }) => {
 						Update
 					</button>
 				</form>
-			</div>
-
 		</div>
 		</FadeEffect> 
 			<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> 

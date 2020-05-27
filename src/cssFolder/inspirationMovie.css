@@ -96,6 +96,11 @@
     margin: 0;
     background-color: #101010;
 }
+.broadcastMessage{
+    width: auto;
+    word-wrap: normal;
+    margin-bottom: 30px;
+}
 
 @media (max-width: 500px) {
     .movieInfo > p {

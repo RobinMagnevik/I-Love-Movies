@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { inspoActions, STATUS } from '../features/InspoMovie';
 import { actions } from "../features/addFavoriteList";
@@ -10,12 +10,14 @@ const Inspiration = () => {
     const dispatch = useDispatch();
     const status = useSelector(state => state.inspoMovie.status);
     const movie = useSelector(state => state.inspoMovie.movie);
+	const [isOK, setIsOK] = useState(null);
 
 
 
 const handleSubmit = (content) => {
     const movieObject = { ...content, id: uuidv4() }
     dispatch(actions.addToMovieList(movieObject))
+    setIsOK("Item has been successfully added!");
 };
 
     let content = {};
@@ -38,8 +40,14 @@ const handleSubmit = (content) => {
     return (
         <div className="inspoContainer">
             <div className="buttonDivTop">
-                <button className="movieButton" onClick={() => fetchMovie(dispatch)}> Get movie suggestion! </button>
-                <button className="serieButton" onClick={() => fetchSerie(dispatch)}> Get serie suggestion! </button>
+                <button className="movieButton" onClick={() => {
+                    fetchMovie(dispatch);
+                    setIsOK("");}
+                }> Get movie suggestion! </button>
+                <button className="serieButton" onClick={() => {
+                    fetchSerie(dispatch);
+                    setIsOK("");}
+                }> Get serie suggestion! </button>
             </div>
             <h2 id="contentTitle">{content.title} ({content.year})</h2>
             <div className="movieInfo">
@@ -51,6 +59,12 @@ const handleSubmit = (content) => {
             <div className="buttonDivBottom">
                 <button className="addButton" onClick={() => handleSubmit(content)}>Add to favorites!</button>
             </div>
+            <br></br>
+            <p className="broadcastMessage"
+				style={isOK ? { color: "green" } : { color: "red" }}
+                >
+				{isOK}
+			</p>
         </div>
     )
 }

@@ -50,7 +50,7 @@
 	grid-row-gap: 50px;
 }
 
-.buttonsInFavoriteList{
+.buttonsInFavoriteList {
 	cursor: pointer;
 	margin-top: 15px;
 	background-color: #ff2e00;
@@ -63,57 +63,69 @@
 	border-radius: 2px;
 }
 
-.buttonsInFavoriteList:hover{
+.buttonsInFavoriteList:hover {
 	background-color: white;
 	color: black;
 	transition: all 0.7s ease 0s;
 }
 
-.showDeleteEditButtonsDiv{
+.showDeleteEditButtonsDiv {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.titleFavoritePage{
+.titleFavoritePage {
 	height: 80px;
 }
 
-.posterFavoritePage{
+.posterFavoritePage {
 	height: 350px;
 	width: 250px;
 	background-position: center;
 }
 
-.ratingFavoritePage{
+.ratingFavoritePage {
 	height: 30px;
 	margin-top: 10px;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 1067px) {
+	.movie-styling {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-top: 50px;
+		grid-gap: 10px;
+		grid-row-gap: 50px;
+	}
+}
+@media screen and (max-width: 768px) {
 	.select-styling {
 		display: inline;
 	}
 	.input-field {
-		width: 45%;
+		width: 60%;
 	}
 }
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 550px) {
 	.select-styling {
-		width: 20%;
-		font-size: small;
-		background-color: rgb(216, 34, 34);
+		display: inline;
 	}
+	.input-field {
+		width: 50%;
+	}
+	.movie-styling {
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (max-width: 330px) {
 	.input-field {
 		width: 20%;
 		font-size: small;
 	}
-}
-@media screen and (max-width: 270px) {
 	.select-styling {
-		background-color: rgb(216, 34, 34);
-		font-size: x-small;
+		font-size: small;
 	}
-	.input-field {
-		font-size: x-small;
+	.movie-styling {
+		grid-template-columns: 1fr;
 	}
 }

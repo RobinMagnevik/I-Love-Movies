@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
-import { useSelector } from "react-redux";
 import "../cssFolder/editForm.css";
 import FadeEffect from './FadeEffect'
 
@@ -76,7 +75,7 @@ const EditForm = ({ item }) => {
 						rows="5"
 					></textarea>
 
-						<textarea className="rating"
+						<input className="rating"
 							placeholder="0-10"
 							type="number"
 							name="rating"
@@ -84,7 +83,7 @@ const EditForm = ({ item }) => {
 							onChange={handleChange}
 							cols="10"
 							rows="1"
-						></textarea>
+						/>
 					<div>
 
 						<input

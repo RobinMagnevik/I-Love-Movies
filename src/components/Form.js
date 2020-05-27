@@ -10,6 +10,11 @@ const Form = () => {
 	const [broadcastError, setBroadcastError] = useState("");
 	const [isOK, setIsOK] = useState(null);
 	const [hasError, setHasError] = useState(null);
+	const [isTitleTouched, setIsTitleTouched] = useState(false)
+	const [isDescriptionTouched, setIsDescriptionTouched] = useState(false)
+	const [isYearTouched, setIsYearTouched] = useState(false)
+	const [isGenreTouched, setIsGenreTouched] = useState(false)
+
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div className="threeLatestDiv" key={item.film.id}>
@@ -31,8 +36,8 @@ const Form = () => {
 		poster:
 			"http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg",
 		description: "",
-		genre: "",
-		ofType: "",
+		genre: '',
+		ofType: '',
 		year: "",
 		rating: "",
 	});
@@ -59,14 +64,12 @@ const Form = () => {
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
-			!movie.ofType.trim('') || !movie.year.length < 5
+			!movie.ofType.trim('') || movie.year.length > 5
 		) {
-			console.log('inside if after submit');
 			
 			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
 		} else {
-			console.log('inside else after submit');
 			
 			setBroadcastError('')
 			setHasError(null)
@@ -83,6 +86,10 @@ const Form = () => {
 				rating: "",
 			});
 			dispatch(actions.addToMovieList(movie));
+			document.getElementById('radio-movie').checked = false;
+			document.getElementById('radio-serie').checked = false;
+			document.getElementById('genre').selectedIndex = 0;
+
 		}
 	};
 
@@ -99,13 +106,12 @@ const Form = () => {
 		<div className="main-container">
 			<div>
 				<form className="form-style" onSubmit={handleSubmit}>
-					{/* {errors.title && <span>{errors.title}</span>}  */}
 					<h2 className="form-style-h2">Add movies or series</h2>
 					<br></br>
 					<small
 						className="title-error-message"
 						style={
-							movie.title.trim("") ? { display: "none" } : { display: "block" }
+							!movie.title.trim("") && isTitleTouched ? { display: "block" } : { display: "none" }
 						}
 					>
 						{broadcastError}
@@ -116,13 +122,14 @@ const Form = () => {
 						name="title"
 						value={movie.title}
 						onChange={handleChange}
+						onBlur={() => setIsTitleTouched(true)}
 					/>
 					<small
 						className="textarea-error-message"
 						style={
-							movie.description.trim("")
-								? { display: "none" }
-								: { display: "block" }
+							!movie.description.trim("") && isDescriptionTouched
+								? { display: "block" }
+								: { display: "none" }
 						}
 					>
 						{broadcastError}
@@ -137,9 +144,10 @@ const Form = () => {
 						cols="20"
 						rows="5"
 						maxLength="180"
+						onBlur={() => setIsDescriptionTouched(true)}
 					></textarea>
 
-						<textarea className="rating"
+						<input className="rating"
 							placeholder="0-10"
 							type="number"
 							name="rating"
@@ -147,10 +155,10 @@ const Form = () => {
 							onChange={handleChange}
 							cols="10"
 							rows="1"
-						>/10</textarea>
+						/>
 
 					<div className="form-style-div-label">
-						<small className='year-error-message' style={movie.year.trim('') ? {display: 'none'} : {display: 'block'}}>{broadcastError}{" "} </small>
+						<small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small>
 						<small className='year-error-message' style={movie.year.length < 5 ? {display: 'none'} : {display: 'block'}}>Format: YYYY</small>
 						<input
 							maxLength="4"
@@ -159,20 +167,21 @@ const Form = () => {
 							name="year"
 							value={movie.year}
 							onChange={handleChange}
+							onBlur={() => setIsYearTouched(true)}
 						/>
 						<div>
 							<small
 								className="genre-error-message"
 								style={
-									movie.genre.trim("")
-										? { display: "none" }
-										: { display: "block" }
+									!movie.genre.trim("") && isGenreTouched
+										? { display: "block" }
+										: { display: "none" }
 								}
 							>
 								{broadcastError}
 							</small>
 							<label htmlFor="genre">Genre: </label>
-							<select name="genre" id="genre" onChange={handleChange}>
+							<select name="genre" id="genre" onChange={handleChange} onBlur={() => setIsGenreTouched(true)}>
 								<option value=""></option>
 								<option value="Action">Action</option>
 								<option value="Anime">Anime</option>
@@ -193,6 +202,7 @@ const Form = () => {
 								type="radio"
 								name="ofType"
 								className="Movie"
+								id='radio-movie'
 								onChange={handleChange}
 							/>
 							<label htmlFor="Serie">Serie: </label>
@@ -200,6 +210,7 @@ const Form = () => {
 								value="serie"
 								type="radio"
 								name="ofType"
+								id='radio-serie'
 								className="Serie"
 								onChange={handleChange}
 							/>

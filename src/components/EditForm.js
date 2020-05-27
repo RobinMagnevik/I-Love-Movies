@@ -8,20 +8,7 @@ import FadeEffect from './FadeEffect'
 const EditForm = ({ item }) => {
 	const dispatch = useDispatch();
 	const [show, setShow] = useState(false);
-	console.log('item: ', item)
-	const data = useSelector((state) => state.addFavoriteList);
-	console.log('data: ', data);
-	// const latestList = data.slice(-3).map((item) => (
-	// 	<div key={item.id}>
-	// 		<h2>{item.film.title} </h2>
-	// 		<p>Genre: {item.film.genre}</p>
-	// 		<p>About: {item.film.description}</p>
-	// 		<p>Year: {item.film.year}</p>
-	// 		<p>{item.film.ofType}</p>
-	// 		<p>Rating: {item.film.rating} </p>
-	// 	</div>
-	// ));
-	// console.log('Latestlist: ', latestList);
+
 
 	const [movie, setMovie] = useState({
 		id: item.film.id,

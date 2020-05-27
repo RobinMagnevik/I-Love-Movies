@@ -66,9 +66,9 @@ const Form = () => {
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
 			!movie.ofType.trim('') || 
-			!movie.rating.trim('') ||
-			movie.year.length > 4 ||
-			movie.year.length < 4 ||
+			movie.year.length > 5 ||
+			movie.year.length < 3 ||
+			movie.rating > 11 ||
 			movie.rating < 0 ||
 			movie.rating > 10
 			
@@ -169,7 +169,6 @@ const Form = () => {
 						/>
 
 					<div className="form-style-div-label">
-						{/* <small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small> */}
 						<small className='year-error-message' style={movie.year.length !== 4 && isYearTouched ? {display: 'block'} : {display: 'none'}}>Format: YYYY</small>
 						<input
 							maxLength="4"

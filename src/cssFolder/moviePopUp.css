@@ -119,6 +119,7 @@
   .popUpX:hover {
 	font-weight: bold;
 	color: white;
+	transition: all 0.7s ease 0s;
   }
   
   .popUpShowDetails {
@@ -126,9 +127,10 @@
 	cursor: pointer;
   }
   
-  .popUpShowDetails:hover {
+  /* .popUpShowDetails:hover {
 	color: orangered;
-  }
+	transition: all 0.7s ease 0s;
+  } */
 
   @media (max-width: 690px) {
 	.popUpDiv {

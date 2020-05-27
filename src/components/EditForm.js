@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
-import { useSelector } from "react-redux";
 import "../cssFolder/editForm.css";
 import FadeEffect from './FadeEffect'
 

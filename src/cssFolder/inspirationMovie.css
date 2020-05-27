@@ -53,6 +53,8 @@
 }
 
 .contentTitle {
+    display: flex;
+    flex-direction: column;
     color: white;
     text-align: center;
     background-color: #101010;
@@ -95,6 +97,11 @@
     padding-top: 10px;
     margin: 0;
     background-color: #101010;
+}
+.broadcastMessage{
+    width: auto;
+    word-wrap: normal;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 500px) {

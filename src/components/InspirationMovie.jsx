@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { inspoActions, STATUS } from '../features/InspoMovie';
 import { actions } from "../features/addFavoriteList";

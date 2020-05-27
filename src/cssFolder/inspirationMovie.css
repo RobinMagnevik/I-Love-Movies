@@ -72,14 +72,14 @@
     background-color: #101010; 
 }
 .movieInfo > p {
-    width: 30%;
+    width: 270px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     background-color: #101010;
 }
 .description{
-    width: 30%;
+    width: auto;
     word-wrap: normal;
     margin-bottom: 10px;
 }
@@ -93,3 +93,9 @@
     margin: 0;
     background-color: #101010;
 }
+
+@media (max-width: 500px) {
+    .movieInfo > p {
+        width: 70%;
+    }
+  }

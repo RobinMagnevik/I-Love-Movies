@@ -14,7 +14,7 @@ const Form = () => {
 	const [isDescriptionTouched, setIsDescriptionTouched] = useState(false)
 	const [isYearTouched, setIsYearTouched] = useState(false)
 	const [isGenreTouched, setIsGenreTouched] = useState(false)
-
+	const [isRatingTouched, setIsRatingTouched] = useState(false)
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div className="threeLatestDiv" key={item.film.id}>
@@ -51,6 +51,7 @@ const Form = () => {
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
+			!movie.rating ||
 			!movie.ofType){
 				setBroadcastError("Tip: Field required")
 			}
@@ -64,12 +65,18 @@ const Form = () => {
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
-			!movie.ofType.trim('') || movie.year.length > 5
-		) {
+			!movie.ofType.trim('') || 
+			!movie.rating.trim('') ||
+			movie.year.length > 4 ||
+			movie.year.length < 4 ||
+			movie.rating < 0 ||
+			movie.rating > 10
 			
+		) {
 			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
-		} else {
+		} 
+		else {
 			
 			setBroadcastError('')
 			setHasError(null)
@@ -89,7 +96,9 @@ const Form = () => {
 			document.getElementById('radio-movie').checked = false;
 			document.getElementById('radio-serie').checked = false;
 			document.getElementById('genre').selectedIndex = 0;
-
+			setIsDescriptionTouched(false)
+			setIsYearTouched(false)
+			setIsGenreTouched(false)
 		}
 	};
 
@@ -146,7 +155,8 @@ const Form = () => {
 						maxLength="180"
 						onBlur={() => setIsDescriptionTouched(true)}
 					></textarea>
-
+						<small className='rating-error-message' style={movie.rating > 10 && isRatingTouched ? {display: 'block'} : {display: 'none'}}>Format: 1-10</small>
+						<small className='rating-error-message' style={movie.rating < 0 && isRatingTouched ? {display: 'block'} : {display: 'none'}}>Format: 1-10</small>
 						<input className="rating"
 							placeholder="0-10"
 							type="number"
@@ -155,11 +165,12 @@ const Form = () => {
 							onChange={handleChange}
 							cols="10"
 							rows="1"
+							onBlur={() => setIsRatingTouched(true)}
 						/>
 
 					<div className="form-style-div-label">
-						<small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small>
-						<small className='year-error-message' style={movie.year.length < 5 ? {display: 'none'} : {display: 'block'}}>Format: YYYY</small>
+						{/* <small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small> */}
+						<small className='year-error-message' style={movie.year.length !== 4 && isYearTouched ? {display: 'block'} : {display: 'none'}}>Format: YYYY</small>
 						<input
 							maxLength="4"
 							placeholder="Year"
@@ -170,6 +181,7 @@ const Form = () => {
 							onBlur={() => setIsYearTouched(true)}
 						/>
 						<div>
+							
 							<small
 								className="genre-error-message"
 								style={

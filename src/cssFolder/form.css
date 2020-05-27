@@ -63,13 +63,13 @@ input[type="file"] {
 .year-error-message {
 	margin-top: 1em;
 }
-.rating-error-message{
+.rating-error-message {
 	top: 35.5em;
 }
 input.rating {
-		width: 5em;
-		margin-left: auto;
-		margin-right: auto;
+	width: 5em;
+	margin-left: auto;
+	margin-right: auto;
 }
 /* .genre-error-message{
 
@@ -118,6 +118,11 @@ input.rating {
 .threeLatestDescription {
 	padding: 10px 5px 10px 5px;
 	height: auto;
+	width: 270px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #101010;
 }
 
 .threeLatestRating {

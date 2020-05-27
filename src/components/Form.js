@@ -14,7 +14,6 @@ const Form = () => {
 	const [isDescriptionTouched, setIsDescriptionTouched] = useState(false)
 	const [isYearTouched, setIsYearTouched] = useState(false)
 	const [isGenreTouched, setIsGenreTouched] = useState(false)
-
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div className="threeLatestDiv" key={item.film.id}>
@@ -51,6 +50,7 @@ const Form = () => {
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
+			!movie.rating ||
 			!movie.ofType){
 				setBroadcastError("Tip: Field required")
 			}
@@ -64,12 +64,17 @@ const Form = () => {
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
-			!movie.ofType.trim('') || movie.year.length > 5
-		) {
+			!movie.ofType.trim('') || 
+			movie.year.length > 5 ||
+			(movie.rating.trim('') >= 11 && movie.rating.trim('') < 0)
 			
+		) {
 			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
-		} else {
+		}else if(movie.rating.trim('') >= 11 && movie.rating.trim('') < 0){
+			setHasError('Rating needs to be between 1 to 10')
+		} 
+		else {
 			
 			setBroadcastError('')
 			setHasError(null)
@@ -89,7 +94,9 @@ const Form = () => {
 			document.getElementById('radio-movie').checked = false;
 			document.getElementById('radio-serie').checked = false;
 			document.getElementById('genre').selectedIndex = 0;
-
+			setIsDescriptionTouched(false)
+			setIsYearTouched(false)
+			setIsGenreTouched(false)
 		}
 	};
 
@@ -146,7 +153,6 @@ const Form = () => {
 						maxLength="180"
 						onBlur={() => setIsDescriptionTouched(true)}
 					></textarea>
-
 						<input className="rating"
 							placeholder="0-10"
 							type="number"
@@ -170,6 +176,7 @@ const Form = () => {
 							onBlur={() => setIsYearTouched(true)}
 						/>
 						<div>
+							
 							<small
 								className="genre-error-message"
 								style={

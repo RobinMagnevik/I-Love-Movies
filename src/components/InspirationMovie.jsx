@@ -31,6 +31,8 @@ const handleSubmit = (content) => {
     }
      else {
         content.title = 'Something went wrong. Could not retrieve movie.';
+        content.year = '1';
+        content.rating = '';
     }
 
     useEffect(() => {
@@ -49,15 +51,16 @@ const handleSubmit = (content) => {
                     setIsOK("");}
                 }> Get serie suggestion! </button>
             </div>
-            <h2 id="contentTitle">{content.title} ({content.year})</h2>
+            <h2 style={ status === STATUS.SUCCESS ? {display: 'block'}: {display: 'none'}} id="contentTitle">{content.title} ({content.year})</h2>
+            <h2 style={ status === STATUS.FAILURE ? {display: 'block'}: {display: 'none'}} id="contentTitle">{content.title}</h2>
             <div className="movieInfo">
                 <p>{content.genre}</p>
                 <img className="contentPoster" src={content.poster} alt="" />
                 <p className="description">{content.description}</p>
-                <p><span className="fa moviePopUp" >&#xf005;</span>{content.rating +'/10'}</p>
+                <p style={ status === STATUS.SUCCESS ? {display: 'block'}: {display: 'none'}}><span  className="fa moviePopUp" >&#xf005;</span>{content.rating +'/10'}</p>
             </div>
             <div className="buttonDivBottom">
-                <button className="addButton" onClick={() => handleSubmit(content)}>Add to favorites!</button>
+                <button className="addButton" disabled={status === STATUS.FAILURE} onClick={() => handleSubmit(content)}>Add to favorites!</button>
             </div>
             <br></br>
             <p className="broadcastMessage"

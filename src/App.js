@@ -7,7 +7,7 @@ import StartPage from "./components/StartPage";
 import WelcomeBackPage from "./components/WelcomeBackPage";
 
 function App() {
-	const [toShow, setToShow] = useState("");
+	const [toShow, setToShow] = useState("addTitles");
 
 	const [localStorageName] = useState(() => {
 		let localStorageName = window.localStorage.getItem("name");

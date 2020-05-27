@@ -65,14 +65,12 @@ const Form = () => {
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
 			!movie.ofType.trim('') || 
-			movie.year.length > 5 ||
-			(movie.rating.trim('') >= 11 && movie.rating.trim('') < 0)
+			movie.year.length < 5 ||
+			movie.year.length > 3
 			
 		) {
 			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
-		}else if(movie.rating.trim('') >= 11 && movie.rating.trim('') < 0){
-			setHasError('Rating needs to be between 1 to 10')
 		} 
 		else {
 			
@@ -165,7 +163,7 @@ const Form = () => {
 
 					<div className="form-style-div-label">
 						<small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small>
-						<small className='year-error-message' style={movie.year.length < 5 ? {display: 'none'} : {display: 'block'}}>Format: YYYY</small>
+						<small className='year-error-message' style={movie.year.length === 4 && isYearTouched ? {display: 'block'} : {display: 'none'}}>Format: YYYY</small>
 						<input
 							maxLength="4"
 							placeholder="Year"

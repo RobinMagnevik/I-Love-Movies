@@ -15,17 +15,10 @@ const [show, setShow] = useState(false);
           <img className="popUpImg" src={item.film.poster} alt="" />
           <h3 className="popUpTitleYear"> {item.film.title} ({item.film.year})</h3>
 		  <p className="popUpAbout">{item.film.description}</p>
-
-
 		  <p className="popUpGenre">{item.film.genre}</p>
-	
-
-		  <p className="popUpRating"> <span className="fa moviePopUp" >&#xf005;</span>{item.film.rating}</p> 
-		  
-          
+		  <p className="popUpRating"> <span className="fa moviePopUp" >&#xf005;</span>{item.film.rating}</p>
         </div>
       </div> 
-	  <br/>
 	</FadeEffect> 
 	<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> Details </button>
 	</div>
@@ -33,63 +26,4 @@ const [show, setShow] = useState(false);
 };
 
 export default MoviePopUp;
-
-
-// import React, { useState } from "react";
-// import "../cssFolder/moviePopUp.css";
-
-// const MoviePopUp = ({ item }) => {
-//   const [toggle, setToggle] = useState(false);
-
-//   return (
-//     <div> {toggle &&
-//       <div
-//         className="popUpModal"
-//         onClick={() => setToggle((toggle) => !toggle)}
-//       >
-//         <div className="popUpDiv">
-// 		<p className="popUpX" onClick={() => setToggle((toggle) => toggle)}>x</p>
-//           <div className="popUpImg"></div>
-//           <p className="popUpTitle"><span>{item.film.title}</span></p>
-// 		  <p className="popUpAbout">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel orci iaculis odio pellentesque aliquam. Nam consectetur posuere odio, sit amet finibus leo pharetra ac.</p>
-//           <span className="popUpGenre">Action</span>
-//           <span className="popUpYear">2012</span>
-// 		  <span className="popUpRating">Rating: 5</span>
-//         </div>
-//       </div> }
-// 	  <br/>
-// 	  <span className="popUpShowDetails" onClick={() => setToggle((toggle) => !toggle)}>Show details</span>
-//     </div>
-//   );
-// };
-
-// export default MoviePopUp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

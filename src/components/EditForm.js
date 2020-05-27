@@ -36,6 +36,17 @@ const EditForm = ({ item }) => {
 			);
 		}
 	};
+	const showImage = (event) => {
+		let img = event.target.files[0];
+		const reader = new FileReader();
+		reader.readAsDataURL(img);
+		reader.onload = function () {
+			const imgData = reader.result;
+			setMovie(
+				{ ...movie, poster: imgData}
+			)
+		};
+	};
 
 	const handleClick = () => dispatch(actions.addToMovieList(movie));
 
@@ -119,6 +130,13 @@ const EditForm = ({ item }) => {
 						</div>
 						
 					</div>
+					<br />
+					<input
+						type="file"
+						id="image"
+						accept=".png, .jpeg, .jpg"
+						onChange={showImage}
+					></input>
 					<br />
 					<button
 						type="submit"

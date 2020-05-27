@@ -20,7 +20,7 @@ const Form = () => {
 			<img className="threeLatestPoster" src={item.film.poster} alt="" />
 			<p className="threeLatestDescription">{item.film.description}</p>
 			<p className="threeLatestRating">
-				<span className="fa">&#xf005;</span> {item.film.rating}{" "}
+				<span className="fa">&#xf005;</span> {item.film.rating + '/10'}{" "}
 			</p>
 		</div>
 	));
@@ -34,7 +34,7 @@ const Form = () => {
 		genre: "",
 		ofType: "",
 		year: "",
-		rating: "0/10",
+		rating: "",
 	});
 
 	const handleChange = (e) => {
@@ -94,7 +94,6 @@ const Form = () => {
 			setMovie({ ...movie, poster: imgData });
 		};
 	};
-
 	return (
 		<div className="main-container">
 			<div>
@@ -140,7 +139,7 @@ const Form = () => {
 					></textarea>
 
 						<textarea className="rating"
-							placeholder="0/10"
+							placeholder="0-10"
 							type="number"
 							name="rating"
 							value={movie.rating}

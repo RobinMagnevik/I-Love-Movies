@@ -48,6 +48,7 @@ input[type="file"] {
 .textarea-error-message,
 .title-error-message,
 .year-error-message,
+.rating-error-message,
 .genre-error-message {
 	color: orange;
 	position: absolute;
@@ -61,6 +62,9 @@ input[type="file"] {
 }
 .year-error-message {
 	margin-top: 1em;
+}
+.rating-error-message{
+	top: 35.5em;
 }
 input.rating {
 		width: 5em;

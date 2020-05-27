@@ -13,10 +13,12 @@ const [show, setShow] = useState(false);
         <div className="popUpDiv">
 		<p className="popUpX" onClick={() => setShow(show => show)}> x </p>
           <img className="popUpImg" src={item.film.poster} alt="" />
-          <h3 className="popUpTitleYear"> {item.film.title} ({item.film.year})</h3>
+          <p className="popUpTitleYear"> {item.film.title} ({item.film.year})</p>
 		  <p className="popUpAbout">{item.film.description}</p>
+		  <div className="popUpGenreRatingDiv">
 		  <p className="popUpGenre">{item.film.genre}</p>
 		  <p className="popUpRating"> <span className="fa moviePopUp" >&#xf005;</span>{item.film.rating}</p>
+		  </div>
         </div>
       </div> 
 	</FadeEffect> 

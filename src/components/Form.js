@@ -137,6 +137,16 @@ const Form = () => {
 						maxLength="180"
 					></textarea>
 
+						<textarea className="rating"
+							placeholder="0/10"
+							type="number"
+							name="rating"
+							value={movie.rating}
+							onChange={handleChange}
+							cols="10"
+							rows="1"
+						></textarea>
+
 					<div className="form-style-div-label">
 						<small
 							className="year-error-message"

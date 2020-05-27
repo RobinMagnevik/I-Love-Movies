@@ -11,7 +11,7 @@
 	background-color: #000000;
 	display: flex;
 	flex-direction: column;
-	margin-top: 1em;
+	margin-top: 2em;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 2.5em;
@@ -41,19 +41,39 @@ input[type="file"] {
 	background-color: transparent;
 	margin-left: 150px;
 }
+.form-textarea{
+	margin-top: 20px;
+}
+.textarea-error-message, .title-error-message, .year-error-message, .genre-error-message{
+	color: orange;
+	position: absolute;
+	background-color: transparent;
+}
+.textarea-error-message{
+	top: 26em;
+}
+.title-error-message{
+	padding-top: 38px;
+}
+.year-error-message{
+margin-top: 1em;
+}
+/* .genre-error-message{
 
+} */
 .addFavoriteToListButton {
-	padding: 0.3em;
-	width: 80px;
-	border: none;
-	margin-left: 40%;
-	font-size: 0.9em;
-	font-weight: bold;
 	background-color: #ff2e00;
+	color: white;
+	height: 35px;
+	width: 75px;
+	font-size: 1em;
+	border: none;
+	cursor: pointer;
+	border-radius: 1px;
 }
 .addFavoriteToListButton:hover {
-	cursor: pointer;
-	background-color: #ff2f00dc;
+	background-color: white;
+	color: black;
 }
 .three-latest {
 	display: grid;
@@ -61,8 +81,40 @@ input[type="file"] {
 	grid-gap: 1.5em;
 	font-size: large;
 	margin-top: 50px;
+	margin-bottom: 50px;
+	
 }
 
+.threeLatestTitle{
+	height: 80px;
+}
+
+.threeLatestGenre{
+	align-self: center;
+	height: 55px;
+}
+
+
+.threeLatestPoster{
+	height: 300px;
+	width: 200px;
+	background-position: center;
+	justify-self: center;
+}
+
+.threeLatestDescription{
+padding: 10px 5px 10px 5px;
+height: auto;
+
+}
+
+.threeLatestRating{
+	height: 30px;
+	margin-bottom: 50px;
+}
 .broadcast-message {
-	color: green;
+	background-color: transparent;
+}
+#image{
+	color: white;
 }

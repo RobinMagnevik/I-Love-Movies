@@ -9,7 +9,6 @@ import EditForm from "./EditForm";
 const FilterMovies = () => {
 	const [search, setSearch] = useState("");
 	const [mode, setMode] = useState("all");
-	// const [toggle, setToggle] = useState(false)
 
 	const data = useSelector((state) => state.addFavoriteList);
 	// const filmList = data.map(item => (
@@ -22,7 +21,6 @@ const FilterMovies = () => {
 	// 	</div>
 	// ))
 
-	console.log('data favorit: ', data);
 
 	const dispatch = useDispatch();
 
@@ -35,12 +33,9 @@ const FilterMovies = () => {
 				return (
 					<div>
 						<div key={item.title}>
-							<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
-							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
-							<p>Rating: {item.film.rating} </p>
+						<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -59,12 +54,9 @@ const FilterMovies = () => {
 		return (
 			<div key={item.film.title}>
 				<div>
-				<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
-							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
-							<p>Rating: {item.film.rating} </p>
+				<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -143,17 +135,15 @@ const FilterMovies = () => {
 				{mode === "all" ? (
 					<div className="movie-styling">{mixedList}</div>
 				) : null}
+
+				
 				{mode === "movies" ? (
 					<div className="movie-styling">
 						{filterByMovie.map((item) => (
 							<div key={item.film.title}>
-							<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
-							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
-							<p>Rating: {item.film.rating} </p>
-							<MoviePopUp item={item} key={item.id} />
+							<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span>{item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />
@@ -170,13 +160,10 @@ const FilterMovies = () => {
 				{mode === "series" ? (
 					<div className="movie-styling">
 						{filterBySerie.map((item) => (
-							<div className="movie-styling" key={item.film.title}>
-							<h2>{item.film.title} ({item.film.year})</h2>
-							{/* <p>{item.film.genre}</p> */}
-							<img src={item.film.poster} alt="" />
-							{/* <p>{item.film.description}</p> */}
-							{/* <p>{item.film.ofType}</p> */}
-							<p>Rating: {item.film.rating} </p>
+							<div key={item.film.title}>
+							<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
+							<img className="posterFavoritePage" src={item.film.poster} alt="" />
+							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating} </p>
 
 							<div className="showDeleteEditButtonsDiv">
 							<MoviePopUp item={item} key={item.id} />

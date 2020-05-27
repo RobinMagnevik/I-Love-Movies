@@ -1,72 +1,93 @@
 @keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes fadeOut {
-	0% {
-	  opacity: 1;
-	}
-	100% {
-	  opacity: 0;
-	}
+  100% {
+    opacity: 1;
   }
-
-.startPageDiv{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	background-color: black; 
 }
 
-.startPageInnerDiv{
-	margin-top: 48px;
-	width: 500px;
-	height: 150px;
-	background-color: black;
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.header{
-	color: orangered;
-	background-color: black;
-}
-.startPageWelcomePhrase{
-	background-color: black;
-	color: white;
-	margin-top: 25px;
-}
-
-.startPageInput{
-height: 20px;
-  margin-top: 25px;
-  text-align: center; 
+.startPageDiv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
   background-color: black;
 }
 
-.startPageWelcomeButton{
-	background-color: white;
-	color: black;
-	height: 20px;
-	width: 70px;
-	border: 2px solid white;
-	cursor: pointer;
+.startPageInnerDiv {
+  background-color: black;
+  align-self: center;
 }
 
-.startPageForm{
-	background-color: black;
+.startPageheader {
+  font-size: 3em;
+  color: #ff2e00;
+  background-color: black;
 }
 
-.welcomeBackForm{
-	background-color: black;
+.startPageWelcomePhrase {
+  background-color: black;
+  color: white;
+  margin-top: 25px;
+  font-size: 1.5em;
+  padding: 0 15px 0 15px;
 }
 
-/* .welcomeHeaderText{
-	text-align: center;
-} */
+.startPageInput {
+  height: 30px;
+  font-size: 1em;
+  margin-top: 25px;
+  text-align: center;
+  background-color: black;
+  border-radius: 2px;
+}
+
+.startPageInput:focus{
+	outline: none;
+	border: 2px solid #ff2e00;
+}
+
+.startPageWelcomeButton {
+  background-color: #ff2e00;
+  color: white;
+  height: 38px;
+  width: 75px;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 1px;
+}
+
+.startPageWelcomeButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.startPageForm {
+  background-color: black;
+}
+
+.welcomeBackForm {
+  background-color: black;
+}
+
+@media screen and (max-width: 400px) {
+	.startPageheader {
+		font-size: 2.4em;
+	  }
+	  .startPageWelcomePhrase {
+		font-size: 1em;
+	  }
+}

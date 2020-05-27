@@ -38,37 +38,38 @@ const Form = () => {
 	});
 
 	const handleChange = (e) => {
-		console.log(movie.title);
-		if (
-			!movie.title.trim("") ||
-			!movie.description.trim("") ||
-			!movie.genre.trim("") ||
-			!movie.year.trim("") ||
-			!movie.ofType
-		) {
-			setMovie({
-				...movie,
-				[e.target.name]: e.target.value,
-			});
-			setBroadcastError("Tip: Field required");
-		}
+		setMovie({
+			...movie,
+			[e.target.name]: e.target.value,
+		});
+		if(	!movie.title.trim('') ||
+			!movie.description.trim('') ||
+			!movie.genre.trim('') ||
+			!movie.year.trim('') ||
+			!movie.ofType){
+				setBroadcastError("Tip: Field required")
+			}
+		
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (
-			!movie.title.trim("") ||
-			!movie.description.trim("") ||
-			!movie.genre.trim("") ||
-			!movie.year.trim("") ||
-			!movie.ofType ||
-			movie.year.length < 5
+			!movie.title.trim('') ||
+			!movie.description.trim('') ||
+			!movie.genre.trim('') ||
+			!movie.year.trim('') ||
+			!movie.ofType.trim('')
 		) {
-			setIsOK(null);
+			console.log('inside if after submit');
+			
+			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
 		} else {
-			setBroadcastError("");
-			setHasError(null);
+			console.log('inside else after submit');
+			
+			setBroadcastError('')
+			setHasError(null)
 			setIsOK("Item has been successfully added!");
 			setMovie({
 				id: uuidv4(),
@@ -149,24 +150,8 @@ const Form = () => {
 						>/10</textarea>
 
 					<div className="form-style-div-label">
-						<small
-							className="year-error-message"
-							style={
-								movie.year.trim("") ? { display: "none" } : { display: "block" }
-							}
-						>
-							{broadcastError}{" "}
-						</small>
-						<small
-							className="year-error-message"
-							style={
-								movie.year.length < 5
-									? { display: "none" }
-									: { display: "block" }
-							}
-						>
-							Format: XXXX
-						</small>
+						<small className='year-error-message' style={movie.year.trim('') ? {display: 'none'} : {display: 'block'}}>{broadcastError}{" "} </small>
+						<small className='year-error-message' style={movie.year.length < 5 ? {display: 'none'} : {display: 'block'}}>Format: YYYY</small>
 						<input
 							maxLength="4"
 							placeholder="Year"

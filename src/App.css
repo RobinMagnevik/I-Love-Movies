@@ -47,8 +47,12 @@ header {
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  /* color: white; */
   font-size: 24px;
+}
+
+.navButton:hover{
+	color: #FF2E00;
+	transition: all 0.7s ease 0s;
 }
 
 

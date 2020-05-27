@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../cssFolder/moviePopUp.css";
 import FadeEffect from './FadeEffect'
 
-
+ 
 const MoviePopUp = ({ item }) => {
 const [show, setShow] = useState(false);
 

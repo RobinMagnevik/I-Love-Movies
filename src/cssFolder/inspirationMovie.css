@@ -104,8 +104,3 @@
     margin-bottom: 30px;
 }
 
-@media (max-width: 500px) {
-    .movieInfo > p {
-        width: 70%;
-    }
-  }

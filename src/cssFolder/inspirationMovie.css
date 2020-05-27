@@ -37,16 +37,19 @@
 .addButton:hover{
 	background-color: white;
 	color: black;
+	transition: all 0.7s ease 0s;
 }
 
 .movieButton:hover{
 	background-color: white;
  color: black;
+ transition: all 0.7s ease 0s;
 }
 
 .serieButton:hover{
 	background-color: white;
 	color: black;
+	transition: all 0.7s ease 0s;
 }
 
 .contentTitle {

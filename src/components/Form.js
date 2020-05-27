@@ -34,6 +34,7 @@ const Form = () => {
 		genre: "",
 		ofType: "",
 		year: "",
+		rating: "0/10",
 	});
 
 	const handleChange = (e) => {
@@ -78,6 +79,7 @@ const Form = () => {
 				genre: "",
 				ofType: "",
 				year: "",
+				rating: "",
 			});
 			dispatch(actions.addToMovieList(movie));
 		}
@@ -145,7 +147,7 @@ const Form = () => {
 							onChange={handleChange}
 							cols="10"
 							rows="1"
-						></textarea>
+						>/10</textarea>
 
 					<div className="form-style-div-label">
 						<small

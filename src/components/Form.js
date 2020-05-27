@@ -151,7 +151,7 @@ console.log(isDescriptionTouched);
 						onBlur={() => setIsDescriptionTouched(true)}
 					></textarea>
 
-						<textarea className="rating"
+						<input className="rating"
 							placeholder="0-10"
 							type="number"
 							name="rating"
@@ -159,7 +159,7 @@ console.log(isDescriptionTouched);
 							onChange={handleChange}
 							cols="10"
 							rows="1"
-						>/10</textarea>
+						/>
 
 					<div className="form-style-div-label">
 						<small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small>

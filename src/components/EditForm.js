@@ -77,7 +77,7 @@ const EditForm = ({ item }) => {
 					></textarea>
 
 						<textarea className="rating"
-							placeholder="Rating"
+							placeholder="0-10"
 							type="number"
 							name="rating"
 							value={movie.rating}

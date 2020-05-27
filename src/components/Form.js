@@ -91,7 +91,7 @@ console.log(isDescriptionTouched);
 			dispatch(actions.addToMovieList(movie));
 			document.getElementById('radio-movie').checked = false;
 			document.getElementById('radio-serie').checked = false;
-			// document.getElementsByTagName('select').selectedIndex = 0;
+			document.getElementById('genre').selectedIndex = 0;
 
 		}
 	};

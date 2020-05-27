@@ -112,6 +112,7 @@ input.rating {
 	width: 200px;
 	background-position: center;
 	justify-self: center;
+	border: 2px solid white;
 }
 
 .threeLatestDescription {

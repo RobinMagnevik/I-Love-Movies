@@ -82,6 +82,7 @@
 	height: 350px;
 	width: 250px;
 	background-position: center;
+	border: 2px solid white;
 }
 
 .ratingFavoritePage {

@@ -46,7 +46,7 @@ const handleSubmit = (content) => {
                 <p>{content.genre}</p>
                 <img className="contentPoster" src={content.poster} alt="" />
                 <p className="description">{content.description}</p>
-                <p>Rating: {content.rating}</p>
+                <p><span className="fa moviePopUp" >&#xf005;</span>{content.rating}</p>
             </div>
             <div className="buttonDivBottom">
                 <button className="addButton" onClick={() => handleSubmit(content)}>Add to favorites!</button>

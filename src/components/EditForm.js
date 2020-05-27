@@ -33,7 +33,6 @@ const EditForm = ({ item }) => {
 		poster: item.film.poster,
 		rating: item.film.rating,
 	});
-	console.log('MOVIE: ', movie)
 
 	const handleChange = (e) => {
 		setMovie({

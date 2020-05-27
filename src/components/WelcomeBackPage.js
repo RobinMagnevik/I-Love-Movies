@@ -24,7 +24,7 @@ function WelcomeBackPage() {
 		  <div className="startPageInnerDiv">
 		  <h1 className="startPageheader">I LOVE MOVIES</h1>
 			<form className="welcomeBackForm">
-			<p className="startPageWelcomePhrase"> Welcome back {localStorageName}</p>
+			<p className="startPageWelcomePhrase"> Welcome back {localStorageName}!</p>
 			<br />
 				<button type="button" className="startPageWelcomeButton" onClick={() => setShow((show) => !show)}> Thanks </button> <br /> <br />
 				<button className="startPageWelcomeButton" onClick={notMe}>Not me</button>

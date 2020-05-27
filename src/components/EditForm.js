@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "../features/addFavoriteList";
-import { useSelector } from "react-redux";
 import "../cssFolder/editForm.css";
 import FadeEffect from './FadeEffect'
 
@@ -9,25 +8,16 @@ const EditForm = ({ item }) => {
 	const dispatch = useDispatch();
 	const [show, setShow] = useState(false);
 
-	const data = useSelector((state) => state.addFavoriteList);
-	const latestList = data.slice(-3).map((item) => (
-		<div key={item.id}>
-			<h2>{item.film.title} </h2>
-			<p>Genre: {item.film.genre}</p>
-			<p>About: {item.film.description}</p>
-			<p>Year: {item.film.year}</p>
-			<p>{item.film.ofType}</p>
-			<p>Rating: {item.film.rating} </p>
-		</div>
-	));
 
 	const [movie, setMovie] = useState({
-		id: "",
-		title: "",
-		description: "",
-		genre: "action",
-		ofType: "movie",
-		year: "",
+		id: item.film.id,
+		title: item.film.title,
+		description: item.film.description,
+		genre: item.film.genre,
+		ofType: item.film.ofType,
+		year: item.film.year,
+		poster: item.film.poster,
+		rating: item.film.rating,
 	});
 
 	const handleChange = (e) => {
@@ -41,13 +31,20 @@ const EditForm = ({ item }) => {
 		e.preventDefault();
 		if (movie.genre) {
 			setMovie(
-				{ ...movie, title: "" },
-				{ ...movie, description: "" },
-				{ ...movie, genre: "" },
-				{ ...movie, year: "" },
-				{ ...movie, ofType: "" }
+				{...movie}
 			);
 		}
+	};
+	const showImage = (event) => {
+		let img = event.target.files[0];
+		const reader = new FileReader();
+		reader.readAsDataURL(img);
+		reader.onload = function () {
+			const imgData = reader.result;
+			setMovie(
+				{ ...movie, poster: imgData}
+			)
+		};
 	};
 
 	const handleClick = () => dispatch(actions.addToMovieList(movie));
@@ -55,8 +52,7 @@ const EditForm = ({ item }) => {
 	return (
 	<div>
 		<FadeEffect show={show}>
-		<div className="popUpModal">
-			<div>
+		<div className="popUpModalEditForm">
 				<form className="form-style" onSubmit={handleSubmit}>
 					<h2 className="editTitle">Edit</h2>
 					<br></br>
@@ -79,6 +75,15 @@ const EditForm = ({ item }) => {
 						rows="5"
 					></textarea>
 
+						<input className="rating"
+							placeholder="0-10"
+							type="number"
+							name="rating"
+							value={movie.rating}
+							onChange={handleChange}
+							cols="10"
+							rows="1"
+						/>
 					<div>
 
 						<input
@@ -107,7 +112,6 @@ const EditForm = ({ item }) => {
 						<div>
 							<label htmlFor="Movie">Movie: </label>
 							<input
-								checked={true}
 								value="movie"
 								type="radio"
 								name="ofType"
@@ -123,20 +127,26 @@ const EditForm = ({ item }) => {
 								onChange={handleChange}
 							/>
 						</div>
+						
 					</div>
-
+					<br />
+					<input
+						type="file"
+						id="image"
+						accept=".png, .jpeg, .jpg"
+						onChange={showImage}
+					></input>
+					<br />
 					<button
 						type="submit"
 						onClick={() =>
-									{dispatch(actions.updateMovieList(item.film.title)); handleClick()
+									{dispatch(actions.updateMovieList(item.film.title)); handleClick(); setShow(show =>!show)
 								}}
 						className="addFavoriteToListButton"
 					>
 						Update
 					</button>
 				</form>
-			</div>
-
 		</div>
 		</FadeEffect> 
 			<button className="buttonsInFavoriteList" onClick={() => setShow(show => !show)}> 

@@ -20,7 +20,7 @@ const Form = () => {
 			<img className="threeLatestPoster" src={item.film.poster} alt="" />
 			<p className="threeLatestDescription">{item.film.description}</p>
 			<p className="threeLatestRating">
-				<span className="fa">&#xf005;</span> {item.film.rating}{" "}
+				<span className="fa">&#xf005;</span> {item.film.rating + '/10'}{" "}
 			</p>
 		</div>
 	));
@@ -34,40 +34,42 @@ const Form = () => {
 		genre: "",
 		ofType: "",
 		year: "",
+		rating: "",
 	});
 
 	const handleChange = (e) => {
-		console.log(movie.title);
-		if (
-			!movie.title.trim("") ||
-			!movie.description.trim("") ||
-			!movie.genre.trim("") ||
-			!movie.year.trim("") ||
-			!movie.ofType
-		) {
-			setMovie({
-				...movie,
-				[e.target.name]: e.target.value,
-			});
-			setBroadcastError("Tip: Field required");
-		}
+		setMovie({
+			...movie,
+			[e.target.name]: e.target.value,
+		});
+		if(	!movie.title.trim('') ||
+			!movie.description.trim('') ||
+			!movie.genre.trim('') ||
+			!movie.year.trim('') ||
+			!movie.ofType){
+				setBroadcastError("Tip: Field required")
+			}
+		
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (
-			!movie.title.trim("") ||
-			!movie.description.trim("") ||
-			!movie.genre.trim("") ||
-			!movie.year.trim("") ||
-			!movie.ofType ||
-			movie.year.length < 5
+			!movie.title.trim('') ||
+			!movie.description.trim('') ||
+			!movie.genre.trim('') ||
+			!movie.year.trim('') ||
+			!movie.ofType.trim('') || !movie.year.length < 5
 		) {
-			setIsOK(null);
+			console.log('inside if after submit');
+			
+			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
 		} else {
-			setBroadcastError("");
-			setHasError(null);
+			console.log('inside else after submit');
+			
+			setBroadcastError('')
+			setHasError(null)
 			setIsOK("Item has been successfully added!");
 			setMovie({
 				id: uuidv4(),
@@ -78,6 +80,7 @@ const Form = () => {
 				genre: "",
 				ofType: "",
 				year: "",
+				rating: "",
 			});
 			dispatch(actions.addToMovieList(movie));
 		}
@@ -92,7 +95,6 @@ const Form = () => {
 			setMovie({ ...movie, poster: imgData });
 		};
 	};
-
 	return (
 		<div className="main-container">
 			<div>
@@ -137,25 +139,19 @@ const Form = () => {
 						maxLength="180"
 					></textarea>
 
+						<textarea className="rating"
+							placeholder="0-10"
+							type="number"
+							name="rating"
+							value={movie.rating}
+							onChange={handleChange}
+							cols="10"
+							rows="1"
+						>/10</textarea>
+
 					<div className="form-style-div-label">
-						<small
-							className="year-error-message"
-							style={
-								movie.year.trim("") ? { display: "none" } : { display: "block" }
-							}
-						>
-							{broadcastError}{" "}
-						</small>
-						<small
-							className="year-error-message"
-							style={
-								movie.year.length < 5
-									? { display: "none" }
-									: { display: "block" }
-							}
-						>
-							Format: XXXX
-						</small>
+						<small className='year-error-message' style={movie.year.trim('') ? {display: 'none'} : {display: 'block'}}>{broadcastError}{" "} </small>
+						<small className='year-error-message' style={movie.year.length < 5 ? {display: 'none'} : {display: 'block'}}>Format: YYYY</small>
 						<input
 							maxLength="4"
 							placeholder="Year"

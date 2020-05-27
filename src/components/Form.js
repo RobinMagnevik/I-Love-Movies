@@ -37,8 +37,8 @@ console.log(isDescriptionTouched);
 		poster:
 			"http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg",
 		description: "",
-		genre: "",
-		ofType: "",
+		genre: '',
+		ofType: '',
 		year: "",
 		rating: "",
 	});
@@ -65,7 +65,7 @@ console.log(isDescriptionTouched);
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
-			!movie.ofType.trim('') || !movie.year.length < 5
+			!movie.ofType.trim('') || movie.year.length > 5
 		) {
 			console.log('inside if after submit');
 			
@@ -89,6 +89,10 @@ console.log(isDescriptionTouched);
 				rating: "",
 			});
 			dispatch(actions.addToMovieList(movie));
+			document.getElementById('radio-movie').checked = false;
+			document.getElementById('radio-serie').checked = false;
+			// document.getElementsByTagName('select').selectedIndex = 0;
+
 		}
 	};
 
@@ -202,6 +206,7 @@ console.log(isDescriptionTouched);
 								type="radio"
 								name="ofType"
 								className="Movie"
+								id='radio-movie'
 								onChange={handleChange}
 							/>
 							<label htmlFor="Serie">Serie: </label>
@@ -209,6 +214,7 @@ console.log(isDescriptionTouched);
 								value="serie"
 								type="radio"
 								name="ofType"
+								id='radio-serie'
 								className="Serie"
 								onChange={handleChange}
 							/>

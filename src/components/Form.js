@@ -169,7 +169,6 @@ const Form = () => {
 						/>
 
 					<div className="form-style-div-label">
-						{/* <small className='year-error-message' style={!movie.year.trim('') && isYearTouched ? {display: 'block'} : {display: 'none'}}>{broadcastError}{" "} </small> */}
 						<small className='year-error-message' style={movie.year.length !== 4 && isYearTouched ? {display: 'block'} : {display: 'none'}}>Format: YYYY</small>
 						<input
 							maxLength="4"

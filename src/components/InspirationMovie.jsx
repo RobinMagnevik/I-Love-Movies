@@ -95,7 +95,6 @@ async function fetchMovie(dispatch) {
             description: json.Plot,
             genre: json.Genre,
             year: json.Year.substring(0,4),
-            // rating: json.Ratings[0].Value,
             rating: json.imdbRating,
             ofType: json.Type
         };
@@ -120,7 +119,6 @@ async function fetchSerie(dispatch) {
             description: json.Plot,
             genre: json.Genre,
             year: json.Year.substring(0,4),
-            // rating: json.Ratings[0].Value,
             rating: json.imdbRating,
             ofType: json.Type
         };

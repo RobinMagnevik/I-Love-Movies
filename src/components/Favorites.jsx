@@ -11,16 +11,6 @@ const FilterMovies = () => {
 	const [mode, setMode] = useState("all");
 
 	const data = useSelector((state) => state.addFavoriteList);
-	// const filmList = data.map(item => (
-	// 	<div key={item.id}>
-	// 		<p>Title: {item.film.title} </p>
-	// 		<p>Description: {item.film.description} </p>
-	// 		<p>Genre: {item.film.genre}</p>
-	// 		<p>Id: {item.film.id}</p>
-	// 		<p>THROUGH REDUX</p>
-	// 	</div>
-	// ))
-
 
 	const dispatch = useDispatch();
 
@@ -76,39 +66,6 @@ const FilterMovies = () => {
 	let filterBySerie = data.filter((item) => {
 		return item.film.ofType.match("serie");
 	});
-
-	// const serieList = seriesArray.map((serie) => {
-	// 	if (search.length !== 0) {
-	// 		if (
-	// 			serie.title.toLowerCase().match(search.toLowerCase()) ||
-	// 			serie.rating.match(search)
-	// 		) {
-	// 			return (
-	// 				<div key={serie.title}>
-	// 					<h2>{serie.title} </h2>
-	// 					<p>{serie.genre}</p>
-	// 					<p>{serie.description}</p>
-	// 					<p>{serie.year}</p>
-	// 					<p>{serie.ofType}</p>
-	// 					<p>Rating: {serie.rating}</p>
-	// 				</div>
-	// 			);
-	// 		} else {
-	// 			return null;
-	// 		}
-	// 	}
-	// 	return (
-	// 		<div key={serie.title}>
-	// 					<h2>{serie.title} </h2>
-	// 					<p>{serie.genre}</p>
-	// 					<p>{serie.description}</p>
-	// 					<p>{serie.year}</p>
-	// 					<p>{serie.ofType}</p>
-	// 					<p>Rating: {serie.rating}</p>
-	// 				</div>
-	// 	);
-	// });
-	// console.log("värdet av value", mode);
 
 	return (
 		<div className="wrapper">
@@ -179,7 +136,6 @@ const FilterMovies = () => {
 					</div>
 				) : null}
 
-				{/* <div>{filterByMovie}</div> */}
 			</div>
 		</div>
 	);

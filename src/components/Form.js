@@ -29,7 +29,6 @@ const Form = () => {
 			</p>
 		</div>
 	));
-console.log(isDescriptionTouched);
 
 	const [movie, setMovie] = useState({
 		id: uuidv4(),
@@ -67,12 +66,10 @@ console.log(isDescriptionTouched);
 			!movie.year.trim('') ||
 			!movie.ofType.trim('') || movie.year.length > 5
 		) {
-			console.log('inside if after submit');
 			
 			setIsOK(null)
 			setHasError("Please sir/madam! all fields are in need of filling!");
 		} else {
-			console.log('inside else after submit');
 			
 			setBroadcastError('')
 			setHasError(null)
@@ -109,7 +106,6 @@ console.log(isDescriptionTouched);
 		<div className="main-container">
 			<div>
 				<form className="form-style" onSubmit={handleSubmit}>
-					{/* {errors.title && <span>{errors.title}</span>}  */}
 					<h2 className="form-style-h2">Add movies or series</h2>
 					<br></br>
 					<small

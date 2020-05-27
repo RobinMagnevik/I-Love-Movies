@@ -14,6 +14,7 @@ const Form = () => {
 	const [isDescriptionTouched, setIsDescriptionTouched] = useState(false)
 	const [isYearTouched, setIsYearTouched] = useState(false)
 	const [isGenreTouched, setIsGenreTouched] = useState(false)
+	const [isRatingTouched, setIsRatingTouched] = useState(false)
 	const data = useSelector((state) => state.addFavoriteList);
 	const latestList = data.slice(-3).map((item) => (
 		<div className="threeLatestDiv" key={item.film.id}>
@@ -66,7 +67,10 @@ const Form = () => {
 			!movie.year.trim('') ||
 			!movie.ofType.trim('') || 
 			movie.year.length > 5 ||
-			movie.year.length < 3
+			movie.year.length < 3 ||
+			movie.rating > 11 ||
+			movie.rating < 0 ||
+			movie.rating > 10
 			
 		) {
 			setIsOK(null)
@@ -151,6 +155,8 @@ const Form = () => {
 						maxLength="180"
 						onBlur={() => setIsDescriptionTouched(true)}
 					></textarea>
+						<small className='rating-error-message' style={movie.rating > 10 && isRatingTouched ? {display: 'block'} : {display: 'none'}}>Format: 1-10</small>
+						<small className='rating-error-message' style={movie.rating < 0 && isRatingTouched ? {display: 'block'} : {display: 'none'}}>Format: 1-10</small>
 						<input className="rating"
 							placeholder="0-10"
 							type="number"
@@ -159,6 +165,7 @@ const Form = () => {
 							onChange={handleChange}
 							cols="10"
 							rows="1"
+							onBlur={() => setIsRatingTouched(true)}
 						/>
 
 					<div className="form-style-div-label">

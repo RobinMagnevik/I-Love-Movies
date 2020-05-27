@@ -59,7 +59,7 @@ const Form = () => {
 			!movie.description.trim('') ||
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
-			!movie.ofType.trim('')
+			!movie.ofType.trim('') || !movie.year.length < 5
 		) {
 			console.log('inside if after submit');
 			

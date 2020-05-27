@@ -66,9 +66,9 @@ const Form = () => {
 			!movie.genre.trim('') ||
 			!movie.year.trim('') ||
 			!movie.ofType.trim('') || 
-			movie.year.length > 5 ||
-			movie.year.length < 3 ||
-			movie.rating > 11 ||
+			!movie.rating.trim('') ||
+			movie.year.length > 4 ||
+			movie.year.length < 4 ||
 			movie.rating < 0 ||
 			movie.rating > 10
 			

@@ -74,6 +74,7 @@ header {
 @media (max-width: 550px) {
 	.header-section {
 		grid-template-rows: 40px 50px 50px;
+		height: 160px;
 	  }
 
 	.navButton {

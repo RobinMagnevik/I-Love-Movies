@@ -83,7 +83,6 @@ const Form = () => {
 
 	const showImage = (event) => {
 		let img = event.target.files[0];
-		console.log('IMG: ', img)
 		const reader = new FileReader();
 		reader.readAsDataURL(img);
 		reader.onload = function () {
@@ -91,8 +90,6 @@ const Form = () => {
 			setMovie(
 				{ ...movie, poster: imgData}
 			)
-			console.log('movieOBJECT: ', imgData)
-			console.log('MOVIE: ', movie)
 		};
 	};
 

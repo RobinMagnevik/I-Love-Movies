@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/I-Love-Movies/static/css/main.931fbe9b.chunk.css",
+    "main.js": "/I-Love-Movies/static/js/main.e6a62d74.chunk.js",
+    "main.js.map": "/I-Love-Movies/static/js/main.e6a62d74.chunk.js.map",
+    "runtime-main.js": "/I-Love-Movies/static/js/runtime-main.d2cf97cc.js",
+    "runtime-main.js.map": "/I-Love-Movies/static/js/runtime-main.d2cf97cc.js.map",
+    "static/js/2.c1fe1f7a.chunk.js": "/I-Love-Movies/static/js/2.c1fe1f7a.chunk.js",
+    "static/js/2.c1fe1f7a.chunk.js.map": "/I-Love-Movies/static/js/2.c1fe1f7a.chunk.js.map",
+    "index.html": "/I-Love-Movies/index.html",
+    "precache-manifest.4ebff4e331af82f364227934d26c9af0.js": "/I-Love-Movies/precache-manifest.4ebff4e331af82f364227934d26c9af0.js",
+    "service-worker.js": "/I-Love-Movies/service-worker.js",
+    "static/css/main.931fbe9b.chunk.css.map": "/I-Love-Movies/static/css/main.931fbe9b.chunk.css.map",
+    "static/js/2.c1fe1f7a.chunk.js.LICENSE.txt": "/I-Love-Movies/static/js/2.c1fe1f7a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2cf97cc.js",
+    "static/js/2.c1fe1f7a.chunk.js",
+    "static/css/main.931fbe9b.chunk.css",
+    "static/js/main.e6a62d74.chunk.js"
+  ]
+}

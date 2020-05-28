@@ -84,18 +84,6 @@
   background-color: black;
 }
 
-.welcomeFirstHeaderText{
-	background-color: black;
-}
-
-.welcomeFirstHeaderTextDiv{
-	display: flex;
-	align-self: end;
-	background-color: black;
-	background-color: transparent;
-	margin: 20px 0 0 20px;
-}
-
 @media screen and (max-width: 400px) {
 	.startPageheader {
 		font-size: 2.4em;

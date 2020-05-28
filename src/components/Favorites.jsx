@@ -21,8 +21,8 @@ const FilterMovies = () => {
 				item.film.description.match(search)
 			) {
 				return (
-					<div>
-						<div key={item.title}>
+					<div key={item.film.id}>
+						<div key={item.film.id}>
 						<h3 className="titleFavoritePage">{item.film.title} ({item.film.year})</h3>
 							<img className="posterFavoritePage" src={item.film.poster} alt="" />
 							<p className="ratingFavoritePage"><span className="fa" >&#xf005;</span> {item.film.rating + '/10'} </p>

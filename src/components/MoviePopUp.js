@@ -14,8 +14,8 @@ const [show, setShow] = useState(false);
 		<p className="popUpX" onClick={() => setShow(show => show)}> x </p>
           <img className="popUpImg" src={item.film.poster} alt="" />
           <p className="popUpTitleYear"> {item.film.title} ({item.film.year})</p>
+		  <div className="popUpAboutGenreRatingDiv">
 		  <p className="popUpAbout">{item.film.description}</p>
-		  <div className="popUpGenreRatingDiv">
 		  <p className="popUpGenre">{item.film.genre}</p>
 		  <p className="popUpRating"> <span className="fa moviePopUp" >&#xf005;</span>{item.film.rating}</p>
 		  </div>
@@ -28,4 +28,3 @@ const [show, setShow] = useState(false);
 };
 
 export default MoviePopUp;
-

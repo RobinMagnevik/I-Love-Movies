@@ -35,7 +35,9 @@ function App() {
 						Inspiration
 					</button>
 				</nav>
-				
+				<div>
+				<StartPage className="startPageComp"/>
+			</div>
 			</header>
 
 			<div
@@ -45,10 +47,6 @@ function App() {
 				}
 			>
 				<AddFavorite />
-			</div>
-
-			<div>
-				<StartPage />
 			</div>
 
 			<div>

@@ -10,11 +10,12 @@ export default function StartPage() {
 	};
 
 	return (
-		<div>
-			<div>
+		<div >
+			<div className="welcomeFirstHeaderTextDiv">
 				{names.map((name) => {
 					return (
-						<p className="welcomeHeaderText" key={name.firstName}>
+						<p className="welcomeFirstHeaderText" key={name.firstName}>
+						 Welcome {name.firstName}!
 						</p>
 					);
 				})}

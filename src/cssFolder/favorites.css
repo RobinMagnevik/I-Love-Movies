@@ -61,6 +61,7 @@
 	border: none;
 	cursor: pointer;
 	border-radius: 2px;
+	margin: 0 7px 0 7px;
 }
 
 .buttonsInFavoriteList:hover {
@@ -71,7 +72,7 @@
 
 .showDeleteEditButtonsDiv {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content:  center;
 }
 
 .titleFavoritePage {

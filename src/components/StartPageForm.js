@@ -15,7 +15,7 @@ const StartPageForm = ({ addName }) => {
 	setfirstName("")
   };
 
-  const start = useState(() => {
+  useState(() => {
 	window.localStorage.getItem("name");
 	if (localStorage.getItem("name") === null) {
 	  return setShow(true)

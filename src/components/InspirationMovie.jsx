@@ -101,7 +101,7 @@ async function fetchMovie(dispatch) {
     let randomMovie = movieList[randomNumber];
 
     dispatch(inspoActions.isFetching());
-    const url = 'http://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomMovie);
+    const url = 'https://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomMovie);
     try {
         let response = await fetch(url);
         let json = await response.json();
@@ -125,7 +125,7 @@ async function fetchSerie(dispatch) {
     let randomSerie = serieList[randomNumber];
 
     dispatch(inspoActions.isFetching());
-    const url = 'http://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomSerie);
+    const url = 'https://www.omdbapi.com/?apikey=5e49bc8e&t=' + encodeURI(randomSerie);
     try {
         let response = await fetch(url);
         let json = await response.json();

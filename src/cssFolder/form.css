@@ -134,6 +134,16 @@ input.rating {
 #image {
 	color: white;
 }
+@media (max-width: 930px){
+	.three-latest {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1.5em;
+		font-size: large;
+		margin-top: 50px;
+		/* margin-bottom: 50px; */
+	}
+}
 @media screen and (max-width: 665px) {
 	.three-latest {
 		grid-template-columns: 1fr;
@@ -141,15 +151,32 @@ input.rating {
 	}
 }
 @media screen and (max-width: 500px) {
-	.three-latest {
-		grid-template-columns: 1fr;
-		align-content: center;
-	}
 	.form-style {
 		width: 250px;
 	}
 	input[type="file"] {
 		background-color: transparent;
 		margin-left: 55px;
+	}
+	.rating-error-message{
+		top: 32.8em;
+	}
+	.form-year-input, .form-rating-input{
+		width: 4em;
+	}
+	.year-error-message{
+		margin-top: 1.2em;
+	}
+	.genre-input-area{
+		margin-top: 0.5em;
+	}
+}
+
+@media (max-width: 550px){
+	.textarea-error-message{
+		top: 23em;
+	}
+	.rating-error-message{
+		top: 32.8em;
 	}
 }

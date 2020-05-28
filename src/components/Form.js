@@ -157,7 +157,7 @@ const Form = () => {
 					></textarea>
 						<small className='rating-error-message' style={movie.rating > 10 && isRatingTouched ? {display: 'block'} : {display: 'none'}}>Format: 1-10</small>
 						<small className='rating-error-message' style={movie.rating < 0 && isRatingTouched ? {display: 'block'} : {display: 'none'}}>Format: 1-10</small>
-						<input className="rating"
+						<input className="rating form-rating-input"
 							placeholder="0-10"
 							type="number"
 							name="rating"
@@ -171,6 +171,7 @@ const Form = () => {
 					<div className="form-style-div-label">
 						<small className='year-error-message' style={movie.year.length !== 4 && isYearTouched ? {display: 'block'} : {display: 'none'}}>Format: YYYY</small>
 						<input
+							className="form-year-input"
 							maxLength="4"
 							placeholder="Year"
 							type="number"
@@ -179,8 +180,6 @@ const Form = () => {
 							onChange={handleChange}
 							onBlur={() => setIsYearTouched(true)}
 						/>
-						<div>
-							
 							<small
 								className="genre-error-message"
 								style={
@@ -191,8 +190,10 @@ const Form = () => {
 							>
 								{broadcastError}
 							</small>
-							<label htmlFor="genre">Genre: </label>
-							<select name="genre" id="genre" onChange={handleChange} onBlur={() => setIsGenreTouched(true)}>
+						<div className="genre-input-area">
+							
+							<label htmlFor="genre" className="genre-input-area">Genre: </label>
+							<select name="genre" className="genre-input-area" id="genre" onChange={handleChange} onBlur={() => setIsGenreTouched(true)}>
 								<option value=""></option>
 								<option value="Action">Action</option>
 								<option value="Anime">Anime</option>

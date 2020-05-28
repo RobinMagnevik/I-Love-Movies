@@ -158,16 +158,11 @@
 @media (max-width: 420px) {
   .popUpDiv {
     width: 300px;
-    height: 600px;
+    height: 660px;
   }
 
   .popUpTitleYear {
     font-size: 1.2em;
-  }
-
-  .popUpImg {
-    height: 200px;
-    width: 150px;
   }
 
   .popUpAboutGenreRatingDiv {

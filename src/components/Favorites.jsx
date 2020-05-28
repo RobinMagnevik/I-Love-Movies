@@ -17,8 +17,7 @@ const FilterMovies = () => {
 	const mixedList = data.map((item) => {
 		if (search.length !== 0) {
 			if (
-				item.film.title.toLowerCase().match(search.toLowerCase()) ||
-				item.film.description.match(search)
+				item.film.title.toLowerCase().match(search.toLowerCase())
 			) {
 				return (
 					<div key={item.film.id}>
